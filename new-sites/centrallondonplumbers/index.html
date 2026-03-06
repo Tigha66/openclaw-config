@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central London Plumbers & Handyman | Plumbing Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --accent: #ff6b00; --light: #f8f5f0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Lato', sans-serif; background: var(--light); color: #1a1a1a; }
+        
+        header { background: white; padding: 25px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 30px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #1a1a1a; }
+        .logo span { color: var(--accent); }
+        .nav { display: flex; gap: 30px; }
+        .nav a { text-decoration: none; color: #666; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--accent); }
+        
+        .hero { background: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.9)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200'); background-size: cover; color: white; padding: 150px 30px 100px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 35px; opacity: 0.9; }
+        
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 16px 35px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+        
+        .section { padding: 80px 30px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 45px 35px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.06); transition: all 0.3s; border-radius: 4px; }
+        .card:hover { transform: translateY(-10px); }
+        .card-icon { width: 70px; height: 70px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; }
+        .card-icon i { font-size: 1.8rem; color: var(--accent); }
+        .card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 12px; }
+        .card p { color: #666; font-size: 0.95rem; line-height: 1.7; }
+        
+        .features { background: #1a1a1a; color: white; }
+        .features h2 { color: white; }
+        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .feature { text-align: center; padding: 30px; }
+        .feature i { font-size: 2rem; color: var(--accent); margin-bottom: 15px; }
+        
+        .contact { background: white; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .contact-item i { width: 45px; height: 45px; background: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); }
+        
+        .form input, .form textarea { width: 100%; padding: 16px; border: 1px solid #ddd; margin-bottom: 15px; font-family: inherit; }
+        .form input:focus, .form textarea:focus { outline: none; border-color: var(--accent); }
+        
+        footer { background: #1a1a1a; color: white; padding: 40px 30px; text-align: center; }
+        footer p { opacity: 0.5; }
+        
+        @media (max-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } .contact-grid { grid-template-columns: 1fr; } .nav { display: none; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">Central London Plumbers & Handyman<span>.</span></div>
+            <nav class="nav">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="#contact" class="btn">Get Quote</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Plumbing Services Excellence</h1>
+        <p>Expert plumbing solutions for your home or business. From emergency repairs to installations, we deliver premium service.</p>
+        <a href="#contact" class="btn">Request A Quote</a>
+    </section>
+    
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-title"><h2>What We Offer</h2></div>
+            <div class="cards">
+                <div class="service-card"><div class="service-icon"><i data-lucide="wrench"></i></div><h3>Emergency Repairs</h3><p>24/7 emergency plumbing services.</p></div><div class="service-card"><div class="service-icon"><i data-lucide="tool"></i></div><h3>Boiler Installation</h3><p>Professional boiler services.</p></div><div class="service-card"><div class="service-icon"><i data-lucide="bath"></i></div><h3>Bathroom Installations</h3><p>Complete bathroom renovations.</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section features" id="about">
+        <div class="container">
+            <div class="section-title"><h2>Why Choose Us</h2></div>
+            <div class="features-grid">
+                <div class="feature"><i class="fas fa-star"></i><h4>Premium Quality</h4><p>Unmatched excellence</p></div>
+                <div class="feature"><i class="fas fa-clock"></i><h4>On Time</h4><p>We meet deadlines</p></div>
+                <div class="feature"><i class="fas fa-handshake"></i><h4>Reliable</h4><p>Trusted service</p></div>
+                <div class="feature"><i class="fas fa-heart"></i><h4>Care</h4><p>Client focused</p></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <h2>Get In Touch</h2>
+                    <p>Ready to start? Contact us for a free consultation.</p>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Flat 14, Seymour Buildings, Seymour Place, London W1H 4PP</div>
+                    <div class="contact-item"><i class="fas fa-phone"></i> 07596726071</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> info@centrallondonplumbers.co.uk</div>
+                </div>
+                <div class="form">
+                    <form>
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <input type="tel" placeholder="Phone">
+                        <textarea placeholder="Message" rows="4"></textarea>
+                        <button type="submit" class="btn w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer><p>&copy; 2026 Central London Plumbers & Handyman. All rights reserved.</p></footer>
+</body>
+</html>
