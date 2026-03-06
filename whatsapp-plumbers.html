@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Outreach - autoAIwebsolutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #25D366; --dark: #0d0d0d; --dark-card: #141414; }
+        body { background: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; }
+        .header { background: linear-gradient(135deg, #25D366, #128C7E); padding: 2rem 0; margin-bottom: 2rem; }
+        .business-card { background: var(--dark-card); border: 1px solid #1f1f1f; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; transition: all 0.3s; }
+        .business-card:hover { border-color: var(--primary); transform: translateX(5px); }
+        .badge-plumber { background: #ff6b00; }
+        .badge-dentist { background: #10b981; }
+        .badge-salon { background: #ec4899; }
+        .badge-agent { background: #6366f1; }
+        .wa-btn { background: var(--primary); border: none; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .wa-btn:hover { background: #128C7E; transform: scale(1.05); }
+        .site-btn { background: #1f1f1f; border: 1px solid #333; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .site-btn:hover { border-color: var(--primary); }
+        .search-box { background: #1f1f1f; border: 1px solid #333; color: white; padding: 12px 20px; border-radius: 10px; width: 100%; }
+        .search-box:focus { border-color: var(--primary); outline: none; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1><i class="fab fa-whatsapp"></i> WhatsApp Outreach - Plumbers</h1>
+            <p class="mb-0">Click to send WhatsApp messages to your leads</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="alert alert-info" style="background:#1f1f1f;border:1px solid #25D366;color:#fff">
+            <i class="fab fa-whatsapp"></i> <strong>How it works:</strong> Click "View Site" to see sample → Click "Send WhatsApp" to message them
+        </div>
+        <input type="text" class="search-box mb-4" placeholder="Search businesses..." id="search">
+        <div id="results"></div>
+    </div>
+
+    <script>
+    const baseUrl = "https://tigha66.github.io/openclaw-config/new-sites/";
+    
+    const businesses = [
+        {name:"Tubbs Plumbing",cat:"Plumber",addr:"2 Battersby Road, London SE6 1SD",phone:"+442086959165",site:"tubbsplumbing/"},
+        {name:"Plug & Plumb",cat:"Plumber",addr:"Dixon Clark Court, Canonbury Rd, London N1 2WE",phone:"+447757242664",site:"plugplumb/"},
+        {name:"TLS Plumbing, Heating & Drainage",cat:"Plumber",addr:"Flat 44, Everard House, Boyd Street, London E1 1LY",phone:"+448000433035",site:"tlsplumbingdrainage/"},
+        {name:"TLS Plumbing & Heating",cat:"Plumber",addr:"Bellingham Road, London SE6 2PR",phone:"+448000433035",site:"tlsplumbingheating/"},
+        {name:"St Neots Plumbers",cat:"Plumber",addr:"25 Devereux Rd, London SW11 6JR",phone:"+441233646788",site:"stneotsplumbers/"},
+        {name:"Turners Plumbing Services Ltd",cat:"Plumber",addr:"Flat 32, 24 St James's Road, London SE16 4QJ",phone:"+447710555855",site:"turnersplumbing/"},
+        {name:"Alpha Gas & Plumbing",cat:"Plumber",addr:"Church Lane, London E10 7BQ",phone:"+442031376652",site:"alphagasplumbing/"},
+        {name:"Premier Plumbing Bethnal Green",cat:"Plumber",addr:"Old Bethnal Green Road, London E2 6QA",phone:"+442089148331",site:"premierplumbing/"},
+        {name:"Tower Plumbing & Heating",cat:"Plumber",addr:"Belmore Street, London SW8 2JY",phone:"+447932276473",site:"towerplumbing/"},
+        {name:"Midnight Plumbers",cat:"Plumber",addr:"24 Janson Close, London NW10 0EQ",phone:"+44748476733",site:"midnightplumbers/"},
+        {name:"Fast London Plumbers",cat:"Plumber",addr:"293 Hall Lane, London E4 8NU",phone:"+442033752698",site:"fastlondonplumbers/"},
+        {name:"C P S Plumbing and Drainage",cat:"Plumber",addr:"Highbury Park, London N5 1QJ",phone:"+442032858849",site:"cpsplumbing/"},
+        {name:"Instant Plumbing Services",cat:"Plumber",addr:"5 Northcote Avenue, London W5 3UR",phone:"+447307101444",site:"instantplumbing/"},
+        {name:"Smart Plumbing London",cat:"Plumber",addr:"Flat 23, Bishops Court, 110 Matthias Road, London N16 8QZ",phone:"+442036979840",site:"smartplumbing/"},
+        {name:"Atlas Plumbers",cat:"Plumber",addr:"Stratos Heights, 38 Milestone Road, London SE19 2LU",phone:"+442035355747",site:"atlasplumbers/"},
+    ];
+
+    const badgeClass = {Plumber:"badge-plumber",Dentist:"badge-dentist",Salon:"badge-salon",Agent:"badge-agent"};
+
+    function getMessage(b) {
+        return `Hi ${b.name}!
+
+I noticed you don't have a website yet. I build professional websites for local businesses - starting from just £397 (or £39/month).
+
+Every site comes with:
+✅ Mobile-friendly design
+✅ Online booking forms
+✅ Stripe payment integration
+✅ Google Maps listing
+✅ SEO setup
+
+I've already built a FREE sample site for your business!
+
+👉 VIEW SAMPLE: ${baseUrl}${b.site}
+
+Check out my work:
+👉 MY WEBSITE: https://tigha66.github.io/openclaw-config/
+
+Would you like me to customise it for your business?
+
+Cheers,
+Abdelhak
+autoAIwebsolutions
+📧 tigha66@gmail.com
+🌐 autoAIwebsolutions.com`;
+    }
+
+    function render(list) {
+        document.getElementById('results').innerHTML = list.map((b, i) => {
+            const waLink = `https://wa.me/${b.phone.replace('+', '')}?text=${encodeURIComponent(getMessage(b))}`;
+            const siteLink = baseUrl + b.site;
+            return `
+            <div class="business-card">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <span class="badge ${badgeClass[b.cat]}">${b.cat}</span>
+                        <h5 class="mt-2 mb-1">${b.name}</h5>
+                        <p class="text-muted small mb-0"><i class="fas fa-map-marker-alt"></i> ${b.addr}</p>
+                        <p class="small mb-0" style="color:#25D366"><i class="fab fa-whatsapp"></i> ${b.phone}</p>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <a href="${siteLink}" target="_blank" class="site-btn"><i class="fas fa-eye"></i> View Site</a>
+                        <a href="${waLink}" target="_blank" class="wa-btn" style="margin-left:8px"><i class="fab fa-whatsapp"></i> Send WhatsApp</a>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    render(businesses);
+    document.getElementById('search').addEventListener('input', e => {
+        const q = e.target.value.toLowerCase();
+        render(businesses.filter(b => b.name.toLowerCase().includes(q) || b.cat.toLowerCase().includes(q)));
+    });
+    </script>
+</body>
+</html>
