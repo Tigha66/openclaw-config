@@ -89,6 +89,56 @@
         {name:"Kingsbridge Lettings",cat:"Agent",addr:"96 George Lane, London E18 1AD",phone:"+442089899811"}
     ];
 
+    const siteUrls = {
+        "dan-the-plumber": "dan-the-plumber/",
+        "englands-plumber": "englands-plumber/",
+        "nico-koci-plumber": "nico-koci-plumber/",
+        "mc-plumber": "mc-plumber/",
+        "plumber-london": "plumber-london/",
+        "national-plumbers": "national-plumbers/",
+        "smart-plumbing-london": "smart-plumbing-london/",
+        "turners-plumbing": "turners-plumbing/",
+        "bens-plumbing": "bens-plumbing/",
+        "flow-plumbing": "flow-plumbing/",
+        "maintracts-plumbers": "maintracts-plumbers/",
+        "central-london-plumbers": "central-london-plumbers/",
+        "arrow-dental-practice": "arrow-dental/",
+        "mr-dentist-children": "mr-dentist-children/",
+        "thatched-house-dental": "thatched-house-dental/",
+        "thayer-street-dental": "thayer-street-dental/",
+        "sky-dental": "sky-dental/",
+        "tabibzadeh-dental": "tabibzadeh-dental/",
+        "hoe-st-dental": "hoe-st-dental/",
+        "greenwich-dental": "greenwich-dental/",
+        "leytonstone-dental": "leytonstone-dental/",
+        "cedars-dental": "cedars-dental/",
+        "strands-hairdressing": "strands-hairdressing/",
+        "liaison-hair-beauty": "liaison-hair-beauty/",
+        "chris-hairdressers": "chris-hairdressers/",
+        "helens-hair-beauty": "helens-salon/",
+        "barber-social": "barber-social/",
+        "danny-hair-beauty": "danny-hair-beauty/",
+        "hair-e14": "hair-e14/",
+        "hair-by-tony": "hair-by-tony/",
+        "ginas-hair-salon": "ginas-hair-salon/",
+        "head-2-head": "head-2-head/",
+        "evas-salon": "evas-salon/",
+        "barnetts-hair": "barnetts-hair/",
+        "connection-salon": "connection-salon/",
+        "ah-hair-beauty": "ah-hair-beauty/",
+        "elizabeth-estate-agent": "elizabeth-estate-agent/",
+        "whitefoot-lettings": "whitefoot-lettings/",
+        "davis-estate-agents": "davis-estate-agents/",
+        "share-in-the-city": "share-in-the-city/",
+        "beaver-property-management": "beaver-property-management/",
+        "mebs-properties": "mebs-properties/",
+        "thirleby-property": "thirleby-property/",
+        "om-property": "om-property/",
+        "north-central-pm": "north-central-property/",
+        "bravissima-estate": "bravissima/",
+        "kingsbridge-lettings": "kingsbridge/"
+    };
+    
     const baseUrl = "https://tigha66.github.io/openclaw-config/sites/";
     
     const message = `Hi ${businesses[0].name}!
@@ -104,7 +154,7 @@ Every site comes with:
 
 I've already built a FREE sample site for your business! See it here:
 👇👇👇
-${baseUrl}${businesses[0].site}
+${baseUrl}${siteUrls[businesses[0].site.replace('.html', '')] || businesses[0].site}
 
 Would you like me to customise it for your business?
 
@@ -117,9 +167,11 @@ tigha66@gmail.com`;
 
     function render(list) {
         document.getElementById('results').innerHTML = list.map((b, i) => {
+            const siteKey = b.site.replace('.html', '');
+            const siteUrl = siteUrls[siteKey] || b.site;
             const personalizedMsg = message
                 .replace(new RegExp(businesses[0].name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), b.name)
-                .replace(new RegExp(businesses[0].site, 'g'), b.site);
+                .replace(new RegExp(baseUrl + (siteUrls[businesses[0].site.replace('.html', '')] || businesses[0].site), 'g'), baseUrl + siteUrl);
             const encodedMsg = encodeURIComponent(personalizedMsg);
             const waLink = `https://wa.me/${b.phone.replace('+', '')}?text=${encodedMsg}`;
             
