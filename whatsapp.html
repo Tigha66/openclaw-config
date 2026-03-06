@@ -14,26 +14,32 @@
         .business-card:hover { border-color: var(--primary); transform: translateX(5px); }
         .badge-plumber { background: #ff6b00; }
         .badge-dentist { background: #10b981; }
-        .badge-salon { background: #d63384; }
+        .badge-salon { background: #ec4899; }
         .badge-agent { background: #6366f1; }
         .wa-btn { background: var(--primary); border: none; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-        .wa-btn:hover { background: #128C7E; color: white; transform: scale(1.05); }
+        .wa-btn:hover { background: #128C7E; transform: scale(1.05); }
         .site-btn { background: #1f1f1f; border: 1px solid #333; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-        .site-btn:hover { border-color: var(--primary); color: white; }
+        .site-btn:hover { border-color: var(--primary); }
         .search-box { background: #1f1f1f; border: 1px solid #333; color: white; padding: 12px 20px; border-radius: 10px; width: 100%; }
         .search-box:focus { border-color: var(--primary); outline: none; }
+        .filter-btn { background: #1f1f1f; border: 1px solid #333; padding: 8px 16px; border-radius: 20px; color: white; cursor: pointer; transition: all 0.3s; }
+        .filter-btn.active { background: var(--primary); border-color: var(--primary); }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="container">
             <h1><i class="fab fa-whatsapp"></i> WhatsApp Outreach</h1>
-            <p class="mb-0">Click to send WhatsApp messages to your leads</p>
+            <p class="mb-0">Click "View Site" to see sample → Click "Send WhatsApp" to message them</p>
         </div>
     </div>
     <div class="container">
-        <div class="alert alert-info" style="background:#1f1f1f;border:1px solid #25D366;color:#fff">
-            <i class="fab fa-whatsapp"></i> <strong>How it works:</strong> Click "View Site" to see the sample → Click "Send WhatsApp" to message them
+        <div class="mb-3">
+            <button class="filter-btn active" onclick="filterAll()">All</button>
+            <button class="filter-btn" onclick="filterCategory('Plumber')">Plumbers</button>
+            <button class="filter-btn" onclick="filterCategory('Dentist')">Dentists</button>
+            <button class="filter-btn" onclick="filterCategory('Agent')">Agents</button>
+            <button class="filter-btn" onclick="filterCategory('Salon')">Salons</button>
         </div>
         <input type="text" class="search-box mb-4" placeholder="Search businesses..." id="search">
         <div id="results"></div>
@@ -45,20 +51,59 @@
     const businesses = [
         // Plumbers
         {name:"Tubbs Plumbing",cat:"Plumber",addr:"2 Battersby Road, London SE6 1SD",phone:"+442086959165",site:"tubbsplumbing/"},
-        {name:"Dan the Plumber",cat:"Plumber",addr:"28 Heathfield Rd, London W3 8EL",phone:"+447890919604",site:"dantheplumber/"},
-        {name:"Nico Koci Plumber",cat:"Plumber",addr:"2 Whitehall Park, London N19 3TL",phone:"+447510875900",site:"nicokociplumber/"},
-        {name:"M C Plumber",cat:"Plumber",addr:"304b Park Road, London N8 8LA",phone:"+447588832021",site:"mcplumber/"},
+        {name:"Plug & Plumb",cat:"Plumber",addr:"Dixon Clark Court, Canonbury Rd, London N1 2WE",phone:"+447757242664",site:"plugplumb/"},
+        {name:"TLS Plumbing, Heating & Drainage",cat:"Plumber",addr:"Flat 44, Everard House, London E1 1LY",phone:"+448000433035",site:"tlsplumbingdrainage/"},
+        {name:"St Neots Plumbers",cat:"Plumber",addr:"25 Devereux Rd, London SW11 6JR",phone:"+441233646788",site:"stneotsplumbers/"},
+        {name:"Turners Plumbing Services",cat:"Plumber",addr:"Flat 32, St James's Road, London SE16 4QJ",phone:"+447710555855",site:"turnersplumbing/"},
+        {name:"Alpha Gas & Plumbing",cat:"Plumber",addr:"Church Lane, London E10 7BQ",phone:"+442031376652",site:"alphagasplumbing/"},
+        {name:"Premier Plumbing",cat:"Plumber",addr:"Old Bethnal Green Road, London E2 6QA",phone:"+442089148331",site:"premierplumbing/"},
+        {name:"Tower Plumbing & Heating",cat:"Plumber",addr:"Belmore Street, London SW8 2JY",phone:"+447932276473",site:"towerplumbing/"},
+        {name:"Midnight Plumbers",cat:"Plumber",addr:"24 Janson Close, London NW10 0EQ",phone:"+44748476733",site:"midnightplumbers/"},
+        {name:"Fast London Plumbers",cat:"Plumber",addr:"293 Hall Lane, London E4 8NU",phone:"+442033752698",site:"fastlondonplumbers/"},
+        {name:"C P S Plumbing",cat:"Plumber",addr:"Highbury Park, London N5 1QJ",phone:"+442032858849",site:"cpsplumbing/"},
+        {name:"Instant Plumbing Services",cat:"Plumber",addr:"5 Northcote Avenue, London W5 3UR",phone:"+447307101444",site:"instantplumbing/"},
+        {name:"Smart Plumbing London",cat:"Plumber",addr:"Flat 23, Bishops Court, London N16 8QZ",phone:"+442036979840",site:"smartplumbing/"},
+        {name:"Atlas Plumbers",cat:"Plumber",addr:"Stratos Heights, London SE19 2LU",phone:"+442035355747",site:"atlasplumbers/"},
+        {name:"Fast Plumber London",cat:"Plumber",addr:"601 International House, London W1B 2QD",phone:"+442078711956",site:"fastplumberlondon/"},
+        {name:"March Plumbers",cat:"Plumber",addr:"25 Devereux Rd, London SW11 6JR",phone:"+441233646788",site:"marchplumbers/"},
+        {name:"Aspect Plumbing",cat:"Plumber",addr:"Chessington KT9 2NY",phone:"+442036276441",site:"aspectplumbing/"},
+        {name:"Central London Plumbers",cat:"Plumber",addr:"Flat 14, Seymour Buildings, London W1H 4PP",phone:"+447596726071",site:"centrallondonplumbers/"},
+        {name:"MTS Plumbers",cat:"Plumber",addr:"Russell Gardens, London W14 8EZ",phone:"+448000546529",site:"mtsplumbers/"},
+        {name:"Just Plumbing",cat:"Plumber",addr:"145-157 St John Street, London EC1V 4PW",phone:"+448009778258",site:"justplumbing/"},
+        {name:"London Plumbing",cat:"Plumber",addr:"1112-114 North Acton Road, London NW10 6QH",phone:"+442035769955",site:"londonplumbing/"},
+        {name:"Emergency Plumber",cat:"Plumber",addr:"Ely House, London E10 6ER",phone:"+447958239064",site:"emergencyplumber/"},
+        {name:"Boiler Repair & Services",cat:"Plumber",addr:"33 Flaxton Rd, London SE18 2EF",phone:"+44784660487",site:"boilerrepairservices/"},
+        {name:"Riverside Plumbing",cat:"Plumber",addr:"372 Well Hall Rd, London SE9 6UF",phone:"+447915673996",site:"riversideplumbing/"},
         // Dentists
-        {name:"Arrow Dental Practice",cat:"Dentist",addr:"89 Robert Street, Camden Town, London NW1 3QT",phone:"+442073878143",site:"arrowdental/"},
-        // Estate Agents
-        {name:"Whitefoot Lettings",cat:"Agent",addr:"358a Verdant Lane, London SE6 1TP",phone:"+442084650242",site:"whitefootlettings/"},
-        {name:"Elizabeth Estate Agent",cat:"Agent",addr:"54 Plumstead High St, London SE18 1SL",phone:"+442034111178",site:"elizabethestate/"},
-        {name:"Davis Estate Agents",cat:"Agent",addr:"311 Hertford Rd, Edmonton, London N9 7EU",phone:"+442088048888",site:"davisestateagents/"},
-        // Salons
-        {name:"Danny Hair & Beauty",cat:"Salon",addr:"446 Finchley Rd, London NW2 2HY",phone:"+442077942666",site:"dannyhairbeauty/"},
-        {name:"Hair By Tony",cat:"Salon",addr:"13 Retingham Way, London E4 6RR",phone:"+442085295211",site:"hairbytony/"},
-        {name:"Barber Social",cat:"Salon",addr:"East Village, 7 West Park Walk, Newham, London E20 1DH",phone:"+442082211876",site:"barbersocial/"},
+        {name:"Greenwich Dental Practice",cat:"Dentist",addr:"207 Greenwich High Road, London SE10 8NB",phone:"+442088581055",site:"greenwichdental/"},
+        {name:"Mr Dentist Children's Practice",cat:"Dentist",addr:"7 The Green, London NW11 7RJ",phone:"+442084584455",site:"mrdentist/"},
+        {name:"Sky Dental Practice",cat:"Dentist",addr:"94 Turnpike Lane, London N8 0PH",phone:"+442088881002",site:"skydental/"},
+        {name:"Leytonstone Dental Centre",cat:"Dentist",addr:"489 High Road, London E11 4PG",phone:"+442085580080",site:"leytonstonedental/"},
+        {name:"Arrow Dental Practice",cat:"Dentist",addr:"89 Robert Street, London NW1 3QT",phone:"+442073878143",site:"arrowdental/"},
+        {name:"The Thayer Street Dental",cat:"Dentist",addr:"12 Thayer Street, London W1U 3JP",phone:"+442074864866",site:"thayerstreetdental/"},
+        {name:"Cedars Dental Practice",cat:"Dentist",addr:"775 High Rd Leyton, London E10 5AB",phone:"+442085581122",site:"cedarsdental/"},
+        {name:"Eyes & Smiles",cat:"Dentist",addr:"53 Friern Barnet Road, London N11 3EG",phone:"+442086360924",site:"eyessmiles/"},
+        {name:"Diamond Smile Beulah Hill",cat:"Dentist",addr:"1 Beulah Hill, London SE19 3LQ",phone:"+442086533545",site:"diamonds mile/"},
+        {name:"Conduit Dental Practice",cat:"Dentist",addr:"41 Lambs Conduit Street, London WC1N 3NG",phone:"+442074054030",site:"conduitdental/"},
+        {name:"Denmark Hill Smiles",cat:"Dentist",addr:"179 Denmark Hill, London SE5 8DX",phone:"+442072740861",site:"denmarkhillsmiles/"},
+        {name:"Farache Dental Surgery",cat:"Dentist",addr:"64 Mill Lane, London NW6 1NJ",phone:"+442077942788",site:"farachedental/"},
+        // Agents
+        {name:"Bravissima",cat:"Agent",addr:"373 Hoe Street, London E17 9AP",phone:"+442085211616",site:"bravissima/"},
+        {name:"Davis Estate Agents",cat:"Agent",addr:"311 Hertford Rd, London N9 7EU",phone:"+442088048888",site:"davisestateagents2/"},
+        {name:"North Central Property Management",cat:"Agent",addr:"P.O Box 33118, London NW3 7FJ",phone:"+4420743115968",site:"northcentralpm2/"},
+        {name:"Thirleby Property Services",cat:"Agent",addr:"London N8 7WW",phone:"+447542736026",site:"thirlebyproperty2/"},
+        {name:"The Residents Management Co",cat:"Agent",addr:"296 King St, London W6 0RR",phone:"+442087481229",site:"residentsmanagement/"},
+        {name:"Philip Fisher LLP",cat:"Agent",addr:"3 Dancastle Court, London N3 2JU",phone:"+442083433636",site:"philipfisher/"},
+        {name:"Mebs Properties Lettings",cat:"Agent",addr:"123 Kensington Avenue, London E12 6NL",phone:"+447366597949",site:"mebsproperties2/"},
+        {name:"Simon Clarke Letting Agents",cat:"Agent",addr:"1306 High Road, London N20 9HJ",phone:"+441287551576",site:"simonclarke2/"},
+        {name:"2000 Ltd Property Management",cat:"Agent",addr:"Penhurst House, London SW11 3BY",phone:"+442077382000",site:"2000ltd/"},
+        {name:"Freshwater Property Management",cat:"Agent",addr:"118a Clare Court, London WC1H 9QR",phone:"+442078372507",site:"freshwater2/"},
+        {name:"Squarewalls Estate Agents",cat:"Agent",addr:"500 Chiswick High Rd, London W4 5RG",phone:"+442085777871",site:"squarewalls/"},
+        {name:"O M Property Management",cat:"Agent",addr:"Royal Belgrave House, London SW1V 1RR",phone:"+442075929463",site:"omproperty/"},
+        {name:"Ragu Estate Agent",cat:"Agent",addr:"258 High St North, London E12 6SB",phone:"+442085862323",site:"raguestate/"},
     ];
+
+    let currentCategory = 'All';
 
     const badgeClass = {Plumber:"badge-plumber",Dentist:"badge-dentist",Salon:"badge-salon",Agent:"badge-agent"};
 
@@ -94,7 +139,6 @@ autoAIwebsolutions
         document.getElementById('results').innerHTML = list.map((b, i) => {
             const waLink = `https://wa.me/${b.phone.replace('+', '')}?text=${encodeURIComponent(getMessage(b))}`;
             const siteLink = baseUrl + b.site;
-            
             return `
             <div class="business-card">
                 <div class="row align-items-center">
@@ -105,25 +149,43 @@ autoAIwebsolutions
                         <p class="small mb-0" style="color:#25D366"><i class="fab fa-whatsapp"></i> ${b.phone}</p>
                     </div>
                     <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                        <a href="${siteLink}" target="_blank" class="site-btn">
-                            <i class="fas fa-eye"></i> View Site
-                        </a>
-                        <a href="${waLink}" target="_blank" class="wa-btn" style="margin-left:8px">
-                            <i class="fab fa-whatsapp"></i> Send WhatsApp
-                        </a>
+                        <a href="${siteLink}" target="_blank" class="site-btn"><i class="fas fa-eye"></i> View Site</a>
+                        <a href="${waLink}" target="_blank" class="wa-btn" style="margin-left:8px"><i class="fab fa-whatsapp"></i> Send WhatsApp</a>
                     </div>
                 </div>
-            </div>
-            `;
+            </div>`;
         }).join('');
+        document.getElementById('results').innerHTML += `<p class="text-muted mt-3">Total: ${list.length} businesses</p>`;
+    }
+
+    function filterCategory(cat) {
+        currentCategory = cat;
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        applyFilters();
+    }
+
+    function filterAll() {
+        currentCategory = 'All';
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.filter-btn').classList.add('active');
+        applyFilters();
+    }
+
+    function applyFilters() {
+        let list = businesses;
+        if (currentCategory !== 'All') {
+            list = list.filter(b => b.cat === currentCategory);
+        }
+        const q = document.getElementById('search').value.toLowerCase();
+        if (q) {
+            list = list.filter(b => b.name.toLowerCase().includes(q) || b.cat.toLowerCase().includes(q));
+        }
+        render(list);
     }
 
     render(businesses);
-
-    document.getElementById('search').addEventListener('input', e => {
-        const q = e.target.value.toLowerCase();
-        render(businesses.filter(b => b.name.toLowerCase().includes(q) || b.cat.toLowerCase().includes(q)));
-    });
+    document.getElementById('search').addEventListener('input', applyFilters);
     </script>
 </body>
 </html>
