@@ -18,20 +18,22 @@
         .badge-agent { background: #1e3a5f; }
         .wa-btn { background: var(--primary); border: none; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
         .wa-btn:hover { background: #128C7E; color: white; transform: scale(1.05); }
+        .site-btn { background: #1f1f1f; border: 1px solid #333; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .site-btn:hover { border-color: var(--primary); color: white; }
         .search-box { background: #1f1f1f; border: 1px solid #333; color: white; padding: 12px 20px; border-radius: 10px; }
         .search-box:focus { border-color: var(--primary); outline: none; }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="container">
+        <div class"
             <h1><i class="fab fa-whatsapp"></i> WhatsApp Outreach</h1>
             <p class="mb-0">Click to send WhatsApp messages to your 44 leads</p>
         </div>
     </div>
-    <div class="container">
-        <div class="alert alert-info" style="background:#1f1f1f;border:1px solid #25D366;color:#fff">
-            <i class="fab fa-whatsapp"></i> <strong>How it works:</strong> Click "Send WhatsApp" → Opens WhatsApp with pre-written message → Send to business
+"
+        <div class="    <div classalert alert-info" style="background:#1f1f1f;border:1px solid #25D366;color:#fff">
+            <i class="fab fa-whatsapp"></i> <strong>How it works:</strong> Click "View Site" to see the sample → Click "Send WhatsApp" to message them
         </div>
         
         <input type="text" class="search-box w-100 mb-4" placeholder="Search businesses..." id="search">
@@ -39,109 +41,62 @@
     </div>
 
     <script>
-    const businesses = [
-        {name:"Dan the Plumber",cat:"Plumber",addr:"28 Heathfield Rd, London W3 8EL",phone:"+447890919604"},
-        {name:"Englands Plumber",cat:"Plumber",addr:"68 High St, London W3 6LE",phone:"+447405881006"},
-        {name:"Nico Koci Plumber",cat:"Plumber",addr:"2 Whitehall Park, London N19 3TL",phone:"+447510875900"},
-        {name:"MC Plumber",cat:"Plumber",addr:"304b Park Road, London N8 8LA",phone:"+447588832021"},
-        {name:"Plumber London",cat:"Plumber",addr:"235 Earls Court Rd, London SW5 9FE",phone:"+447440607431"},
-        {name:"National Plumbers",cat:"Plumber",addr:"20a Western Ave, Ealing, London W3 7TZ",phone:"+447760244444"},
-        {name:"Smart Plumbing London",cat:"Plumber",addr:"Flat 23, Bishops Court, London N16 8QZ",phone:"+442036979840"},
-        {name:"Turners Plumbing",cat:"Plumber",addr:"Flat 32, 24 St James's Road, London SE16 4QJ",phone:"+447710555855"},
-        {name:"Bens Plumbing",cat:"Plumber",addr:"Stockwell Gardens, London SW9 0RY",phone:"+442072073743"},
-        {name:"Flow Plumbing",cat:"Plumber",addr:"28 Colegrove Rd, London SE15 6ND",phone:"+447412890075"},
-        {name:"Maintracts Plumbers",cat:"Plumber",addr:"Bickersteth Road, London SW17 9SH",phone:"+442080032960"},
-        {name:"Central London Plumbers",cat:"Plumber",addr:"Flat 14, Seymour Buildings, London W1H 4PP",phone:"+447596726071"},
-        {name:"Arrow Dental Practice",cat:"Dentist",addr:"89 Robert Street, Camden Town, London NW1 3QT",phone:"+442073878143"},
-        {name:"Mr Dentist Children's",cat:"Dentist",addr:"7 The Green Castletown, London NW11 7RJ",phone:"+442084584455"},
-        {name:"Thatched House Dental",cat:"Dentist",addr:"154 High Rd, London E15 1UA",phone:"+442085342926"},
-        {name:"Thayer Street Dental",cat:"Dentist",addr:"12 Thayer Street, London W1U 3JP",phone:"+442074864866"},
-        {name:"Sky Dental Practice",cat:"Dentist",addr:"94 Turnpike Lane, London N8 0PH",phone:"+442088881002"},
-        {name:"Tabibzadeh Mr S",cat:"Dentist",addr:"41 Willoughby Road, London N8 0JG",phone:"+442083404015"},
-        {name:"Hoe St Dental Surgery",cat:"Dentist",addr:"337 Hoe St, London E17 9BD",phone:"+442085205289"},
-        {name:"Greenwich Dental Practice",cat:"Dentist",addr:"207 Greenwich High Road, London SE10 8NB",phone:"+442088581055"},
-        {name:"Leytonstone Dental Centre",cat:"Dentist",addr:"489 High Road, London E11 4PG",phone:"+442085580080"},
-        {name:"Cedars Dental Practice",cat:"Dentist",addr:"775 High Rd Leyton, London E10 5AB",phone:"+442085581122"},
-        {name:"Strands Hairdressing",cat:"Salon",addr:"51 Bounces Rd, London N9 8JE",phone:"+442088072071"},
-        {name:"Liaison Hair & Beauty",cat:"Salon",addr:"11 The Broadway, Mill Hill, London NW7 3LN",phone:"+442089590938"},
-        {name:"Chris Hairdressers",cat:"Salon",addr:"191 Chiswick High Rd, London W4 2DR",phone:"+442087479322"},
-        {name:"Helen's Unisex Hair",cat:"Salon",addr:"16 Craven Terrace, London W2 3QD",phone:"+442074022802"},
-        {name:"Barber Social",cat:"Salon",addr:"7 West Park Walk, London E20 1DH",phone:"+442082211876"},
-        {name:"Danny Hair & Beauty",cat:"Salon",addr:"446 Finchley Rd, London NW2 2HY",phone:"+442077942666"},
-        {name:"Hair E14",cat:"Salon",addr:"163 Manchester Rd, London E14 3DR",phone:"+442075156677"},
-        {name:"Hair By Tony",cat:"Salon",addr:"13 Retingham Way, London E4 6RR",phone:"+442085295211"},
-        {name:"Gina's Unisex Hair",cat:"Salon",addr:"103 Wood St, London E17 3LL",phone:"+442085202055"},
-        {name:"Head 2 Head",cat:"Salon",addr:"206 Putney Bridge Rd, London SW15 2NA",phone:"+442087885887"},
-        {name:"Eva's Salon London",cat:"Salon",addr:"23 Queensway, London W2 4QJ",phone:"+442072211812"},
-        {name:"Barnetts Hair",cat:"Salon",addr:"34 Turnpike Lane, London N8 0PS",phone:"+442088813142"},
-        {name:"Connection Salon",cat:"Salon",addr:"172 Earls Court Rd, London SW5 9QQ",phone:"+442073730664"},
-        {name:"A & H Hair",cat:"Salon",addr:"376 Lordship Lane, London N17 7QX",phone:"+442036899814"},
-        {name:"Elizabeth Estate Agent",cat:"Agent",addr:"54 Plumstead High St, London SE18 1SL",phone:"+442034111178"},
-        {name:"Whitefoot Lettings",cat:"Agent",addr:"358a Verdant Lane, London SE6 1TP",phone:"+442084650242"},
-        {name:"Davis Estate Agents",cat:"Agent",addr:"311 Hertford Rd, London N9 7EU",phone:"+442088048888"},
-        {name:"Share in the City",cat:"Agent",addr:"14 Bedford Square, London WC1B 3JA",phone:"+442071835478"},
-        {name:"Beaver Property Management",cat:"Agent",addr:"28 New Rd, London E1 2AX",phone:"+442077908899"},
-        {name:"Mebs Properties",cat:"Agent",addr:"123 Kensington Avenue, London E12 6NL",phone:"+447366597949"},
-        {name:"Thirleby Property",cat:"Agent",addr:"London N8 7WW",phone:"+447542736026"},
-        {name:"OM Property Management",cat:"Agent",addr:"Royal Belgrave House, London SW1V 1RR",phone:"+442075929463"},
-        {name:"North Central PM",cat:"Agent",addr:"P.O Box 33118, London NW3 7FJ",phone:"+4420743115968"},
-        {name:"Bravissima Estate",cat:"Agent",addr:"373 Hoe Street, London E17 9AP",phone:"+442085211616"},
-        {name:"Kingsbridge Lettings",cat:"Agent",addr:"96 George Lane, London E18 1AD",phone:"+442089899811"}
-    ];
-
-    const siteUrls = {
-        "dan-the-plumber": "dan-the-plumber/",
-        "englands-plumber": "englands-plumber/",
-        "nico-koci-plumber": "nico-koci-plumber/",
-        "mc-plumber": "mc-plumber/",
-        "plumber-london": "plumber-london/",
-        "national-plumbers": "national-plumbers/",
-        "smart-plumbing-london": "smart-plumbing-london/",
-        "turners-plumbing": "turners-plumbing/",
-        "bens-plumbing": "bens-plumbing/",
-        "flow-plumbing": "flow-plumbing/",
-        "maintracts-plumbers": "maintracts-plumbers/",
-        "central-london-plumbers": "central-london-plumbers/",
-        "arrow-dental-practice": "arrow-dental/",
-        "mr-dentist-children": "mr-dentist-children/",
-        "thatched-house-dental": "thatched-house-dental/",
-        "thayer-street-dental": "thayer-street-dental/",
-        "sky-dental": "sky-dental/",
-        "tabibzadeh-dental": "tabibzadeh-dental/",
-        "hoe-st-dental": "hoe-st-dental/",
-        "greenwich-dental": "greenwich-dental/",
-        "leytonstone-dental": "leytonstone-dental/",
-        "cedars-dental": "cedars-dental/",
-        "strands-hairdressing": "strands-hairdressing/",
-        "liaison-hair-beauty": "liaison-hair-beauty/",
-        "chris-hairdressers": "chris-hairdressers/",
-        "helens-hair-beauty": "helens-salon/",
-        "barber-social": "barber-social/",
-        "danny-hair-beauty": "danny-hair-beauty/",
-        "hair-e14": "hair-e14/",
-        "hair-by-tony": "hair-by-tony/",
-        "ginas-hair-salon": "ginas-hair-salon/",
-        "head-2-head": "head-2-head/",
-        "evas-salon": "evas-salon/",
-        "barnetts-hair": "barnetts-hair/",
-        "connection-salon": "connection-salon/",
-        "ah-hair-beauty": "ah-hair-beauty/",
-        "elizabeth-estate-agent": "elizabeth-estate-agent/",
-        "whitefoot-lettings": "whitefoot-lettings/",
-        "davis-estate-agents": "davis-estate-agents/",
-        "share-in-the-city": "share-in-the-city/",
-        "beaver-property-management": "beaver-property-management/",
-        "mebs-properties": "mebs-properties/",
-        "thirleby-property": "thirleby-property/",
-        "om-property": "om-property/",
-        "north-central-pm": "north-central-property/",
-        "bravissima-estate": "bravissima/",
-        "kingsbridge-lettings": "kingsbridge/"
-    };
-    
     const baseUrl = "https://tigha66.github.io/openclaw-config/sites/";
     
-    const message = `Hi ${businesses[0].name}!
+    const businesses = [
+        {name:"Dan the Plumber",cat:"Plumber",addr:"28 Heathfield Rd, London W3 8EL",phone:"+447890919604",site:"dan-the-plumber/"},
+        {name:"Englands Plumber",cat:"Plumber",addr:"68 High St, London W3 6LE",phone:"+447405881006",site:"englands-plumber/"},
+        {name:"Nico Koci Plumber",cat:"Plumber",addr:"2 Whitehall Park, London N19 3TL",phone:"+447510875900",site:"nico-koci-plumber/"},
+        {name:"MC Plumber",cat:"Plumber",addr:"304b Park Road, London N8 8LA",phone:"+447588832021",site:"mc-plumber/"},
+        {name:"Plumber London",cat:"Plumber",addr:"235 Earls Court Rd, London SW5 9FE",phone:"+447440607431",site:"plumber-london/"},
+        {name:"National Plumbers",cat:"Plumber",addr:"20a Western Ave, Ealing, London W3 7TZ",phone:"+447760244444",site:"national-plumbers/"},
+        {name:"Smart Plumbing London",cat:"Plumber",addr:"Flat 23, Bishops Court, London N16 8QZ",phone:"+442036979840",site:"smart-plumbing-london/"},
+        {name:"Turners Plumbing",cat:"Plumber",addr:"Flat 32, 24 St James's Road, London SE16 4QJ",phone:"+447710555855",site:"turners-plumbing/"},
+        {name:"Bens Plumbing",cat:"Plumber",addr:"Stockwell Gardens, London SW9 0RY",phone:"+442072073743",site:"bens-plumbing/"},
+        {name:"Flow Plumbing",cat:"Plumber",addr:"28 Colegrove Rd, London SE15 6ND",phone:"+447412890075",site:"flow-plumbing/"},
+        {name:"Maintracts Plumbers",cat:"Plumber",addr:"Bickersteth Road, London SW17 9SH",phone:"+442080032960",site:"maintracts-plumbers/"},
+        {name:"Central London Plumbers",cat:"Plumber",addr:"Flat 14, Seymour Buildings, London W1H 4PP",phone:"+447596726071",site:"central-london-plumbers/"},
+        {name:"Arrow Dental Practice",cat:"Dentist",addr:"89 Robert Street, Camden Town, London NW1 3QT",phone:"+442073878143",site:"arrow-dental/"},
+        {name:"Mr Dentist Children's",cat:"Dentist",addr:"7 The Green Castletown, London NW11 7RJ",phone:"+442084584455",site:"mr-dentist-children/"},
+        {name:"Thatched House Dental",cat:"Dentist",addr:"154 High Rd, London E15 1UA",phone:"+442085342926",site:"thatched-house-dental/"},
+        {name:"Thayer Street Dental",cat:"Dentist",addr:"12 Thayer Street, London W1U 3JP",phone:"+442074864866",site:"thayer-street-dental/"},
+        {name:"Sky Dental Practice",cat:"Dentist",addr:"94 Turnpike Lane, London N8 0PH",phone:"+442088881002",site:"sky-dental/"},
+        {name:"Tabibzadeh Mr S",cat:"Dentist",addr:"41 Willoughby Road, London N8 0JG",phone:"+442083404015",site:"tabibzadeh-dental/"},
+        {name:"Hoe St Dental Surgery",cat:"Dentist",addr:"337 Hoe St, London E17 9BD",phone:"+442085205289",site:"hoe-st-dental/"},
+        {name:"Greenwich Dental Practice",cat:"Dentist",addr:"207 Greenwich High Road, London SE10 8NB",phone:"+442088581055",site:"greenwich-dental/"},
+        {name:"Leytonstone Dental Centre",cat:"Dentist",addr:"489 High Road, London E11 4PG",phone:"+442085580080",site:"leytonstone-dental/"},
+        {name:"Cedars Dental Practice",cat:"Dentist",addr:"775 High Rd Leyton, London E10 5AB",phone:"+442085581122",site:"cedars-dental/"},
+        {name:"Strands Hairdressing",cat:"Salon",addr:"51 Bounces Rd, London N9 8JE",phone:"+442088072071",site:"strands-hairdressing/"},
+        {name:"Liaison Hair & Beauty",cat:"Salon",addr:"11 The Broadway, Mill Hill, London NW7 3LN",phone:"+442089590938",site:"liaison-hair-beauty/"},
+        {name:"Chris Hairdressers",cat:"Salon",addr:"191 Chiswick High Rd, London W4 2DR",phone:"+442087479322",site:"chris-hairdressers/"},
+        {name:"Helen's Unisex Hair",cat:"Salon",addr:"16 Craven Terrace, London W2 3QD",phone:"+442074022802",site:"helens-salon/"},
+        {name:"Barber Social",cat:"Salon",addr:"7 West Park Walk, London E20 1DH",phone:"+442082211876",site:"barber-social/"},
+        {name:"Danny Hair & Beauty",cat:"Salon",addr:"446 Finchley Rd, London NW2 2HY",phone:"+442077942666",site:"danny-hair-beauty/"},
+        {name:"Hair E14",cat:"Salon",addr:"163 Manchester Rd, London E14 3DR",phone:"+442075156677",site:"hair-e14/"},
+        {name:"Hair By Tony",cat:"Salon",addr:"13 Retingham Way, London E4 6RR",phone:"+442085295211",site:"hair-by-tony/"},
+        {name:"Gina's Unisex Hair",cat:"Salon",addr:"103 Wood St, London E17 3LL",phone:"+442085202055",site:"ginas-hair-salon/"},
+        {name:"Head 2 Head",cat:"Salon",addr:"206 Putney Bridge Rd, London SW15 2NA",phone:"+442087885887",site:"head-2-head/"},
+        {name:"Eva's Salon London",cat:"Salon",addr:"23 Queensway, London W2 4QJ",phone:"+442072211812",site:"evas-salon/"},
+        {name:"Barnetts Hair",cat:"Salon",addr:"34 Turnpike Lane, London N8 0PS",phone:"+442088813142",site:"barnetts-hair/"},
+        {name:"Connection Salon",cat:"Salon",addr:"172 Earls Court Rd, London SW5 9QQ",phone:"+442073730664",site:"connection-salon/"},
+        {name:"A & H Hair",cat:"Salon",addr:"376 Lordship Lane, London N17 7QX",phone:"+442036899814",site:"ah-hair-beauty/"},
+        {name:"Elizabeth Estate Agent",cat:"Agent",addr:"54 Plumstead High St, London SE18 1SL",phone:"+442034111178",site:"elizabeth-estate-agent/"},
+        {name:"Whitefoot Lettings",cat:"Agent",addr:"358a Verdant Lane, London SE6 1TP",phone:"+442084650242",site:"whitefoot-lettings/"},
+        {name:"Davis Estate Agents",cat:"Agent",addr:"311 Hertford Rd, London N9 7EU",phone:"+442088048888",site:"davis-estate-agents/"},
+        {name:"Share in the City",cat:"Agent",addr:"14 Bedford Square, London WC1B 3JA",phone:"+442071835478",site:"share-in-the-city/"},
+        {name:"Beaver Property Management",cat:"Agent",addr:"28 New Rd, London E1 2AX",phone:"+442077908899",site:"beaver-property-management/"},
+        {name:"Mebs Properties",cat:"Agent",addr:"123 Kensington Avenue, London E12 6NL",phone:"+447366597949",site:"mebs-properties/"},
+        {name:"Thirleby Property",cat:"Agent",addr:"London N8 7WW",phone:"+447542736026",site:"thirleby-property/"},
+        {name:"OM Property Management",cat:"Agent",addr:"Royal Belgrave House, London SW1V 1RR",phone:"+442075929463",site:"om-property/"},
+        {name:"North Central PM",cat:"Agent",addr:"P.O Box 33118, London NW3 7FJ",phone:"+4420743115968",site:"north-central-property/"},
+        {name:"Bravissima Estate",cat:"Agent",addr:"373 Hoe Street, London E17 9AP",phone:"+442085211616",site:"bravissima/"},
+        {name:"Kingsbridge Lettings",cat:"Agent",addr:"96 George Lane, London E18 1AD",phone:"+442089899811",site:"kingsbridge/"}
+    ];
+
+    const badgeClass = {Plumber:"badge-plumber",Dentist:"badge-dentist",Salon:"badge-salon",Agent:"badge-agent"};
+
+    function getMessage(b) {
+        return `Hi ${b.name}!
 
 I noticed you don't have a website yet. I build professional websites for local businesses - starting from just £397 (or £39/month).
 
@@ -154,7 +109,7 @@ Every site comes with:
 
 I've already built a FREE sample site for your business! See it here:
 👇👇👇
-${baseUrl}${siteUrls[businesses[0].site.replace('.html', '')] || businesses[0].site}
+${baseUrl}${b.site}
 
 Would you like me to customise it for your business?
 
@@ -162,18 +117,12 @@ Cheers,
 Abdelhak
 autoAIwebsolutions
 tigha66@gmail.com`;
-
-    const badgeClass = {Plumber:"badge-plumber",Dentist:"badge-dentist",Salon:"badge-salon",Agent:"badge-agent"};
+    }
 
     function render(list) {
         document.getElementById('results').innerHTML = list.map((b, i) => {
-            const siteKey = b.site.replace('.html', '');
-            const siteUrl = siteUrls[siteKey] || b.site;
-            const personalizedMsg = message
-                .replace(new RegExp(businesses[0].name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), b.name)
-                .replace(new RegExp(baseUrl + (siteUrls[businesses[0].site.replace('.html', '')] || businesses[0].site), 'g'), baseUrl + siteUrl);
-            const encodedMsg = encodeURIComponent(personalizedMsg);
-            const waLink = `https://wa.me/${b.phone.replace('+', '')}?text=${encodedMsg}`;
+            const waLink = `https://wa.me/${b.phone.replace('+', '')}?text=${encodeURIComponent(getMessage(b))}`;
+            const siteLink = baseUrl + b.site;
             
             return `
             <div class="business-card">
@@ -184,11 +133,11 @@ tigha66@gmail.com`;
                         <p class="text-muted small mb-0"><i class="fas fa-map-marker-alt"></i> ${b.addr}</p>
                         <p class="small mb-0" style="color:#25D366"><i class="fab fa-whatsapp"></i> ${b.phone}</p>
                     </div>
-                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                        <a href="${baseUrl}${siteUrl}" target="_blank" class="btn btn-sm" style="background:#1f1f1f;border:1px solid #333;color:#fff;margin-right:8px">
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <a href="${siteLink}" target="_blank" class="site-btn">
                             <i class="fas fa-eye"></i> View Site
                         </a>
-                        <a href="${waLink}" target="_blank" class="wa-btn">
+                        <a href="${waLink}" target="_blank" class="wa-btn" style="margin-left:8px">
                             <i class="fab fa-whatsapp"></i> Send WhatsApp
                         </a>
                     </div>
