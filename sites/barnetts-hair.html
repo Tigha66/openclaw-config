@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barnetts Hair & Beauty Salon | Hair in London</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #d63384; --accent: #ffc107; --dark: #1a1a2e; --light: #fdf2f8; --white: #ffffff; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; color: var(--dark); }
+        header { background: var(--dark); padding: 1rem 2rem; position: fixed; width: 100%; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--white); }
+        .btn-primary { background: var(--primary); color: var(--white); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .hero { background: linear-gradient(135deg, var(--dark), #444); color: var(--white); padding: 8rem 2rem 4rem; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .services { padding: 5rem 2rem; background: var(--light); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--white); padding: 2rem; border-radius: 12px; text-align: center; }
+        .service-icon { width: 70px; height: 70px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+        .service-icon i { font-size: 1.75rem; color: var(--white); }
+        .cta-section { background: var(--primary); padding: 5rem 2rem; text-align: center; color: var(--white); }
+        footer { background: var(--dark); color: var(--white); padding: 3rem 2rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container" style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+            <div class="logo">Barnetts <span>Hair</span></div>
+            <a href="tel:02088813142" class="btn-primary">Book Now</a>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>Expert Hair in Turnpike Lane</h1>
+        <p>Cuts, colouring, styling.</p>
+        <a href="tel:02088813142" class="btn-primary"><i class="fas fa-phone"></i> 020 8881 3142</a>
+    </section>
+    <section class="services">
+        <div class="section-container">
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-cut"></i></div><h3>Cuts</h3></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-palette"></i></div><h3>Colouring</h3></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-magic"></i></div><h3>Styling</h3></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-spa"></i></div><h3>Beauty</h3></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Book Now</h2>
+        <a href="tel:02088813142" class="btn-primary" style="font-size:1.25rem;background:var(--white);color:var(--primary)">020 8881 3142</a>
+    </section>
+    <footer>
+        <p>34 Turnpike Lane, London N8 0PS</p>
+        <p>020 8881 3142</p>
+    </footer>
+</body>
+</html>

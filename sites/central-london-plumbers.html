@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central London Plumbers & Handyman Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #0077b6; --accent: #ffc300; --dark: #1a1a2e; --light: #f8f9fa; --white: #ffffff; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; color: var(--dark); }
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; }
+        .header-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .btn-primary { background: var(--accent); color: var(--dark); padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; }
+        .hero { background: linear-gradient(135deg, var(--dark), var(--primary)); color: var(--white); padding: 8rem 2rem 4rem; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; opacity: 0.9; margin-bottom: 2rem; }
+        .services { padding: 5rem 2rem; background: var(--light); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--white); padding: 2rem; border-radius: 12px; text-align: center; }
+        .service-icon { width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+        .service-icon i { font-size: 1.5rem; color: var(--white); }
+        .cta-section { background: var(--primary); padding: 5rem 2rem; text-align: center; color: var(--white); }
+        footer { background: var(--dark); color: var(--white); padding: 3rem 2rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo"><i class="fas fa-wrench"></i> Central London Plumbers</div>
+            <a href="tel:07596726071" class="btn-primary">Call Now</a>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>Plumbers & Handyman in Central London</h1>
+        <p>Plumbing & handyman services. No job too small.</p>
+        <a href="tel:07596726071" class="btn-primary"><i class="fas fa-phone"></i> 07596 726071</a>
+    </section>
+    <section class="services">
+        <div class="section-container">
+            <div class="services-grid">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-wrench"></i></div><h3>Plumbing</h3><p>All plumbing needs.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-tools"></i></div><h3>Handyman</h3><p>General repairs.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Emergency</h3><p>Fast response.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3> installations</h3><p>Home services.</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <h2>Call Now</h2>
+        <a href="tel:07596726071" class="btn-primary" style="font-size:1.25rem;background:var(--white);color:var(--primary)"><i class="fas fa-phone"></i> 07596 726071</a>
+    </section>
+    <footer>
+        <p>Flat 14, Seymour Buildings, Seymour Place, London W1H 4PP</p>
+        <p>07596 726071</p>
+    </footer>
+</body>
+</html>
