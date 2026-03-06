@@ -89,6 +89,8 @@
         {name:"Kingsbridge Lettings",cat:"Agent",addr:"96 George Lane, London E18 1AD",phone:"+442089899811"}
     ];
 
+    const baseUrl = "https://tigha66.github.io/openclaw-config/sites/";
+    
     const message = `Hi ${businesses[0].name}!
 
 I noticed you don't have a website yet. I build professional websites for local businesses - starting from just £397 (or £39/month).
@@ -100,7 +102,11 @@ Every site comes with:
 ✅ Google Maps listing
 ✅ SEO setup
 
-I've already built a sample site for your business. Would you like to see it?
+I've already built a FREE sample site for your business! See it here:
+👇👇👇
+${baseUrl}${businesses[0].site}
+
+Would you like me to customise it for your business?
 
 Cheers,
 Abdelhak
@@ -111,7 +117,9 @@ tigha66@gmail.com`;
 
     function render(list) {
         document.getElementById('results').innerHTML = list.map((b, i) => {
-            const personalizedMsg = message.replace(new RegExp(businesses[0].name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), b.name);
+            const personalizedMsg = message
+                .replace(new RegExp(businesses[0].name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), b.name)
+                .replace(new RegExp(businesses[0].site, 'g'), b.site);
             const encodedMsg = encodeURIComponent(personalizedMsg);
             const waLink = `https://wa.me/${b.phone.replace('+', '')}?text=${encodedMsg}`;
             
