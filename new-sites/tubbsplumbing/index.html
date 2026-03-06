@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davis Estate Agents | Premium Property Services in London</title>
-    <meta name="description" content="Professional Property Services services in London. {{SERVICES_LIST}}. Call now for a free quote.">
+    <title>Tubbs Plumbing | Premium Plumbing Services in London</title>
+    <meta name="description" content="Professional Plumbing Services services in London. {{SERVICES_LIST}}. Call now for a free quote.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,20 +14,20 @@
         :root {
             --primary: #0a0a0a;
             --secondary: #141414;
-            --accent: #6366f1;
-            --accent-light: #8b5cf6;
+            --accent: #ff6b00;
+            --accent-light: #ff8c33;
             --surface: #1a1a1a;
             --surface-light: #242424;
             --text: #ffffff;
             --text-muted: #888888;
-            --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            --gradient: linear-gradient(135deg, #ff6b00 0%, #ff8c33 100%);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Outfit', sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; overflow-x: hidden; }
         
         .bg-pattern { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; opacity: 0.5; }
-        .bg-pattern::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%); animation: bgMove 20s ease-in-out infinite; }
+        .bg-pattern::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 80%, rgba(255, 107, 0, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.05) 0%, transparent 40%); animation: bgMove 20s ease-in-out infinite; }
         @keyframes bgMove { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-5%, -5%); } }
         
         header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 1rem 0; transition: all 0.3s; }
@@ -39,18 +39,18 @@
         .nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s; }
         .nav a:hover::after { width: 100%; }
         .btn { background: var(--gradient); color: white; padding: 0.875rem 2rem; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; border: none; cursor: pointer; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(255, 107, 0, 0.3); }
         
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 2rem 80px; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: radial-gradient(ellipse at right, rgba(99, 102, 241, 0.15) 0%, transparent 70%); }
+        .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: radial-gradient(ellipse at right, rgba(255, 107, 0, 0.15) 0%, transparent 70%); }
         .hero-content { max-width: 800px; position: relative; z-index: 1; }
-        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.875rem; color: var(--accent); margin-bottom: 1.5rem; animation: fadeInUp 0.6s ease; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.2); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.875rem; color: var(--accent); margin-bottom: 1.5rem; animation: fadeInUp 0.6s ease; }
         .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; animation: fadeInUp 0.6s ease 0.1s backwards; }
         .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 540px; animation: fadeInUp 0.6s ease 0.2s backwards; }
         .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeInUp 0.6s ease 0.3s backwards; }
         .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.2); color: white; }
-        .btn-outline:hover { border-color: var(--accent); background: rgba(99, 102, 241, 0.1); }
+        .btn-outline:hover { border-color: var(--accent); background: rgba(255, 107, 0, 0.1); }
         
         .section { padding: 100px 2rem; position: relative; }
         .section-dark { background: var(--secondary); }
@@ -62,9 +62,9 @@
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .service-card { background: var(--surface); border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; padding: 2.5rem; transition: all 0.4s; position: relative; overflow: hidden; }
         .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); transform: scaleX(0); transition: transform 0.4s; }
-        .service-card:hover { transform: translateY(-8px); border-color: rgba(99, 102, 241, 0.3); box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(255, 107, 0, 0.3); box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
         .service-card:hover::before { transform: scaleX(1); }
-        .service-icon { width: 70px; height: 70px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(99, 102, 241, 0.05)); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.75rem; color: var(--accent); transition: all 0.3s; }
+        .service-icon { width: 70px; height: 70px; background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 107, 0, 0.05)); border: 1px solid rgba(255, 107, 0, 0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1.75rem; color: var(--accent); transition: all 0.3s; }
         .service-card:hover .service-icon { background: var(--gradient); color: white; }
         .service-card h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 0.75rem; }
         .service-card p { color: var(--text-muted); font-size: 0.95rem; }
@@ -91,7 +91,7 @@
         .contact-form { background: var(--surface); border-radius: 24px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.05); }
         .form-group { margin-bottom: 1.25rem; }
         .form-control { width: 100%; background: var(--primary); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 1rem 1.25rem; border-radius: 12px; font-size: 1rem; transition: all 0.3s; }
-        .form-control:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1); }
+        .form-control:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1); }
         textarea.form-control { min-height: 120px; resize: vertical; }
         
         footer { background: var(--secondary); padding: 60px 2rem 30px; border-top: 1px solid rgba(255,255,255,0.05); }
@@ -116,7 +116,7 @@
     
     <header id="header">
         <div class="header-inner">
-            <a href="#" class="logo">Davis Estate Agents</a>
+            <a href="#" class="logo">Tubbs Plumbing</a>
             <nav class="nav">
                 <a href="#services">Services</a>
                 <a href="#why">Why Us</a>
@@ -132,11 +132,11 @@
                 <i data-lucide="check-circle"></i>
                 Trusted by 500+ happy customers
             </div>
-            <h1>Premium Property Services<br>in <span>London</span></h1>
-            <p>Your trusted partner for property sales, lettings, and management in London.</p>
+            <h1>Premium Plumbing Services<br>in <span>London</span></h1>
+            <p>Expert plumbing solutions for your home or business. From emergency repairs to installations, we deliver premium service.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn"><i data-lucide="calendar-check"></i> Get Free Quote</a>
-                <a href="tel:442088048888" class="btn btn-outline"><i data-lucide="phone"></i> 02088048888</a>
+                <a href="tel:442086959165" class="btn btn-outline"><i data-lucide="phone"></i> 02086959165</a>
             </div>
         </div>
     </section>
@@ -145,10 +145,10 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Services</h2>
-                <p>Professional Property Services solutions tailored to your needs</p>
+                <p>Professional Plumbing Services solutions tailored to your needs</p>
             </div>
             <div class="services-grid">
-                <div class="service-card"><div class="service-icon"><i data-lucide="home"></i></div><h3>Sales</h3><p>Sell your property with our expert team. Free market valuations.</p></div><div class="service-card"><div class="service-icon"><i data-lucide="key"></i></div><h3>Lettings</h3><p>Find your perfect rental or let your property with us.</p></div><div class="service-card"><div class="service-icon"><i data-lucide="building"></i></div><h3>Property Management</h3><p>Full management services. We handle everything.</p></div>
+                <div class="service-card"><div class="service-icon"><i data-lucide="wrench"></i></div><h3>Emergency Repairs</h3><p>24/7 emergency plumbing services. We're here when you need us most.</p></div><div class="service-card"><div class="service-icon"><i data-lucide="tool"></i></div><h3>Boiler Installation</h3><p>Professional boiler installation and replacement services. Free quotes.</p></div><div class="service-card"><div class="service-icon"><i data-lucide="bath"></i></div><h3>Bathroom Installations</h3><p>Complete bathroom renovations. Transform your space.</p></div>
             </div>
         </div>
     </section>
@@ -200,18 +200,18 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h2>Get Your Free Quote Today</h2>
-                    <p>Ready to experience premium Property Services? Contact us now for a free, no-obligation quote.</p>
+                    <p>Ready to experience premium Plumbing Services? Contact us now for a free, no-obligation quote.</p>
                     <div class="contact-item">
                         <div class="contact-icon"><i data-lucide="map-pin"></i></div>
-                        <div class="contact-text"><h5>Address</h5><p>311 Hertford Rd, Edmonton, London N9 7EU</p></div>
+                        <div class="contact-text"><h5>Address</h5><p>2 Battersby Road, London SE6 1SD</p></div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon"><i data-lucide="phone"></i></div>
-                        <div class="contact-text"><h5>Phone</h5><p>02088048888</p></div>
+                        <div class="contact-text"><h5>Phone</h5><p>02086959165</p></div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon"><i data-lucide="mail"></i></div>
-                        <div class="contact-text"><h5>Email</h5><p>info@davisestateagents.co.uk</p></div>
+                        <div class="contact-text"><h5>Email</h5><p>info@tubbsplumbing.co.uk</p></div>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -231,14 +231,14 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand">Davis Estate Agents</div>
-                    <p>Premium Property Services services in London. Trusted by hundreds of happy customers.</p>
+                    <div class="footer-brand">Tubbs Plumbing</div>
+                    <p>Premium Plumbing Services services in London. Trusted by hundreds of happy customers.</p>
                 </div>
                 <div><h5>Services</h5><ul class="footer-links"><li><a href="#services">Emergency Repairs</a></li><li><a href="#services">Installations</a></li><li><a href="#services">Maintenance</a></li><li><a href="#services">Free Quotes</a></li></ul></div>
                 <div><h5>Company</h5><ul class="footer-links"><li><a href="#">About Us</a></li><li><a href="#">Our Team</a></li><li><a href="#">Careers</a></li><li><a href="#contact">Contact</a></li></ul></div>
-                <div><h5>Contact</h5><ul class="footer-links"><li><a href="tel:442088048888">02088048888</a></li><li><a href="#">info@davisestateagents.co.uk</a></li><li><a href="#">London, UK</a></li></ul></div>
+                <div><h5>Contact</h5><ul class="footer-links"><li><a href="tel:442086959165">02086959165</a></li><li><a href="#">info@tubbsplumbing.co.uk</a></li><li><a href="#">London, UK</a></li></ul></div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 Davis Estate Agents. All rights reserved.</p></div>
+            <div class="footer-bottom"><p>&copy; 2026 Tubbs Plumbing. All rights reserved.</p></div>
         </div>
     </footer>
 
