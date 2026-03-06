@@ -26,13 +26,13 @@
 </head>
 <body>
     <div class="header">
-        <div class"
+        <div class="container">
             <h1><i class="fab fa-whatsapp"></i> WhatsApp Outreach</h1>
             <p class="mb-0">Click to send WhatsApp messages to your 44 leads</p>
         </div>
     </div>
-"
-        <div class="    <div classalert alert-info" style="background:#1f1f1f;border:1px solid #25D366;color:#fff">
+    <div class="container">
+        <div class="alert alert-info" style="background:#1f1f1f;border:1px solid #25D366;color:#fff">
             <i class="fab fa-whatsapp"></i> <strong>How it works:</strong> Click "View Site" to see the sample → Click "Send WhatsApp" to message them
         </div>
         
@@ -44,53 +44,50 @@
     const baseUrl = "https://tigha66.github.io/openclaw-config/sites/";
     
     const businesses = [
-        {name:"Dan the Plumber",cat:"Plumber",addr:"28 Heathfield Rd, London W3 8EL",phone:"+447890919604",site:"dan-the-plumber/"},
-        {name:"Englands Plumber",cat:"Plumber",addr:"68 High St, London W3 6LE",phone:"+447405881006",site:"englands-plumber/"},
-        {name:"Nico Koci Plumber",cat:"Plumber",addr:"2 Whitehall Park, London N19 3TL",phone:"+447510875900",site:"nico-koci-plumber/"},
-        {name:"MC Plumber",cat:"Plumber",addr:"304b Park Road, London N8 8LA",phone:"+447588832021",site:"mc-plumber/"},
-        {name:"Plumber London",cat:"Plumber",addr:"235 Earls Court Rd, London SW5 9FE",phone:"+447440607431",site:"plumber-london/"},
-        {name:"National Plumbers",cat:"Plumber",addr:"20a Western Ave, Ealing, London W3 7TZ",phone:"+447760244444",site:"national-plumbers/"},
-        {name:"Smart Plumbing London",cat:"Plumber",addr:"Flat 23, Bishops Court, London N16 8QZ",phone:"+442036979840",site:"smart-plumbing-london/"},
-        {name:"Turners Plumbing",cat:"Plumber",addr:"Flat 32, 24 St James's Road, London SE16 4QJ",phone:"+447710555855",site:"turners-plumbing/"},
-        {name:"Bens Plumbing",cat:"Plumber",addr:"Stockwell Gardens, London SW9 0RY",phone:"+442072073743",site:"bens-plumbing/"},
-        {name:"Flow Plumbing",cat:"Plumber",addr:"28 Colegrove Rd, London SE15 6ND",phone:"+447412890075",site:"flow-plumbing/"},
-        {name:"Maintracts Plumbers",cat:"Plumber",addr:"Bickersteth Road, London SW17 9SH",phone:"+442080032960",site:"maintracts-plumbers/"},
-        {name:"Central London Plumbers",cat:"Plumber",addr:"Flat 14, Seymour Buildings, London W1H 4PP",phone:"+447596726071",site:"central-london-plumbers/"},
-        {name:"Arrow Dental Practice",cat:"Dentist",addr:"89 Robert Street, Camden Town, London NW1 3QT",phone:"+442073878143",site:"arrow-dental/"},
-        {name:"Mr Dentist Children's",cat:"Dentist",addr:"7 The Green Castletown, London NW11 7RJ",phone:"+442084584455",site:"mr-dentist-children/"},
-        {name:"Thatched House Dental",cat:"Dentist",addr:"154 High Rd, London E15 1UA",phone:"+442085342926",site:"thatched-house-dental/"},
-        {name:"Thayer Street Dental",cat:"Dentist",addr:"12 Thayer Street, London W1U 3JP",phone:"+442074864866",site:"thayer-street-dental/"},
-        {name:"Sky Dental Practice",cat:"Dentist",addr:"94 Turnpike Lane, London N8 0PH",phone:"+442088881002",site:"sky-dental/"},
-        {name:"Tabibzadeh Mr S",cat:"Dentist",addr:"41 Willoughby Road, London N8 0JG",phone:"+442083404015",site:"tabibzadeh-dental/"},
-        {name:"Hoe St Dental Surgery",cat:"Dentist",addr:"337 Hoe St, London E17 9BD",phone:"+442085205289",site:"hoe-st-dental/"},
-        {name:"Greenwich Dental Practice",cat:"Dentist",addr:"207 Greenwich High Road, London SE10 8NB",phone:"+442088581055",site:"greenwich-dental/"},
-        {name:"Leytonstone Dental Centre",cat:"Dentist",addr:"489 High Road, London E11 4PG",phone:"+442085580080",site:"leytonstone-dental/"},
-        {name:"Cedars Dental Practice",cat:"Dentist",addr:"775 High Rd Leyton, London E10 5AB",phone:"+442085581122",site:"cedars-dental/"},
-        {name:"Strands Hairdressing",cat:"Salon",addr:"51 Bounces Rd, London N9 8JE",phone:"+442088072071",site:"strands-hairdressing/"},
-        {name:"Liaison Hair & Beauty",cat:"Salon",addr:"11 The Broadway, Mill Hill, London NW7 3LN",phone:"+442089590938",site:"liaison-hair-beauty/"},
-        {name:"Chris Hairdressers",cat:"Salon",addr:"191 Chiswick High Rd, London W4 2DR",phone:"+442087479322",site:"chris-hairdressers/"},
-        {name:"Helen's Unisex Hair",cat:"Salon",addr:"16 Craven Terrace, London W2 3QD",phone:"+442074022802",site:"helens-salon/"},
-        {name:"Barber Social",cat:"Salon",addr:"7 West Park Walk, London E20 1DH",phone:"+442082211876",site:"barber-social/"},
-        {name:"Danny Hair & Beauty",cat:"Salon",addr:"446 Finchley Rd, London NW2 2HY",phone:"+442077942666",site:"danny-hair-beauty/"},
-        {name:"Hair E14",cat:"Salon",addr:"163 Manchester Rd, London E14 3DR",phone:"+442075156677",site:"hair-e14/"},
-        {name:"Hair By Tony",cat:"Salon",addr:"13 Retingham Way, London E4 6RR",phone:"+442085295211",site:"hair-by-tony/"},
-        {name:"Gina's Unisex Hair",cat:"Salon",addr:"103 Wood St, London E17 3LL",phone:"+442085202055",site:"ginas-hair-salon/"},
-        {name:"Head 2 Head",cat:"Salon",addr:"206 Putney Bridge Rd, London SW15 2NA",phone:"+442087885887",site:"head-2-head/"},
-        {name:"Eva's Salon London",cat:"Salon",addr:"23 Queensway, London W2 4QJ",phone:"+442072211812",site:"evas-salon/"},
-        {name:"Barnetts Hair",cat:"Salon",addr:"34 Turnpike Lane, London N8 0PS",phone:"+442088813142",site:"barnetts-hair/"},
-        {name:"Connection Salon",cat:"Salon",addr:"172 Earls Court Rd, London SW5 9QQ",phone:"+442073730664",site:"connection-salon/"},
-        {name:"A & H Hair",cat:"Salon",addr:"376 Lordship Lane, London N17 7QX",phone:"+442036899814",site:"ah-hair-beauty/"},
-        {name:"Elizabeth Estate Agent",cat:"Agent",addr:"54 Plumstead High St, London SE18 1SL",phone:"+442034111178",site:"elizabeth-estate-agent/"},
-        {name:"Whitefoot Lettings",cat:"Agent",addr:"358a Verdant Lane, London SE6 1TP",phone:"+442084650242",site:"whitefoot-lettings/"},
-        {name:"Davis Estate Agents",cat:"Agent",addr:"311 Hertford Rd, London N9 7EU",phone:"+442088048888",site:"davis-estate-agents/"},
-        {name:"Share in the City",cat:"Agent",addr:"14 Bedford Square, London WC1B 3JA",phone:"+442071835478",site:"share-in-the-city/"},
-        {name:"Beaver Property Management",cat:"Agent",addr:"28 New Rd, London E1 2AX",phone:"+442077908899",site:"beaver-property-management/"},
-        {name:"Mebs Properties",cat:"Agent",addr:"123 Kensington Avenue, London E12 6NL",phone:"+447366597949",site:"mebs-properties/"},
-        {name:"Thirleby Property",cat:"Agent",addr:"London N8 7WW",phone:"+447542736026",site:"thirleby-property/"},
-        {name:"OM Property Management",cat:"Agent",addr:"Royal Belgrave House, London SW1V 1RR",phone:"+442075929463",site:"om-property/"},
-        {name:"North Central PM",cat:"Agent",addr:"P.O Box 33118, London NW3 7FJ",phone:"+4420743115968",site:"north-central-property/"},
-        {name:"Bravissima Estate",cat:"Agent",addr:"373 Hoe Street, London E17 9AP",phone:"+442085211616",site:"bravissima/"},
-        {name:"Kingsbridge Lettings",cat:"Agent",addr:"96 George Lane, London E18 1AD",phone:"+442089899811",site:"kingsbridge/"}
+        {name:"Dan the Plumber",cat:"Plumber",addr:"28 Heathfield Rd, London W3 8EL",phone:"+447890919604",site:"dantheplumber/"},
+        {name:"Englands Plumber",cat:"Plumber",addr:"68 High St, London W3 6LE",phone:"+447405881006",site:"englandsplumber/"},
+        {name:"Nico Koci Plumber",cat:"Plumber",addr:"2 Whitehall Park, London N19 3TL",phone:"+447510875900",site:"nicokociplumber/"},
+        {name:"MC Plumber",cat:"Plumber",addr:"304b Park Road, London N8 8LA",phone:"+447588832021",site:"mcplumber/"},
+        {name:"Plumber London",cat:"Plumber",addr:"235 Earls Court Rd, London SW5 9FE",phone:"+447440607431",site:"plumberlondon/"},
+        {name:"National Plumbers",cat:"Plumber",addr:"20a Western Ave, Ealing, London W3 7TZ",phone:"+447760244444",site:"nationalplumbers/"},
+        {name:"Smart Plumbing London",cat:"Plumber",addr:"Flat 23, Bishops Court, London N16 8QZ",phone:"+442036979840",site:"smartplumbing/"},
+        {name:"Turners Plumbing",cat:"Plumber",addr:"Flat 32, 24 St James's Road, London SE16 4QJ",phone:"+447710555855",site:"turnersplumbing/"},
+        {name:"Bens Plumbing",cat:"Plumber",addr:"Stockwell Gardens, London SW9 0RY",phone:"+442072073743",site:"bensplumbing/"},
+        {name:"Flow Plumbing",cat:"Plumber",addr:"28 Colegrove Rd, London SE15 6ND",phone:"+447412890075",site:"flowplumbing/"},
+        {name:"Maintracts Plumbers",cat:"Plumber",addr:"Bickersteth Road, London SW17 9SH",phone:"+442080032960",site:"maintracts/"},
+        {name:"Central London Plumbers",cat:"Plumber",addr:"Flat 14, Seymour Buildings, London W1H 4PP",phone:"+447596726071",site:"centrallondonplumbers/"},
+        {name:"Arrow Dental Practice",cat:"Dentist",addr:"89 Robert Street, Camden Town, London NW1 3QT",phone:"+442073878143",site:"arrowdental/"},
+        {name:"Mr Dentist Children's",cat:"Dentist",addr:"7 The Green Castletown, London NW11 7RJ",phone:"+442084584455",site:"mrdentistchildren/"},
+        {name:"Thatched House Dental",cat:"Dentist",addr:"154 High Rd, London E15 1UA",phone:"+442085342926",site:"thatchedhousedental/"},
+        {name:"Thayer Street Dental",cat:"Dentist",addr:"12 Thayer Street, London W1U 3JP",phone:"+442074864866",site:"thayerstreetdental/"},
+        {name:"Sky Dental Practice",cat:"Dentist",addr:"94 Turnpike Lane, London N8 0PH",phone:"+442088881002",site:"skydental/"},
+        {name:"Tabibzadeh Mr S",cat:"Dentist",addr:"41 Willoughby Road, London N8 0JG",phone:"+442083404015",site:"tabibzadehdental/"},
+        {name:"Hoe St Dental Surgery",cat:"Dentist",addr:"337 Hoe St, London E17 9BD",phone:"+442085205289",site:"hoestdental/"},
+        {name:"Greenwich Dental Practice",cat:"Dentist",addr:"207 Greenwich High Road, London SE10 8NB",phone:"+442088581055",site:"greenwichdental/"},
+        {name:"Leytonstone Dental Centre",cat:"Dentist",addr:"489 High Road, London E11 4PG",phone:"+442085580080",site:"leytonstonedental/"},
+        {name:"Cedars Dental Practice",cat:"Dentist",addr:"775 High Rd Leyton, London E10 5AB",phone:"+442085581122",site:"cedarsdental/"},
+        {name:"Strands Hairdressing",cat:"Salon",addr:"51 Bounces Rd, London N9 8JE",phone:"+442088072071",site:"strandshairdressing/"},
+        {name:"Liaison Hair & Beauty",cat:"Salon",addr:"11 The Broadway, Mill Hill, London NW7 3LN",phone:"+442089590938",site:"liaisonhairbeauty/"},
+        {name:"Chris Hairdressers",cat:"Salon",addr:"191 Chiswick High Rd, London W4 2DR",phone:"+442087479322",site:"chrishairdressers/"},
+        {name:"Helen's Unisex Hair",cat:"Salon",addr:"16 Craven Terrace, London W2 3QD",phone:"+442074022802",site:"helensunisexhair/"},
+        {name:"Barber Social",cat:"Salon",addr:"7 West Park Walk, London E20 1DH",phone:"+442082211876",site:"barbersocial/"},
+        {name:"Danny Hair & Beauty",cat:"Salon",addr:"446 Finchley Rd, London NW2 2HY",phone:"+442077942666",site:"dannyhairbeauty/"},
+        {name:"Hair E14",cat:"Salon",addr:"163 Manchester Rd, London E14 3DR",phone:"+442075156677",site:"haire14/"},
+        {name:"Hair By Tony",cat:"Salon",addr:"13 Retingham Way, London E4 6RR",phone:"+442085295211",site:"hairbytony/"},
+        {name:"Gina's Unisex Hair",cat:"Salon",addr:"103 Wood St, London E17 3LL",phone:"+442085202055",site:"ginasunisexhair/"},
+        {name:"Head 2 Head",cat:"Salon",addr:"206 Putney Bridge Rd, London SW15 2NA",phone:"+442087885887",site:"head2head/"},
+        {name:"Eva's Salon London",cat:"Salon",addr:"23 Queensway, London W2 4QJ",phone:"+442072211812",site:"evasalonlondon/"},
+        {name:"Barnetts Hair",cat:"Salon",addr:"34 Turnpike Lane, London N8 0PS",phone:"+442088813142",site:"barnettshair/"},
+        {name:"Connection Salon",cat:"Salon",addr:"172 Earls Court Rd, London SW5 9QQ",phone:"+442073730664",site:"connectionsalon/"},
+        {name:"A & H Hair",cat:"Salon",addr:"376 Lordship Lane, London N17 7QX",phone:"+442036899814",site:"ahhair/"},
+        {name:"Elizabeth Estate Agent",cat:"Agent",addr:"54 Plumstead High St, London SE18 1SL",phone:"+442034111178",site:"elizabethestate/"},
+        {name:"Whitefoot Lettings",cat:"Agent",addr:"358a Verdant Lane, London SE6 1TP",phone:"+442084650242",site:"whitefootlettings/"},
+        {name:"Davis Estate Agents",cat:"Agent",addr:"311 Hertford Rd, London N9 7EU",phone:"+442088048888",site:"davisestateagents/"},
+        {name:"Share in the City",cat:"Agent",addr:"14 Bedford Square, London WC1B 3JA",phone:"+442071835478",site:"shareinthecity/"},
+        {name:"Beaver Property Management",cat:"Agent",addr:"28 New Rd, London E1 2AX",phone:"+442077908899",site:"beaverproperty/"},
+        {name:"Mebs Properties",cat:"Agent",addr:"123 Kensington Avenue, London E12 6NL",phone:"+447366597949",site:"mebsproperties/"},
+        {name:"Thirleby Property",cat:"Agent",addr:"London N8 7WW",phone:"+447542736026",site:"thirlebyproperty/"},
+        {name:"OM Property Management",cat:"Agent",addr:"Royal Belgrave House, London SW1V 1RR",phone:"+442075929463",site:"omproperty/"},
     ];
 
     const badgeClass = {Plumber:"badge-plumber",Dentist:"badge-dentist",Salon:"badge-salon",Agent:"badge-agent"};
