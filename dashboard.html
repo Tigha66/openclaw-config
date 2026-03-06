@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Local Businesses Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1e3a5f; --secondary: #2d5a87; --accent: #c9a227; }
+        body { background: #f8f9fa; }
+        .hero-section { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 3rem 0; margin-bottom: 2rem; }
+        .business-card { border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); transition: all 0.3s; border: none; }
+        .business-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.15); transform: translateY(-3px); }
+        .badge-plumber { background: #0077b6; }
+        .badge-dentist { background: #2a9d8f; }
+        .badge-salon { background: #d63384; }
+        .badge-agent { background: #1e3a5f; }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="container">
+            <h1><i class="fas fa-building"></i> UK Local Businesses Dashboard</h1>
+            <p class="lead">44 Verified Leads - No Website on Yell</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-3"><div class="card bg-primary text-white p-3 text-center"><h3>13</h3><p class="mb-0">Plumbers</p></div></div>
+            <div class="col-md-3"><div class="card bg-info text-white p-3 text-center"><h3>10</h3><p class="mb-0">Dentists</p></div></div>
+            <div class="col-md-3"><div class="card bg-danger text-white p-3 text-center"><h3>13</h3><p class="mb-0">Salons</p></div></div>
+            <div class="col-md-3"><div class="card bg-dark text-white p-3 text-center"><h3>8</h3><p class="mb-0">Agents</p></div></div>
+        </div>
+        <input type="text" class="form-control mb-4" placeholder="Search..." id="search">
+        <div class="row" id="results"></div>
+    </div>
+    <script>
+    const businesses = [
+        {name:"Dan the Plumber",cat:"Plumber",addr:"28 Heathfield Rd, London W3 8EL",phone:"07890 919604",site:"dan-the-plumber.html"},
+        {name:"Englands Plumber",cat:"Plumber",addr:"68 High St, London W3 6LE",phone:"07405 881006",site:"englands-plumber.html"},
+        {name:"Nico Koci Plumber",cat:"Plumber",addr:"2 Whitehall Park, London N19 3TL",phone:"07510 875900",site:"nico-koci-plumber.html"},
+        {name:"MC Plumber",cat:"Plumber",addr:"304b Park Road, London N8 8LA",phone:"07588 832021",site:"mc-plumber.html"},
+        {name:"Plumber London",cat:"Plumber",addr:"235 Earls Court Rd, London SW5 9FE",phone:"07440 607431",site:"plumber-london.html"},
+        {name:"National Plumbers",cat:"Plumber",addr:"20a Western Ave, Ealing, London W3 7TZ",phone:"07760 244444",site:"national-plumbers.html"},
+        {name:"Smart Plumbing London",cat:"Plumber",addr:"Flat 23, Bishops Court, London N16 8QZ",phone:"020 3697 9840",site:"smart-plumbing-london.html"},
+        {name:"Turners Plumbing",cat:"Plumber",addr:"Flat 32, 24 St James's Road, London SE16 4QJ",phone:"07710 555855",site:"turners-plumbing.html"},
+        {name:"Bens Plumbing",cat:"Plumber",addr:"Stockwell Gardens, London SW9 0RY",phone:"020 7207 3743",site:"bens-plumbing-heating.html"},
+        {name:"Flow Plumbing",cat:"Plumber",addr:"28 Colegrove Rd, London SE15 6ND",phone:"07412 890075",site:"flow-plumbing.html"},
+        {name:"Maintracts Plumbers",cat:"Plumber",addr:"Bickersteth Road, London SW17 9SH",phone:"020 8003 2960",site:"maintracts-plumbers.html"},
+        {name:"Central London Plumbers",cat:"Plumber",addr:"Flat 14, Seymour Buildings, London W1H 4PP",phone:"07596 726071",site:"central-london-plumbers.html"},
+        {name:"Arrow Dental Practice",cat:"Dentist",addr:"89 Robert Street, Camden Town, London NW1 3QT",phone:"020 7387 8143",site:"arrow-dental-practice.html"},
+        {name:"Mr Dentist Children's",cat:"Dentist",addr:"7 The Green Castletown, London NW11 7RJ",phone:"020 8458 4455",site:"mr-dentist-children.html"},
+        {name:"Thatched House Dental",cat:"Dentist",addr:"154 High Rd, London E15 1UA",phone:"020 8534 2926",site:"thatched-house-dental.html"},
+        {name:"Thayer Street Dental",cat:"Dentist",addr:"12 Thayer Street, London W1U 3JP",phone:"020 7486 4866",site:"thayer-street-dental.html"},
+        {name:"Sky Dental Practice",cat:"Dentist",addr:"94 Turnpike Lane, London N8 0PH",phone:"020 8888 1002",site:"sky-dental.html"},
+        {name:"Tabibzadeh Mr S",cat:"Dentist",addr:"41 Willoughby Road, London N8 0JG",phone:"020 8340 4015",site:"tabibzadeh-dental.html"},
+        {name:"Hoe St Dental Surgery",cat:"Dentist",addr:"337 Hoe St, London E17 9BD",phone:"020 8520 5289",site:"hoe-st-dental.html"},
+        {name:"Greenwich Dental Practice",cat:"Dentist",addr:"207 Greenwich High Road, London SE10 8NB",phone:"020 8858 1055",site:"greenwich-dental.html"},
+        {name:"Leytonstone Dental Centre",cat:"Dentist",addr:"489 High Road, London E11 4PG",phone:"020 8558 0080",site:"leytonstone-dental.html"},
+        {name:"Cedars Dental Practice",cat:"Dentist",addr:"775 High Rd Leyton, London E10 5AB",phone:"020 8558 1122",site:"cedars-dental.html"},
+        {name:"Strands Hairdressing",cat:"Salon",addr:"51 Bounces Rd, London N9 8JE",phone:"020 8807 2071",site:"strands-hairdressing.html"},
+        {name:"Liaison Hair & Beauty",cat:"Salon",addr:"11 The Broadway, Mill Hill, London NW7 3LN",phone:"020 8959 0938",site:"liaison-hair-beauty.html"},
+        {name:"Chris Hairdressers",cat:"Salon",addr:"191 Chiswick High Rd, London W4 2DR",phone:"020 8747 9322",site:"chris-hairdressers.html"},
+        {name:"Helen's Unisex Hair",cat:"Salon",addr:"16 Craven Terrace, London W2 3QD",phone:"020 7402 2802",site:"helens-hair-beauty.html"},
+        {name:"Barber Social",cat:"Salon",addr:"7 West Park Walk, London E20 1DH",phone:"020 8221 1876",site:"barber-social.html"},
+        {name:"Danny Hair & Beauty",cat:"Salon",addr:"446 Finchley Rd, London NW2 2HY",phone:"020 7794 2666",site:"danny-hair-beauty.html"},
+        {name:"Hair E14",cat:"Salon",addr:"163 Manchester Rd, London E14 3DR",phone:"020 7515 6677",site:"hair-e14.html"},
+        {name:"Hair By Tony",cat:"Salon",addr:"13 Retingham Way, London E4 6RR",phone:"020 8529 5211",site:"hair-by-tony.html"},
+        {name:"Gina's Unisex Hair",cat:"Salon",addr:"103 Wood St, London E17 3LL",phone:"020 8520 2055",site:"ginas-hair-salon.html"},
+        {name:"Head 2 Head",cat:"Salon",addr:"206 Putney Bridge Rd, London SW15 2NA",phone:"020 8788 5887",site:"head-2-head.html"},
+        {name:"Eva's Salon London",cat:"Salon",addr:"23 Queensway, London W2 4QJ",phone:"020 7221 1812",site:"evas-salon.html"},
+        {name:"Barnetts Hair",cat:"Salon",addr:"34 Turnpike Lane, London N8 0PS",phone:"020 8881 3142",site:"barnetts-hair.html"},
+        {name:"Connection Salon",cat:"Salon",addr:"172 Earls Court Rd, London SW5 9QQ",phone:"020 7373 0664",site:"connection-salon.html"},
+        {name:"A & H Hair",cat:"Salon",addr:"376 Lordship Lane, London N17 7QX",phone:"020 3689 9814",site:"ah-hair-beauty.html"},
+        {name:"Elizabeth Estate Agent",cat:"Agent",addr:"54 Plumstead High St, London SE18 1SL",phone:"020 3411 1178",site:"elizabeth-estate-agent.html"},
+        {name:"Whitefoot Lettings",cat:"Agent",addr:"358a Verdant Lane, London SE6 1TP",phone:"020 8465 0242",site:"whitefoot-lettings.html"},
+        {name:"Davis Estate Agents",cat:"Agent",addr:"311 Hertford Rd, London N9 7EU",phone:"020 8804 8888",site:"davis-estate-agents.html"},
+        {name:"Share in the City",cat:"Agent",addr:"14 Bedford Square, London WC1B 3JA",phone:"020 7183 5478",site:"share-in-the-city.html"},
+        {name:"Beaver Property Management",cat:"Agent",addr:"28 New Rd, London E1 2AX",phone:"020 7790 8899",site:"beaver-property.html"},
+        {name:"Mebs Properties",cat:"Agent",addr:"123 Kensington Avenue, London E12 6NL",phone:"07366 597949",site:"mebs-properties.html"},
+        {name:"Thirleby Property",cat:"Agent",addr:"London N8 7WW",phone:"07542 736026",site:"thirleby-property.html"},
+        {name:"OM Property Management",cat:"Agent",addr:"Royal Belgrave House, London SW1V 1RR",phone:"020 7592 9463",site:"om-property.html"},
+        {name:"North Central PM",cat:"Agent",addr:"P.O Box 33118, London NW3 7FJ",phone:"020 7431 5968",site:"north-central-pm.html"},
+        {name:"Bravissima Estate",cat:"Agent",addr:"373 Hoe Street, London E17 9AP",phone:"020 8521 1616",site:"bravissima-estate.html"},
+        {name:"Kingsbridge Lettings",cat:"Agent",addr:"96 George Lane, London E18 1AD",phone:"020 8989 9811",site:"kingsbridge-lettings.html"}
+    ];
+    const badgeClass = {Plumber:"badge-plumber",Dentist:"badge-dentist",Salon:"badge-salon",Agent:"badge-agent"};
+    function render(list) {
+        document.getElementById('results').innerHTML = list.map(b => `<div class="col-md-6 col-lg-4 mb-3"><div class="card business-card"><div class="card-body"><span class="badge ${badgeClass[b.cat]}">${b.cat}</span><h5 class="mt-2 mb-1">${b.name}</h5><p class="text-muted small mb-1"><i class="fas fa-map-marker-alt"></i> ${b.addr}</p><p class="mb-2"><i class="fas fa-phone"></i> <a href="tel:${b.phone.replace(/\\s/g,'')}" class="text-primary text-decoration-none">${b.phone}</a></p><a href="sites/${b.site}" target="_blank" class="btn btn-sm btn-success"><i class="fas fa-external-link-alt"></i> View Website</a></div></div></div>`).join('');
+    }
+    render(businesses);
+    document.getElementById('search').addEventListener('input', e => {
+        const q = e.target.value.toLowerCase();
+        render(businesses.filter(b => b.name.toLowerCase().includes(q) || b.cat.toLowerCase().includes(q) || b.addr.toLowerCase().includes(q)));
+    });
+    </script>
+</body>
+</html>
