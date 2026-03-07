@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponty Plumbing | Hackney Professional Plumber</title>
+    <meta name="description" content="Professional plumbing services in Hackney. Emergency repairs, boiler installation, bathroom fitting. Call now!">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #0066cc; --secondary: #003366; --accent: #ff6b00; --light: #f8f9fa; --dark: #1a1a2e; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); line-height: 1.6; }
+        .emergency-bar { background: linear-gradient(90deg, var(--accent), #ff8c00); padding: 10px 0; text-align: center; color: white; font-weight: 600; }
+        .emergency-bar i { animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        nav { display: flex; gap: 30px; align-items: center; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 500; }
+        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .features { padding: 80px 20px; background: var(--light); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--secondary); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: white; padding: 40px; border-radius: 15px; text-align: center; }
+        .feature-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+        .services { padding: 80px 20px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+        .service-img { height: 180px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; }
+        .service-img i { font-size: 3.5rem; color: white; }
+        .service-content { padding: 25px; }
+        .service-content h3 { margin-bottom: 15px; color: var(--secondary); }
+        .service-content li { list-style: none; padding: 8px 0; border-bottom: 1px solid #eee; }
+        .service-content li i { color: var(--accent); margin-right: 10px; }
+        .contact { padding: 80px 20px; background: var(--light); }
+        .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--secondary); margin-bottom: 20px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .contact-item i { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .contact-form { background: white; padding: 40px; border-radius: 15px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none; box-shadow: 0 5px 20px rgba(37,211,102,0.4); z-index: 1000; }
+        .testimonials { padding: 80px 20px; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: white; padding: 30px; border-radius: 15px; }
+        .testimonial-card .stars { color: #ffc107; margin-bottom: 15px; }
+        footer { background: var(--dark); color: white; padding: 50px 20px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--accent); margin-bottom: 20px; }
+        .footer-col a { color: #aaa; text-decoration: none; display: block; margin-bottom: 10px; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .contact-inner { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="emergency-bar">
+        <i class="fas fa-exclamation-circle"></i> EMERGENCY? Call now: <a href="tel:07714003900" style="color: white; text-decoration: underline;">07714 003900</a>
+    </div>
+    <header>
+        <div class="header-inner">
+            <div class="logo">Ponty<span>Plumbing</span></div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:07714003900" class="btn btn-accent"><i class="fas fa-phone"></i> Call Now</a>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>Professional Plumbing in Hackney</h1>
+        <p>Expert plumbers in Hackney. Fast, reliable service. No call-out fee.</p>
+        <a href="tel:07714003900" class="btn btn-accent"><i class="fas fa-phone"></i> Call Now</a>
+    </section>
+    <section class="features">
+        <div class="section-title"><h2>Why Choose Us</h2></div>
+        <div class="features-grid">
+            <div class="feature-card"><i class="fas fa-clock"></i><h3>24/7 Available</h3><p>Round the clock emergency service</p></div>
+            <div class="feature-card"><i class="fas fa-check-circle"></i><h3>Certified Experts</h3><p>Fully qualified plumbers</p></div>
+            <div class="feature-card"><i class="fas fa-pound-sign"></i><h3>Fair Pricing</h3><p>Transparent quotes</p></div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="section-title"><h2>Our Services</h2></div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img"><i class="fas fa-wrench"></i></div>
+                <div class="service-content">
+                    <h3>Emergency Repairs</h3>
+                    <ul><li><i class="fas fa-check"></i> Burst pipes</li><li><i class="fas fa-check"></i> Leak detection</li><li><i class="fas fa-check"></i> Blocked drains</li></ul>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img"><i class="fas fa-bath"></i></div>
+                <div class="service-content">
+                    <h3>Bathroom Fitting</h3>
+                    <ul><li><i class="fas fa-check"></i> Full installation</li><li><i class="fas fa-check"></i> Shower fitting</li><li><i class="fas fa-check"></i> Tiling</li></ul>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img"><i class="fas fa-fire"></i></div>
+                <div class="service-content">
+                    <h3>Boiler Services</h3>
+                    <ul><li><i class="fas fa-check"></i> Installation</li><li><i class="fas fa-check"></i> Repairs</li><li><i class="fas fa-check"></i> Servicing</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="section-title"><h2>What Our Customers Say</h2></div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Excellent service. Fixed my leak within an hour. Highly recommend!"</p><div class="author">- Mike T., Hackney</div></div>
+            <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Professional and efficient. New bathroom looks amazing."</p><div class="author">- Lisa R., E8</div></div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Phone</strong><br><a href="tel:07714003900" style="color:var(--primary);text-decoration:none;">07714 003900</a></div></div>
+                <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><br><a href="mailto:nic@pontyplumbing.com" style="color:var(--primary);text-decoration:none;">nic@pontyplumbing.com</a></div></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Area</strong><br>Hackney and surrounding</div></div>
+            </div>
+            <div class="contact-form">
+                <h3>Request a Quote</h3>
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group"><label>Name</label><input type="text" required></div>
+                    <div class="form-group"><label>Phone</label><input type="tel" required></div>
+                    <div class="form-group"><label>Service</label><select><option>Emergency Repair</option><option>Boiler</option><option>Bathroom</option><option>Other</option></select></div>
+                    <div class="form-group"><label>Message</label><textarea></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <a href="https://wa.me/447714003900?text=Hi, I need a plumber in Hackney. Can you help?" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col"><h4>Ponty Plumbing</h4><p>Professional plumbing services in Hackney.</p></div>
+            <div class="footer-col"><h4>Contact</h4><p><i class="fas fa-phone"></i> 07714 003900</p><p><i class="fas fa-envelope"></i> nic@pontyplumbing.com</p></div>
+        </div>
+    </footer>
+    <script>function submitForm(e){e.preventDefault();alert('Thank you! We will contact you shortly.');}</script>
+</body>
+</html>

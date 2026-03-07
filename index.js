@@ -2,7 +2,7 @@ const WPP = require('@wppconnect-team/wppconnect');
 
 const messageTemplate = (name, siteUrl) => `Hi ${name}!
 
-I've built a FREE professional website for your business!
+I've built a professional website for your business!
 
 📺 VIEW SITE: ${siteUrl}
 
@@ -22,8 +22,9 @@ Abdelhak
 📧 tigha66@gmail.com
 🌐 autoAIwebsolutions.com`;
 
-// Map business to their specific site
+// Updated business list with their specific sites
 const businesses = [
+    // Existing with sites
     {name:"Englands Plumber",phone:"447405881006",site:"https://tigha66.github.io/openclaw-config/new-sites/englands-plumber/"},
     {name:"Tubbs Plumbing",phone:"442086959165",site:"https://tigha66.github.io/openclaw-config/new-sites/tubbs-plumbing/"},
     {name:"Fast Plumber London",phone:"442078711956",site:"https://tigha66.github.io/openclaw-config/new-sites/fast-plumber-london/"},
@@ -32,6 +33,16 @@ const businesses = [
     {name:"East London Plumbing",phone:"442039848457",site:"https://tigha66.github.io/openclaw-config/new-sites/east-london-plumbing/"},
     {name:"Bens Plumbing",phone:"442086946618",site:"https://tigha66.github.io/openclaw-config/new-sites/bens-plumbing/"},
     {name:"Plumbing Circle",phone:"447867850846",site:"https://tigha66.github.io/openclaw-config/new-sites/plumbing-circle/"},
+    // NEW from user's list
+    {name:"Dulwich Plumber",phone:"447521853507",site:"https://tigha66.github.io/openclaw-config/new-sites/dulwich-plumber/"},
+    {name:"Ponty Plumbing",phone:"447714003900",site:"https://tigha66.github.io/openclaw-config/new-sites/ponty-plumbing/"},
+    {name:"London Local Plumber",phone:"447736710750",site:"https://tigha66.github.io/openclaw-config/new-sites/london-local-plumber/"},
+    {name:"Arcas Plumbing",phone:"447723651551",site:"https://tigha66.github.io/openclaw-config/new-sites/arcas-plumbing/"},
+    {name:"Pro Plumbing Team",phone:"",site:"https://tigha66.github.io/openclaw-config/new-sites/pro-plumbing-team/"},
+    {name:"London Plumbing Hobs",phone:"447506605605",site:"https://tigha66.github.io/openclaw-config/new-sites/london-plumbing-hobs/"},
+    {name:"My Local Plumber",phone:"447950478383",site:"https://tigha66.github.io/openclaw-config/new-sites/my-local-plumber/"},
+    {name:"AP UK Plumbing",phone:"447849424718",site:"https://tigha66.github.io/openclaw-config/new-sites/ap-uk-plumbing/"},
+    {name:"Near Me Plumbers",phone:"447521305976",site:"https://tigha66.github.io/openclaw-config/new-sites/near-me-plumbers/"},
 ];
 
 (async () => {
@@ -41,11 +52,14 @@ const businesses = [
     console.log('');
     
     for (const b of businesses) {
+        if (!b.phone) {
+            console.log(`⏭️  Skipping ${b.name} (no phone)`);
+            continue;
+        }
         console.log(`Sending to ${b.name}...`);
         try {
             await client.sendText(b.phone + '@c.us', messageTemplate(b.name, b.site));
             console.log(`✅ Sent to ${b.name}`);
-            console.log(`   Site: ${b.site}`);
         } catch (e) { 
             console.log(`❌ Failed ${b.name}: ${e.message}`); 
         }

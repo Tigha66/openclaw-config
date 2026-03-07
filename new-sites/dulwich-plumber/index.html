@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulwich Plumber | Emergency Plumbing SE13 London</title>
+    <meta name="description" content="Professional plumbing services in SE13 Dulwich. Emergency repairs, boiler installation, bathroom fitting. Call now!">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #0066cc; --secondary: #003366; --accent: #ff6b00; --light: #f8f9fa; --dark: #1a1a2e; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); line-height: 1.6; }
+        .emergency-bar { background: linear-gradient(90deg, var(--accent), #ff8c00); padding: 10px 0; text-align: center; color: white; font-weight: 600; }
+        .emergency-bar i { animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        nav { display: flex; gap: 30px; align-items: center; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--primary); }
+        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn-accent { background: var(--accent); color: white; }
+        .btn-accent:hover { background: #e55a00; }
+        .hero { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); color: white; padding: 100px 20px; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .features { padding: 80px 20px; background: var(--light); }
+        .features-inner { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 40px 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-card i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
+        .feature-card h3 { margin-bottom: 15px; color: var(--secondary); }
+        .services { padding: 80px 20px; }
+        .services-inner { max-width: 1200px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-img { height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; }
+        .service-img i { font-size: 4rem; color: white; }
+        .service-content { padding: 30px; }
+        .service-content h3 { margin-bottom: 15px; color: var(--secondary); }
+        .service-content ul { list-style: none; }
+        .service-content li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .service-content li:last-child { border: none; }
+        .service-content li i { color: var(--accent); margin-right: 10px; }
+        .cta { background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 80px 20px; text-align: center; color: white; }
+        .cta h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+        .cta p { margin-bottom: 30px; font-size: 1.1rem; }
+        .testimonials { padding: 80px 20px; background: var(--light); }
+        .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .testimonial-card .stars { color: #ffc107; margin-bottom: 15px; }
+        .testimonial-card p { font-style: italic; margin-bottom: 15px; }
+        .testimonial-card .author { font-weight: 600; color: var(--primary); }
+        .contact { padding: 80px 20px; }
+        .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; color: var(--secondary); }
+        .contact-info p { margin-bottom: 30px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .contact-item i { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .contact-form { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .contact-form h3 { margin-bottom: 25px; color: var(--secondary); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--primary); outline: none; }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none; box-shadow: 0 5px 20px rgba(37,211,102,0.4); transition: transform 0.3s; z-index: 1000; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        footer { background: var(--dark); color: white; padding: 50px 20px 20px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--accent); }
+        .footer-col p, .footer-col a { color: #aaa; text-decoration: none; margin-bottom: 10px; display: block; }
+        .footer-col a:hover { color: white; }
+        .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; color: #666; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .contact-inner { grid-template-columns: 1fr; } nav { display: none; } }
+    </style>
+</head>
+<body>
+    <div class="emergency-bar">
+        <i class="fas fa-exclamation-circle"></i> EMERGENCY? Call now: <a href="tel:07521853507" style="color: white; text-decoration: underline;">07521 853 507</a>
+    </div>
+    
+    <header>
+        <div class="header-inner">
+            <div class="logo">Dulwich<span>Plumber</span></div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:07521853507" class="btn btn-accent"><i class="fas fa-phone"></i> Call Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Professional Plumbing in SE13</h1>
+        <p>Expert plumbers in Dulwich. Fast, reliable service with no call-out fee.</p>
+        <div class="hero-btns">
+            <a href="tel:07521853507" class="btn btn-accent"><i class="fas fa-phone"></i> Call Now</a>
+            <a href="#contact" class="btn" style="background: rgba(255,255,255,0.2); color: white;">Get Quote</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-inner">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>Professional service you can trust</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Available</h3>
+                    <p>Round the clock emergency service for urgent plumbing needs</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Certified Experts</h3>
+                    <p>Fully qualified and experienced plumbers</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-pound-sign"></i>
+                    <h3>Fair Pricing</h3>
+                    <p>Transparent quotes with no hidden costs</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>5-Star Service</h3>
+                    <p>Highly rated by customers in Dulwich and SE13</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-inner">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive plumbing solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img"><i class="fas fa-wrench"></i></div>
+                    <div class="service-content">
+                        <h3>Emergency Repairs</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Burst pipe repair</li>
+                            <li><i class="fas fa-check"></i> Leak detection</li>
+                            <li><i class="fas fa-check"></i> Blocked drains</li>
+                            <li><i class="fas fa-check"></i> Same-day service</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img"><i class="fas fa-bath"></i></div>
+                    <div class="service-content">
+                        <h3>Bathroom Fitting</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Full bathroom installation</li>
+                            <li><i class="fas fa-check"></i> Shower & bath fitting</li>
+                            <li><i class="fas fa-check"></i> Toilet & sink installation</li>
+                            <li><i class="fas fa-check"></i> Tiling & waterproofing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img"><i class="fas fa-fire"></i></div>
+                    <div class="service-content">
+                        <h3>Boiler Services</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Boiler installation</li>
+                            <li><i class="fas fa-check"></i> Boiler repair & servicing</li>
+                            <li><i class="fas fa-check"></i> Central heating</li>
+                            <li><i class="fas fa-check"></i> Gas safety certificates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-inner">
+            <div class="section-title">
+                <h2>What Our Customers Say</h2>
+                <p>Trusted by homeowners in Dulwich</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Quick response and excellent work. Fixed my burst pipe at 10pm on a Sunday. Highly recommend!"</p>
+                    <div class="author">- Sarah M., SE13</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Had a new bathroom fitted. Professional service from start to finish. Very happy with the result."</p>
+                    <div class="author">- James T., Dulwich</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Reliable plumber who turns up on time. Fair prices and quality workmanship."</p>
+                    <div class="author">- Emma R., SE13</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Ready to solve your plumbing problems? Get in touch for a free quote.</p>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:07521853507" style="color: var(--primary); text-decoration: none;">07521 853 507</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:office@dulwich-plumber.co.uk" style="color: var(--primary); text-decoration: none;">office@dulwich-plumber.co.uk</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Area</strong><br>
+                        Dulwich, SE13 and surrounding areas
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Request a Quote</h3>
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" required placeholder="Your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label>Service Required</label>
+                        <select>
+                            <option>Emergency Repair</option>
+                            <option>Boiler Installation</option>
+                            <option>Bathroom Fitting</option>
+                            <option>General Plumbing</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea placeholder="Describe your issue..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/447521853507?text=Hi, I need a plumber in Dulwich area. Can you help?" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Dulwich Plumber</h4>
+                <p>Professional plumbing services in SE13 Dulwich and surrounding areas. Emergency service available 24/7.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#testimonials">Reviews</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> 07521 853 507</p>
+                <p><i class="fas fa-envelope"></i> office@dulwich-plumber.co.uk</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dulwich Plumber. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitForm(e) {
+            e.preventDefault();
+            alert('Thank you! We will contact you shortly.');
+        }
+    </script>
+</body>
+</html>
