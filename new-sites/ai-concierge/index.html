@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Concierge | Smart Customer Service for Small Businesses</title>
+    <meta name="description" content="AI-powered concierge bot for small businesses. Automate bookings, FAQs, reminders, and more. Starting £97/month.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #6366f1; --secondary: #4f46e5; --accent: #10b981; --dark: #0f172a; --light: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); line-height: 1.6; }
+        
+        header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn-accent { background: var(--accent); color: white; }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+        
+        .hero { background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; color: var(--dark); }
+        .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
+        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; font-weight: 500; }
+        
+        .features { padding: 80px 20px; background: white; }
+        .features-inner { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; }
+        .section-title p { color: #64748b; font-size: 1.1rem; }
+        
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: var(--light); padding: 40px; border-radius: 20px; transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+        .feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
+        .feature-card p { color: #64748b; }
+        
+        .businesses { padding: 80px 20px; background: var(--light); }
+        .biz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
+        .biz-item { background: white; padding: 25px; border-radius: 15px; text-align: center; font-weight: 500; }
+        
+        .pricing { padding: 80px 20px; background: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: var(--light); padding: 40px; border-radius: 20px; text-align: center; }
+        .pricing-card.featured { background: var(--primary); color: white; }
+        .pricing-card.featured p { color: rgba(255,255,255,0.8); }
+        .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
+        .price span { font-size: 1rem; font-weight: 400; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+        .pricing-card.featured li { border-color: rgba(255,255,255,0.2); }
+        
+        .demo { padding: 80px 20px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; text-align: center; }
+        .demo-box { background: white; color: var(--dark); max-width: 600px; margin: 40px auto 0; border-radius: 20px; padding: 30px; text-align: left; }
+        .chat-message { padding: 15px; border-radius: 15px; margin-bottom: 15px; }
+        .chat-user { background: #f1f5f9; margin-left: 20%; }
+        .chat-bot { background: var(--primary); color: white; margin-right: 20%; }
+        
+        .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
+        
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">AI<span>Concierge</span></div>
+            <a href="#pricing" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <span class="hero-tag">🚀 AI-Powered Customer Service</span>
+        <h1>Automate Your Business Customer Service</h1>
+        <p>Handle bookings, FAQs, reminders, and more — 24/7. Save hours every week and never miss a customer again.</p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
+            <a href="#demo" class="btn btn-outline">See Demo</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-inner">
+            <div class="section-title">
+                <h2>What It Does</h2>
+                <p>Everything your receptionists do — automatically</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Booking Management</h3>
+                    <p>Customers can book, reschedule, or cancel appointments online. Auto-syncs with your calendar.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Smart FAQ Handling</h3>
+                    <p>Instant answers to common questions: pricing, hours, services, directions — any time day or night.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                    <h3>Reminders & Notifications</h3>
+                    <p>Automated SMS reminders for appointments, follow-ups, and promotions. Reduce no-shows by 80%.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-sync"></i></div>
+                    <h3>Calendar Integration</h3>
+                    <p>Syncs with Google Calendar, Outlook, Apple Calendar. Real-time availability updates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sms"></i></div>
+                    <h3>SMS Marketing</h3>
+                    <p>Send promotions, specials, and updates to customers. Keep them engaged and coming back.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Personalized Experience</h3>
+                    <p>Learns from customer history. Recommends services, remembers preferences, delivers tailored experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="businesses">
+        <div class="section-title">
+            <h2>Works For Every Business</h2>
+        </div>
+        <div class="biz-grid">
+            <div class="biz-item">🏢 Plumbers</div>
+            <div class="biz-item">🦷 Dentists</div>
+            <div class="biz-item">🍽️ Restaurants</div>
+            <div class="biz-item">💇 Salons</div>
+            <div class="biz-item">🏥 Clinics</div>
+            <div class="biz-item">🏠 Estate Agents</div>
+            <div class="biz-item">💪 Gyms</div>
+            <div class="biz-item">🧑‍⚕️ Therapists</div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="section-title">
+            <h2>Simple Pricing</h2>
+            <p>No hidden fees. Cancel anytime.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">£97<span>/month</span></div>
+                <p>Perfect for small businesses</p>
+                <ul>
+                    <li>✓ Unlimited bookings</li>
+                    <li>✓ FAQ automation</li>
+                    <li>✓ SMS reminders</li>
+                    <li>✓ Calendar sync</li>
+                    <li>✓ Email support</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Start Trial</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Pro</h3>
+                <div class="price">£197<span>/month</span></div>
+                <p>For growing businesses</p>
+                <ul>
+                    <li>✓ Everything in Starter</li>
+                    <li>✓ SMS marketing campaigns</li>
+                    <li>✓ Multi-staff management</li>
+                    <li>✓ Custom integrations</li>
+                    <li>✓ Priority support</li>
+                </ul>
+                <a href="#" class="btn btn-accent" style="background: white; color: var(--primary);">Start Trial</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo" id="demo">
+        <h2>See It In Action</h2>
+        <p>Watch how the AI handles customer conversations</p>
+        <div class="demo-box">
+            <div class="chat-message chat-user">Hi, do you have any availability tomorrow at 2pm?</div>
+            <div class="chat-message chat-bot">Yes! We have 2:00pm and 2:30pm available tomorrow. Would you like me to book you in for a haircut?</div>
+            <div class="chat-message chat-user">Yes please, book 2pm.</div>
+            <div class="chat-message chat-bot">Done! I've booked you in for tomorrow at 2:00pm. You'll receive a reminder 2 hours before. See you then!</div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Automate?</h2>
+        <p style="margin: 20px 0;">Start your 14-day free trial. No credit card required.</p>
+        <a href="#" class="btn btn-accent">Get Started Free</a>
+    </section>
+
+    <footer>
+        <p>© 2026 AI Concierge. All rights reserved.</p>
+    </footer>
+</body>
+</html>
