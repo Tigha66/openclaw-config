@@ -52,16 +52,16 @@
     
     const businesses = [
         // Plumbers
-        {name:"Englands Plumber",cat:"Plumber",site:"englands-plumber/"},
-        {name:"Tubbs Plumbing",cat:"Plumber",site:"tubbs-plumbing/"},
-        {name:"Fast Plumber London",cat:"Plumber",site:"fast-plumber-london/"},
+        {name:"Englands Plumber",cat:"Plumber",site:"englands-plumber/",phone:"07405881006"},
+        {name:"Tubbs Plumbing",cat:"Plumber",site:"tubbs-plumbing/",phone:"02086959165"},
+        {name:"Fast Plumber London",cat:"Plumber",site:"fast-plumber-london/",phone:"02078711956"},
         {name:"Atlas Plumbers",cat:"Plumber",site:"atlasplumbers/"},
-        {name:"National Plumbers",cat:"Plumber",site:"national-plumbers/"},
-        {name:"MC Plumber",cat:"Plumber",site:"mc-plumber/"},
+        {name:"National Plumbers",cat:"Plumber",site:"national-plumbers/",phone:"07760244444"},
+        {name:"MC Plumber",cat:"Plumber",site:"mc-plumber/",phone:"02079460194"},
         {name:"Maintracts Plumbers",cat:"Plumber",site:"maintractsplumbers2/"},
         {name:"Richard Plumbing",cat:"Plumber",site:"richardplumbing/"},
         {name:"LF Plumbing & Heating",cat:"Plumber",site:"lfplumbing/"},
-        {name:"Bens Plumbing & Heating",cat:"Plumber",site:"bens-plumbing/"},
+        {name:"Bens Plumbing & Heating",cat:"Plumber",site:"bens-plumbing/",phone:"02086946618"},
         {name:"T4 Plumbing",cat:"Plumber",site:"t4plumbing/"},
         {name:"Emosh Female Plumbing",cat:"Plumber",site:"emoshplumbing/"},
         {name:"GSplumbing",cat:"Plumber",site:"gsplumbing/"},
@@ -176,7 +176,8 @@ autoAIwebsolutions
 
     function render(list) {
         document.getElementById('results').innerHTML = list.map(b => {
-            const waLink = `${baseWhatsappUrl}?text=${encodeURIComponent(getMessage(b))}`;
+            const phone = b.phone || '447000000000';
+            const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(getMessage(b))}`;
             const siteLink = baseUrl + b.site;
             return `
             <div class="business-card">
