@@ -176,16 +176,49 @@ Abdelhak
 
     function render(list) {
         document.getElementById('results').innerHTML = list.map(b => {
-            const phone = b.phone || '447000000000';
-            const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(getMessage(b))}`;
+            // Clean phone number - remove any non-digits
+            let phone = b.phone || '447000000000';
+            phone = phone.replace(/[^0-9]/g, '');
+            if (!phone.startsWith('44')) {
+                phone = '44' + phone;
+            }
+            
+            // Build WhatsApp URL with pre-filled message
+            const message = `Hi ${b.name}!
+
+I've built a FREE professional website for your business!
+
+📺 VIEW SAMPLE: ${baseUrl}${b.site}
+
+💰 PRICES: From £397 one-time or £39/month
+
+🚀 What's included:
+• Mobile-friendly design
+• Online booking/contact forms  
+• Google Maps listing
+• SEO optimization
+• Your domain email
+
+Check out more of my work:
+🌐 https://tigha66.github.io/openclaw-config/
+
+Interested? Reply to this message!
+
+Cheers,
+Abdelhak
+📧 tigha66@gmail.com
+🌐 autoAIwebsolutions.com`;
+            
+            const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
             const siteLink = baseUrl + b.site;
+            
             return `
             <div class="business-card">
                 <div class="row align-items-center">
                     <div class="col-md-4">
                         <span class="badge ${badgeClass[b.cat]}">${b.cat}</span>
                         <h5 class="mt-2 mb-1">${b.name}</h5>
-                        <small class="text-success"><i class="fas fa-phone"></i> ${phone}</small>
+                        <small class="text-success"><i class="fab fa-whatsapp"></i> ${phone}</small>
                     </div>
                     <div class="col-md-8 text-md-end mt-3 mt-md-0">
                         <a href="${siteLink}" target="_blank" class="site-btn" style="margin-right:8px"><i class="fas fa-eye"></i> View Site</a>
