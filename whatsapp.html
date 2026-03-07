@@ -16,7 +16,6 @@
         .badge-dentist { background: #10b981; }
         .badge-agent { background: #6366f1; }
         .badge-salon { background: #ec4899; }
-        .badge-other { background: #3b82f6; }
         .wa-btn { background: var(--primary); border: none; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; text-decoration: none; }
         .wa-btn:hover { background: #128C7E; transform: scale(1.05); }
         .site-btn { background: #1f1f1f; border: 1px solid #333; padding: 10px 20px; border-radius: 8px; color: white; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
@@ -40,8 +39,6 @@
             <button class="filter-btn" onclick="filter('Plumber')">Plumbers</button>
             <button class="filter-btn" onclick="filter('Dentist')">Dentists</button>
             <button class="filter-btn" onclick="filter('Agent')">Agents</button>
-            <button class="filter-btn" onclick="filter('Salon')">Salons</button>
-            <button class="filter-btn" onclick="filter('Other')">Other</button>
         </div>
         <input type="text" class="search-box mb-4" placeholder="Search businesses..." id="search">
         <div id="results"></div>
@@ -54,42 +51,63 @@
     const myWebsite = "autoAIwebsolutions.com";
     
     const businesses = [
-        // Existing
-        {name:"Englands Plumber",cat:"Plumber",site:"englands-plumber/",phone:"07405881006"},
+        // With built websites (sample sites)
+        {name:"Englands Plumber",cat:"Plumber",site:"englands-plumbing/",phone:"07405881006"},
         {name:"Tubbs Plumbing",cat:"Plumber",site:"tubbs-plumbing/",phone:"02086959165"},
         {name:"Fast Plumber London",cat:"Plumber",site:"fast-plumber-london/",phone:"02078711956"},
         {name:"National Plumbers",cat:"Plumber",site:"national-plumbers/",phone:"07760244444"},
         {name:"MC Plumber",cat:"Plumber",site:"mc-plumber/",phone:"02079460194"},
         {name:"East London Plumbing",cat:"Plumber",site:"east-london-plumbing/",phone:"02039848457"},
-        {name:"Bens Plumbing & Heating",cat:"Plumber",site:"bens-plumbing/",phone:"02086946618"},
-        // New from list
+        {name:"Bens Plumbing",cat:"Plumber",site:"bens-plumbing/",phone:"02086946618"},
         {name:"Plumber 24hour London",cat:"Plumber",site:"plumber-24hour-london/",phone:""},
-        {name:"Emergency Plumber London LTD",cat:"Plumber",site:"emergency-plumber-london/",phone:""},
-        {name:"Emergency Plumbers Edgware",cat:"Plumber",site:"emergency-plumbers-edgware/",phone:""},
-        {name:"The London Plumber",cat:"Plumber",site:"the-london-plumber/",phone:""},
-        {name:"GK Construction",cat:"Plumber",site:"gk-construction/",phone:""},
-        {name:"Purley Plumbers",cat:"Plumber",site:"purley-plumbers/",phone:""},
-        {name:"ARA Hackney Plumbers",cat:"Plumber",site:"ara-hackney/",phone:""},
+        {name:"Emergency Plumber London",cat:"Plumber",site:"emergency-plumber-london/",phone:""},
         {name:"Plumbing Circle",cat:"Plumber",site:"plumbing-circle/",phone:"07867850846"},
+        // Additional from here.now list
+        {name:"Abbey Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"Airedale Heating & Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Alba Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"All Hours Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Alpha Plumbing Services",cat:"Plumber",site:"",phone:""},
+        {name:"Atlas Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"Capital Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"City Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"Complete Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"Dial A Plumber",cat:"Plumber",site:"",phone:""},
+        {name:"Elite Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"Gold Star Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Kent Plumbing & Heating",cat:"Plumber",site:"",phone:""},
+        {name:"London 24h Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Manchester Plumbing Services",cat:"Plumber",site:"",phone:""},
+        {name:"Miller & Sons Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Milton Keynes Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Nottingham Plumbing Services",cat:"Plumber",site:"",phone:""},
+        {name:"Oxford Plumbing Services",cat:"Plumber",site:"",phone:""},
+        {name:"Parker & Sons Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Premier Plumbing Services",cat:"Plumber",site:"",phone:""},
+        {name:"Sheffield Plumbing Services",cat:"Plumber",site:"",phone:""},
+        {name:"Smith & Sons Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Southend Plumbing Services",cat:"Plumber",site:"",phone:""},
+        {name:"St. Albans Plumbing",cat:"Plumber",site:"",phone:""},
+        {name:"Swindon Plumbing Services",cat:"Plumber",site:"",phone:""},
     ];
 
-    const badgeClass = {
-        "Plumber": "badge-plumber",
-        "Dentist": "badge-dentist",
-        "Agent": "badge-agent",
-        "Salon": "badge-salon",
-        "Other": "badge-other"
-    };
+    const badgeClass = {"Plumber":"badge-plumber","Dentist":"badge-dentist","Agent":"badge-agent","Salon":"badge-salon","Other":"badge-other"};
 
     function sendWA(phone, name, site) {
+        if (!phone) {
+            alert("No phone number for this business. Search online to find their contact info first.");
+            return;
+        }
         phone = phone.replace(/[^0-9]/g, '');
         if (!phone.startsWith('44')) phone = '44' + phone;
+        
+        let siteUrl = site ? baseUrl + site : mySite;
         
         const message = `Hi ${name}!
 
 I've built a FREE professional website for your business!
 
-📺 VIEW SAMPLE: ${baseUrl}${site}
+📺 VIEW SAMPLE: ${siteUrl}
 
 💰 PRICES: From £397 one-time or £39/month
 
@@ -117,22 +135,30 @@ Abdelhak
     function render(list) {
         let html = '';
         for (let b of list) {
+            const hasSite = b.site ? `<a href="${baseUrl}${b.site}" target="_blank" class="site-btn" style="margin-right:8px"><i class="fas fa-eye"></i> View Site</a>` : '';
+            const phoneDisplay = b.phone ? `<small class="text-success"><i class="fab fa-whatsapp"></i> ${b.phone}</small>` : `<small class="text-muted">No phone - search online</small>`;
+            const msgBtn = b.phone ? `<button onclick="sendWA('${b.phone}', '${b.name}', '${b.site}')" class="wa-btn"><i class="fab fa-whatsapp"></i> Message</button>` : `<button onclick="searchOnline('${b.name}')" class="wa-btn" style="background:#666"><i class="fas fa-search"></i> Find Phone</button>`;
+            
             html += `<div class="business-card">
                 <div class="row align-items-center">
                     <div class="col-md-4">
                         <span class="badge ${badgeClass[b.cat]}">${b.cat}</span>
                         <h5 class="mt-2 mb-1">${b.name}</h5>
-                        <small class="text-success"><i class="fab fa-whatsapp"></i> ${b.phone}</small>
+                        ${phoneDisplay}
                     </div>
                     <div class="col-md-8 text-md-end mt-3 mt-md-0">
-                        <a href="${baseUrl}${b.site}" target="_blank" class="site-btn" style="margin-right:8px"><i class="fas fa-eye"></i> View Site</a>
-                        <button onclick="sendWA('${b.phone}', '${b.name}', '${b.site}')" class="wa-btn"><i class="fab fa-whatsapp"></i> Message</button>
+                        ${hasSite}
+                        ${msgBtn}
                     </div>
                 </div>
             </div>`;
         }
         html += `<p class="text-muted mt-3">Total: ${list.length} businesses</p>`;
         document.getElementById('results').innerHTML = html;
+    }
+
+    function searchOnline(name) {
+        window.open('https://www.google.com/search?q=' + encodeURIComponent(name + ' phone number'), '_blank');
     }
 
     let currentFilter = 'all';
