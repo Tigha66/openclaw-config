@@ -150,27 +150,28 @@
     function getMessage(b) {
         return `Hi ${b.name}!
 
-I noticed you don't have a website yet. I build professional websites for local businesses - starting from just £397 (or £39/month).
+I've built a FREE professional website for your business!
 
-Every site comes with:
-✅ Mobile-friendly design
-✅ Online booking forms
-✅ Stripe payment integration
-✅ Google Maps listing
-✅ SEO setup
+📺 VIEW SAMPLE: ${baseUrl}${b.site}
 
-I've already built a FREE sample site for your business!
+I can customize it with YOUR business name, services, phone number, and more.
 
-👉 VIEW SAMPLE: ${baseUrl}${b.site}
+💰 PRICES: From £397 one-time or £39/month
 
-Check out my work:
-👉 MY WEBSITE: https://tigha66.github.io/openclaw-config/
+🚀 What's included:
+• Mobile-friendly design
+• Online booking/contact forms  
+• Google Maps listing
+• SEO optimization
+• Your domain email
 
-Would you like me to customise it for your business?
+Check out more of my work:
+🌐 https://tigha66.github.io/openclaw-config/
+
+Interested? Reply to this message!
 
 Cheers,
 Abdelhak
-autoAIwebsolutions
 📧 tigha66@gmail.com
 🌐 autoAIwebsolutions.com`;
     }
@@ -183,13 +184,15 @@ autoAIwebsolutions
             return `
             <div class="business-card">
                 <div class="row align-items-center">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <span class="badge ${badgeClass[b.cat]}">${b.cat}</span>
                         <h5 class="mt-2 mb-1">${b.name}</h5>
+                        <small class="text-success"><i class="fas fa-phone"></i> ${phone}</small>
                     </div>
-                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                        <a href="${siteLink}" target="_blank" class="site-btn"><i class="fas fa-eye"></i> View Site</a>
-                        <a href="${waLink}" target="_blank" class="wa-btn" style="margin-left:8px"><i class="fab fa-whatsapp"></i> Send WhatsApp</a>
+                    <div class="col-md-7 text-md-end mt-3 mt-md-0">
+                        <a href="tel:${phone}" class="site-btn" style="margin-right:8px"><i class="fas fa-phone"></i> Call</a>
+                        <a href="${siteLink}" target="_blank" class="site-btn" style="margin-right:8px"><i class="fas fa-eye"></i> View Site</a>
+                        <a href="${waLink}" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i> Send WhatsApp</a>
                     </div>
                 </div>
             </div>`;
