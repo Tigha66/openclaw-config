@@ -1,3 +1,183 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Reviews - Englands Plumber</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><style>:root{--primary:#0a2540;--accent:#00a8e8}body{font-family:'DM Sans',sans-serif}.hero{background:linear-gradient(135deg,var(--primary),#1a3a5c);padding:4rem 0}.hero h1{font-family:'Playfair Display',serif;color:white}.review-card{background:white;border-radius:15px;padding:1.5rem;box-shadow:0 5px 20px rgba(0,0,0,.08)}.stars{color:#ffc107}.navbar{background:white;box-shadow:0 2px 20px rgba(0,0,0,.08)}.navbar-brand{font-family:'Playfair Display',serif;font-weight:700}</style></head>
-<body><nav class="navbar navbar-expand-lg sticky-top"><div class="container"><a class="navbar-brand" href="index.html"><i class="fas fa-wrench text-primary me-2"></i>Englands Plumber</a><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li><li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li><li class="nav-item"><a class="nav-link btn btn-primary text-white px-4 ms-2" href="contact.html">Contact</a></li></ul></div></nav><section class="hero"><div class="container text-center"><h1>Customer Reviews</h1><p class="lead">4.8/5 rating</p></div></section><section class="py-5"><div class="container"><div class="row g-4"><div class="col-md-6"><div class="review-card"><div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Great service, very professional."</p><small>- Mike, Clapham</small></div></div><div class="col-md-6"><div class="review-card"><div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Fast and efficient. Recommended!"</p><small>- Anna, Balham</small></div></div></div></div></section><footer class="bg-dark text-white py-4"><div class="container text-center"><p class="mb-0">&copy; 2026 Englands Plumber. All rights reserved.</p></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script></body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | Englands Plumber</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0a2540; --accent: #00a8e8; }
+        body { font-family: 'DM Sans', sans-serif; }
+        .navbar { background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .navbar-brand { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--primary); }
+        .hero { background: linear-gradient(135deg, var(--primary), #1e3a5f); padding: 5rem 0; }
+        .hero h1 { font-family: 'Playfair Display', serif; color: white; }
+        .review-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); border: 1px solid #eee; }
+        .stars { color: #ffc107; }
+        .reviewer-img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-wrench me-2"></i>Englands Plumber</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-3" href="contact.html">Get Quote</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container text-center">
+            <h1>Customer Reviews</h1>
+            <p class="lead text-white-50">See what our customers say about us</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary mb-3 d-inline-block" style="font-size: 1rem; padding: 0.5rem 1rem;">
+                    <i class="fas fa-star me-1"></i> 4.9 Average Rating
+                </span>
+                <div class="stars fs-4 mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-muted">Based on 127 reviews</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="review-card h-100">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Sarah M." class="reviewer-img me-3">
+                                <div>
+                                    <h6 class="mb-0">Sarah M.</h6>
+                                    <small class="text-muted">London</small>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Englands Plumbing saved the day! Our boiler broke down on Christmas Eve and they came within an hour. Professional, efficient and reasonably priced. Can't recommend them enough!"</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="review-card h-100">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="David P." class="reviewer-img me-3">
+                                <div>
+                                    <h6 class="mb-0">David P.</h6>
+                                    <small class="text-muted">West London</small>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Had a complete bathroom refit done by Englands Plumber. From start to finish the communication was excellent and the work was top quality. My new bathroom looks amazing!"</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="review-card h-100">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Emma L." class="reviewer-img me-3">
+                                <div>
+                                    <h6 class="mb-0">Emma L.</h6>
+                                    <small class="text-muted">Chelsea</small>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Used them for a leaking pipe under the kitchen sink. Quick response, fixed the problem immediately and no hidden charges. Will definitely use again for any plumbing needs."</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="review-card h-100">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Michael R." class="reviewer-img me-3">
+                                <div>
+                                    <h6 class="mb-0">Michael R.</h6>
+                                    <small class="text-muted">Kensington</small>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p>"Excellent service from John and his team. They installed a new central heating system and were tidy, professional and completed on time. The heating bills have already dropped!"</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="review-card h-100">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" alt="Jennifer K." class="reviewer-img me-3">
+                                <div>
+                                    <h6 class="mb-0">Jennifer K.</h6>
+                                    <small class="text-muted">Notting Hill</small>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Our toilet was completely blocked and water was backing up. Englands Plumber arrived within 30 minutes and had it sorted in no time. Absolute lifesavers!"</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="review-card h-100">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100" alt="Robert T." class="reviewer-img me-3">
+                                <div>
+                                    <h6 class="mb-0">Robert T.</h6>
+                                    <small class="text-muted">Hammersmith</small>
+                                </div>
+                            </div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Had an emergency leak on a Sunday morning. Called Englands and they were here within the hour. Professional, friendly and fairly priced. My go-to plumbers now."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light text-center">
+        <h2>Had a Great Experience?</h2>
+        <p class="text-muted mb-4">Leave us a review and help other customers</p>
+        <a href="https://www.google.com/search?q=Englands+Plumber+London" target="_blank" class="btn btn-primary btn-lg px-5">Leave a Review</a>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 Englands Plumber. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
