@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talbot Designs | Custom Design Studio London</title>
+    <meta name="description" content="Custom design studio in Finchley. Graphic design, branding, and creative services.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #7B1FA2; --secondary: #9C27B0; --accent: #FF6B00; --light: #f5f5f5; --dark: #1a1a2e; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); font-weight: 700; }
+        .btn { padding: 12px 25px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .features { padding: 60px 20px; background: var(--light); }
+        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+        .feature-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .services { padding: 60px 20px; }
+        .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .service-img { height: 150px; background: var(--primary); display: flex; align-items: center; justify-content: center; }
+        .service-img i { font-size: 3rem; color: white; }
+        .service-content { padding: 25px; }
+        .portfolio { padding: 60px 20px; background: var(--light); }
+        .portfolio-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .portfolio-item { background: var(--dark); height: 200px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; }
+        .contact { padding: 60px 20px; }
+        .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin: 15px 0; }
+        .contact-item i { width: 45px; height: 45px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 1000; }
+        footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header><div class="header-inner"><div class="logo">Talbot Designs</div><a href="#contact" class="btn btn-primary">Get Quote</a></div></header>
+    <section class="hero"><h1>Creative Design Solutions</h1><p>Graphic design, branding, and creative services for businesses.</p><a href="#contact" class="btn btn-accent">Discuss Project</a></section>
+    <section class="features"><div class="features-grid"><div class="feature-card"><i class="fas fa-palette"></i><h3>Creative Design</h3><p>Unique concepts</p></div><div class="feature-card"><i class="fas fa-bullhorn"></i><h3>Branding</h3><p>Strong identity</p></div><div class="feature-card"><i class="fas fa-print"></i><h3>Print Design</h3><p>Business cards, flyers</p></div></div></section>
+    <section class="services"><div class="services-grid"><div class="service-card"><div class="service-img"><i class="fas fa-pen-nib"></i></div><div class="service-content"><h3>Logo Design</h3><p>Professional logos</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-desktop"></i></div><div class="service-content"><h3>Web Design</h3><p>Modern websites</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-print"></i></div><div class="service-content"><h3>Print</h3><p>Brochures, cards</p></div></div></div></section>
+    <section class="portfolio"><div class="section-title"><h2>Our Work</h2></div><div class="portfolio-grid"><div class="portfolio-item">Project 1</div><div class="portfolio-item">Project 2</div><div class="portfolio-item">Project 3</div><div class="portfolio-item">Project 4</div></div></section>
+    <section class="contact" id="contact"><div class="contact-inner"><div><h2>Get in Touch</h2><div class="contact-item"><i class="fas fa-map-marker-alt"></i><div>225 Long Lane, Finchley, London N3 2RL</div></div><div class="contact-item"><i class="fas fa-envelope"></i><div>info@talbotdesigns.co.uk</div></div><div class="contact-item"><i class="fas fa-phone"></i><div>Call for chat</div></div></div><div style="background:#f5f5f5;padding:30px;border-radius:15px;"><h3>Send Message</h3><form onsubmit="event.preventDefault();alert('Thank you!');"><input type="text" placeholder="Name" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><input type="email" placeholder="Email" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><textarea placeholder="Tell us about your project" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;height:100px;"></textarea><button class="btn btn-primary" style="width:100%;">Send</button></form></div></div></section>
+    <a href="https://wa.me/?text=Hi, I'd like to discuss a design project" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 Talbot Designs. All rights reserved.</p></footer>
+</body>
+</html>

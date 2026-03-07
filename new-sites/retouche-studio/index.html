@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retouche Studio | Photo Retouching London</title>
+    <meta name="description" content="Professional photo retouching services in London. Fashion, product, and wedding photo editing.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #E91E63; --secondary: #F06292; --accent: #212121; --light: #f5f5f5; --dark: #1a1a2e; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); font-weight: 700; }
+        .btn { padding: 12px 25px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .features { padding: 60px 20px; background: var(--light); }
+        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+        .feature-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .services { padding: 60px 20px; }
+        .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .service-img { height: 150px; background: var(--primary); display: flex; align-items: center; justify-content: center; }
+        .service-img i { font-size: 3rem; color: white; }
+        .service-content { padding: 25px; }
+        .pricing { padding: 60px 20px; background: var(--light); }
+        .pricing-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .pricing-card { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+        .pricing-card.featured { border: 3px solid var(--primary); }
+        .pricing-card h3 { margin-bottom: 15px; }
+        .price { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
+        .pricing-card ul { list-style: none; margin-bottom: 20px; }
+        .pricing-card li { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .contact { padding: 60px 20px; }
+        .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin: 15px 0; }
+        .contact-item i { width: 45px; height: 45px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 1000; }
+        footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header><div class="header-inner"><div class="logo">Retouche Studio</div><a href="#contact" class="btn btn-primary">Upload Photos</a></div></header>
+    <section class="hero"><h1>Professional Photo Retouching</h1><p>Expert retouching for fashion, product, and wedding photography.</p><a href="#pricing" class="btn btn-accent">View Pricing</a></section>
+    <section class="features"><div class="features-grid"><div class="feature-card"><i class="fas fa-magic"></i><h3>Expert Editing</h3><p>Professional results</p></div><div class="feature-card"><i class="fas fa-clock"></i><h3>Fast Turnaround</h3><p>24-48 hours</p></div><div class="feature-card"><i class="fas fa-star"></i><h3>5-Star Quality</h3><p>High satisfaction</p></div></div></section>
+    <section class="services"><div class="services-grid"><div class="service-card"><div class="service-img"><i class="fas fa-tshirt"></i></div><div class="service-content"><h3>Fashion Retouching</h3><p>Model & editorial photos</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-box"></i></div><div class="service-content"><h3>Product Retouching</h3><p>E-commerce ready</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-rings-wedding"></i></div><div class="service-content"><h3>Wedding Retouching</h3><p>Perfect memories</p></div></div></div></section>
+    <section class="pricing" id="pricing"><div class="section-title"><h2>Pricing</h2></div><div class="pricing-grid"><div class="pricing-card"><h3>Basic</h3><div class="price">£15</div><ul><li>Color correction</li><li>Basic retouching</li><li>24hr turnaround</li></ul><button class="btn btn-primary">Order</button></div><div class="pricing-card featured"><h3>Professional</h3><div class="price">£35</div><ul><li>Advanced retouching</li><li>Skin smoothing</li><li>Background removal</li><li>24hr turnaround</li></ul><button class="btn btn-primary">Order</button></div><div class="pricing-card"><h3>Premium</h3><div class="price">£75</div><ul><li>Full retouching</li><li>Creative editing</li><li>Multiple revisions</li><li>Same day</li></ul><button class="btn btn-primary">Order</button></div></div></section>
+    <section class="contact" id="contact"><div class="contact-inner"><div><h2>Contact Us</h2><div class="contact-item"><i class="fas fa-map-marker-alt"></i><div>32 Great Sutton Street, London EC1V 0NB</div></div><div class="contact-item"><i class="fas fa-envelope"></i><div>hello@retouchestudio.co.uk</div></div><div class="contact-item"><i class="fas fa-phone"></i><div>Call for quote</div></div></div><div style="background:#f5f5f5;padding:30px;border-radius:15px;"><h3>Get Quote</h3><form onsubmit="event.preventDefault();alert('Thank you! We will respond shortly.');"><input type="text" placeholder="Name" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><input type="email" placeholder="Email" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><textarea placeholder="Describe your project" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;height:100px;"></textarea><button class="btn btn-primary" style="width:100%;">Send</button></form></div></div></section>
+    <a href="https://wa.me/?text=Hi, I'd like a quote for photo retouching" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 Retouche Studio. All rights reserved.</p></footer>
+</body>
+</html>

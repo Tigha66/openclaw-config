@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair UK | Professional Hair Styling London</title>
+    <meta name="description" content="Professional hair styling in London. Expert cuts, colours, and treatments.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #8B4513; --secondary: #D2691E; --accent: #FF6B9D; --light: #FFF5F0; --dark: #1a1a2e; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); line-height: 1.6; }
+        header { background: var(--white); box-shadow: 0 2px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--dark); }
+        .logo span { color: var(--accent); }
+        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; }
+        .btn-primary { background: var(--dark); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #333 100%); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+        .features { padding: 80px 20px; background: var(--light); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+        .feature-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+        .services { padding: 80px 20px; }
+        .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+        .service-img { height: 180px; background: var(--dark); display: flex; align-items: center; justify-content: center; }
+        .service-img i { font-size: 3.5rem; color: var(--accent); }
+        .service-content { padding: 30px; }
+        .booking { padding: 80px 20px; background: var(--accent); color: white; text-align: center; }
+        .booking h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px; }
+        .booking-form { background: white; padding: 40px; border-radius: 20px; max-width: 600px; margin: 30px auto 0; color: var(--dark); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px; border: 2px solid #e0e0e0; border-radius: 10px; }
+        .testimonials { padding: 80px 20px; background: var(--light); }
+        .testimonial-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testimonial-card { background: white; padding: 30px; border-radius: 20px; }
+        .testimonial-card .stars { color: #ffc107; margin-bottom: 15px; }
+        .contact { padding: 80px 20px; }
+        .contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .contact-item i { width: 50px; height: 50px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 1000; }
+        footer { background: var(--dark); color: white; padding: 60px 20px; text-align: center; }
+        @media (max-width: 768px) { .contact-inner { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header><div class="header-inner"><div class="logo">Hair<span>UK</span></div><a href="tel:02077032323" class="btn btn-primary">Call</a></div></header>
+    <section class="hero"><h1>Expert Hair Styling in London</h1><p>Professional cuts, colours, and treatments. Look your best.</p><a href="#booking" class="btn btn-accent">Book Now</a></section>
+    <section class="features"><div class="section-title"><h2>Why Choose Us</h2></div><div class="features-grid"><div class="feature-card"><i class="fas fa-cut"></i><h3>Expert Stylists</h3><p>Years of experience</p></div><div class="feature-card"><i class="fas fa-paint-brush"></i><h3>Premium Products</h3><p>Top quality brands</p></div><div class="feature-card"><i class="fas fa-star"></i><h3>5-Star Service</h3><p>Highly rated</p></div></div></section>
+    <section class="services"><div class="services-grid"><div class="service-card"><div class="service-img"><i class="fas fa-cut"></i></div><div class="service-content"><h3>Haircuts</h3><p>Professional cuts for men and women</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-paint-brush"></i></div><div class="service-content"><h3>Colouring</h3><p>Full colour, highlights, balayage</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-spa"></i></div><div class="service-content"><h3>Treatments</h3><p>Keratin, smoothing, repairs</p></div></div></div></section>
+    <section class="booking" id="booking"><div class="booking-inner"><h2>Book Appointment</h2><div class="booking-form"><form onsubmit="event.preventDefault();alert('Thank you! We will confirm shortly.');"><div class="form-group"><label>Name</label><input type="text" required></div><div class="form-group"><label>Phone</label><input type="tel" required></div><div class="form-group"><label>Service</label><select><option>Haircut</option><option>Colouring</option><option>Highlights</option><option>Treatment</option></select></div><div class="form-group"><label>Date</label><input type="date" required></div><button class="btn btn-accent" style="width:100%;">Book Now</button></form></div></div></section>
+    <section class="testimonials"><div class="testimonial-grid"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Excellent service! Love my new cut."</p><div class="author">- Customer</div></div><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Best salon in the area. Highly recommend!"</p><div class="author">- Customer</div></div></div></section>
+    <section class="contact"><div class="contact-inner"><div class="contact-info"><h2>Contact Us</h2><div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Address</strong><br>166 Old Kent Rd, London SE1 5TY</div></div><div class="contact-item"><i class="fas fa-phone"></i><div><strong>Phone</strong><br><a href="tel:02077032323" style="color:var(--dark);text-decoration:none;">020 7703 2323</a></div></div></div><div style="background:white;padding:30px;border-radius:20px;"><h3>Message</h3><form onsubmit="event.preventDefault();alert('Sent!');"><input type="text" placeholder="Name" style="width:100%;padding:14px;margin-bottom:15px;border:2px solid #e0e0e0;border-radius:10px;"><input type="email" placeholder="Email" style="width:100%;padding:14px;margin-bottom:15px;border:2px solid #e0e0e0;border-radius:10px;"><textarea placeholder="Message" style="width:100%;padding:14px;margin-bottom:15px;border:2px solid #e0e0e0;border-radius:10px;height:100px;"></textarea><button class="btn btn-primary" style="width:100%;">Send</button></form></div></div></section>
+    <a href="https://wa.me/442077032323?text=Hi, I'd like to book an appointment" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 Hair UK. All rights reserved.</p></footer>
+</body>
+</html>

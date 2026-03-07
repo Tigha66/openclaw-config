@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwiksweep | Professional Cleaning Services London</title>
+    <meta name="description" content="Professional cleaning services in London. Commercial and domestic cleaning. Book online.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #00BCD4; --secondary: #0097A7; --accent: #FF6B00; --light: #f5f5f5; --dark: #1a1a2e; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: var(--white); padding: 15px 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); font-weight: 700; }
+        .btn { padding: 12px 25px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .features { padding: 60px 20px; background: var(--light); }
+        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+        .feature-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .services { padding: 60px 20px; }
+        .services-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .service-img { height: 150px; background: var(--primary); display: flex; align-items: center; justify-content: center; }
+        .service-img i { font-size: 3rem; color: white; }
+        .service-content { padding: 25px; }
+        .booking { padding: 60px 20px; background: var(--accent); color: white; text-align: center; }
+        .testimonials { padding: 60px 20px; background: var(--light); }
+        .testimonial-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .testimonial-card { background: white; padding: 25px; border-radius: 15px; }
+        .testimonial-card .stars { color: #ffc107; margin-bottom: 10px; }
+        .contact { padding: 60px 20px; }
+        .contact-inner { max-width: 1200px; margin: 0 auto; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin: 15px 0; }
+        .contact-item i { width: 45px; height: 45px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 1000; }
+        footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header><div class="header-inner"><div class="logo">Kwiksweep</div><a href="#booking" class="btn btn-primary">Book Clean</a></div></header>
+    <section class="hero"><h1>Professional Cleaning Services</h1><p>Commercial and domestic cleaning across London. Spotless results, every time.</p><a href="#booking" class="btn btn-accent">Book Now</a></section>
+    <section class="features"><div class="features-grid"><div class="feature-card"><i class="fas fa-clock"></i><h3>Fast Service</h3><p>Same day available</p></div><div class="feature-card"><i class="fas fa-check-circle"></i><h3>Trusted Staff</h3><p>Vetted cleaners</p></div><div class="feature-card"><i class="fas fa-pound-sign"></i><h3>Fair Prices</h3><p>No hidden fees</p></div></div></section>
+    <section class="services"><div class="services-grid"><div class="service-card"><div class="service-img"><i class="fas fa-home"></i></div><div class="service-content"><h3>Domestic Cleaning</h3><p>Regular & one-off cleans</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-building"></i></div><div class="service-content"><h3>Commercial Cleaning</h3><p>Offices, shops, schools</p></div></div><div class="service-card"><div class="service-img"><i class="fas fa-spray-can"></i></div><div class="service-content"><h3>Deep Clean</h3><p>Thorough sanitisation</p></div></div></div></section>
+    <section class="booking" id="booking"><h2>Book a Clean</h2><div style="background:white;padding:30px;border-radius:15px;max-width:500px;margin:20px auto 0;color:var(--dark);"><form onsubmit="event.preventDefault();alert('Thank you! We will confirm shortly.');"><input type="text" placeholder="Name" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><input type="tel" placeholder="Phone" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><select style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><option>Service</option><option>Domestic</option><option>Commercial</option><option>Deep Clean</option></select><input type="date" style="width:100%;padding:14px;margin-bottom:15px;border-radius:10px;border:2px solid #ddd;"><button class="btn btn-primary" style="width:100%;">Book Now</button></form></div></section>
+    <section class="testimonials"><div class="testimonial-grid"><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Excellent service! My office is always spotless."</p><div class="author">- Business Owner</div></div><div class="testimonial-card"><div class="stars">★★★★★</div><p>"Reliable and professional. Highly recommend!"</p><div class="author">- Happy Customer</div></div></div></section>
+    <section class="contact"><div class="contact-inner"><div><h2>Contact Us</h2><div class="contact-item"><i class="fas fa-map-marker-alt"></i><div>45 Barrett House, Victoria Road, London NW6 6QG</div></div><div class="contact-item"><i class="fas fa-phone"></i><div>Call for booking</div></div></div></div></section>
+    <a href="https://wa.me/?text=Hi, I'd like to book a cleaning service" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <footer><p>&copy; 2026 Kwiksweep. All rights reserved.</p></footer>
+</body>
+</html>
