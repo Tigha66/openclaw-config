@@ -154,8 +154,6 @@ I've built a FREE professional website for your business!
 
 📺 VIEW SAMPLE: ${baseUrl}${b.site}
 
-I can customize it with YOUR business name, services, phone number, and more.
-
 💰 PRICES: From £397 one-time or £39/month
 
 🚀 What's included:
@@ -184,15 +182,14 @@ Abdelhak
             return `
             <div class="business-card">
                 <div class="row align-items-center">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <span class="badge ${badgeClass[b.cat]}">${b.cat}</span>
                         <h5 class="mt-2 mb-1">${b.name}</h5>
                         <small class="text-success"><i class="fas fa-phone"></i> ${phone}</small>
                     </div>
-                    <div class="col-md-7 text-md-end mt-3 mt-md-0">
-                        <a href="tel:${phone}" class="site-btn" style="margin-right:8px"><i class="fas fa-phone"></i> Call</a>
+                    <div class="col-md-8 text-md-end mt-3 mt-md-0">
                         <a href="${siteLink}" target="_blank" class="site-btn" style="margin-right:8px"><i class="fas fa-eye"></i> View Site</a>
-                        <a href="${waLink}" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i> Send WhatsApp</a>
+                        <a href="${waLink}" target="_blank" class="wa-btn"><i class="fab fa-whatsapp"></i> Message</a>
                     </div>
                 </div>
             </div>`;
