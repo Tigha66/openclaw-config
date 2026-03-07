@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Plumbing Services in East London | Professional Plumbers</title>
+    <meta name="description" content="Professional plumbing services in East London. Emergency repairs, boiler installation, bathroom fitting. Call 020 3984 8457 for fast, reliable service.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a2540;
+            --secondary: #1e3a5f;
+            --accent: #00a8e8;
+            --accent-dark: #0088c7;
+            --light: #f8fafc;
+            --dark: #1a1a2e;
+        }
+        body { font-family: 'DM Sans', sans-serif; color: #333; }
+        
+        .navbar { background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.08); padding: 1rem 0; }
+        .navbar-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; color: var(--primary); }
+        .nav-link { font-weight: 500; color: var(--dark) !important; margin: 0 0.5rem; }
+        .nav-link:hover { color: var(--accent) !important; }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #2d5a87 100%);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+        }
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.25rem;
+            margin: 1.5rem 0 2rem;
+        }
+        
+        .btn-primary { background: var(--accent); border: none; padding: 1rem 2rem; border-radius: 50px; font-weight: 600; }
+        .btn-primary:hover { background: var(--accent-dark); }
+        .btn-outline-light { padding: 1rem 2rem; border-radius: 50px; font-weight: 600; }
+        
+        .emergency-banner {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 0.75rem 0;
+            text-align: center;
+        }
+        .emergency-banner a { color: white; font-weight: 700; }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #eee;
+            height: 100%;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.12); }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stats-section { background: var(--primary); padding: 4rem 0; }
+        .stat-item h3 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--accent); }
+        
+        .trust-badge {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        .trust-badge i { color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem; }
+        
+        .gallery-item { border-radius: 15px; overflow: hidden; position: relative; height: 250px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        
+        .cta-section { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); padding: 4rem 0; }
+        
+        footer { background: var(--dark); color: white; padding: 3rem 0 1rem; }
+        footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        footer a:hover { color: white; }
+        .whatsapp-btn { background: #25D366; color: white; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .whatsapp-btn:hover { background: #128C7E; color: white; }
+    </style>
+</head>
+<body>
+    <div class="emergency-banner">
+        <i class="fas fa-exclamation-triangle me-2"></i>
+        <strong>24/7 Emergency Service Available</strong> — Call now: <a href="tel:02039848457">020 3984 8457</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-wrench me-2"></i>East London Plumbing
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html"> Reviews</a></li>
+                    <li class="nav-item"><a class="btn btn-primary ms-3" href="contact.html">Get Quote</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Expert Plumbing Services in East London</h1>
+                    <p>Fast, reliable, and professional plumbing solutions for your home or business. From emergency repairs to complete installations — we've got you covered.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="fas fa-calendar-check me-2"></i>Book Online
+                        </a>
+                        <a href="tel:02039848457" class="btn btn-outline-light">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                    </div>
+                    <div class="mt-4 d-flex gap-3 flex-wrap">
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle d-block"></i>
+                            <small>Gas Safe Registered</small>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-clock d-block"></i>
+                            <small>Same Day Service</small>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-star d-block"></i>
+                            <small>5-Star Rated</small>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt d-block"></i>
+                            <small>Fully Insured</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Our Services</h2>
+                <p class="text-muted">Comprehensive plumbing solutions for every need</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h4>Emergency Repairs</h4>
+                        <p class="text-muted">24/7 emergency plumbing services with fast response times. We're here when you need us most.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-fire"></i></div>
+                        <h4>Boiler Services</h4>
+                        <p class="text-muted">Installation, repair, and annual servicing by Gas Safe registered engineers.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-bath"></i></div>
+                        <h4>Bathroom Fitting</h4>
+                        <p class="text-muted">Complete bathroom renovations from design to installation by certified professionals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-pipe"></i></div>
+                        <h4>Pipework & Drains</h4>
+                        <p class="text-muted">Complete pipe installation, repair, and drainage services for all property types.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-radiation"></i></div>
+                        <h4>Central Heating</h4>
+                        <p class="text-muted">Complete heating system installations, upgrades, and repairs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                        <h4>General Plumbing</h4>
+                        <p class="text-muted">All aspects of domestic and commercial plumbing. No job too small.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="stat-item">
+                        <h3>5000+</h3>
+                        <p>Jobs Completed</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Satisfaction</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="stat-item">
+                        <h3>30min</h3>
+                        <p>Response Time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    font-family: 'Playfair Display',<h2 style=" serif; font-size: 2.5rem;">Why Choose Us?</h2>
+                    <p class="lead">We're not just plumbers — we're your partners in maintaining a safe, efficient plumbing system.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>Fully qualified and certified engineers</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>Transparent pricing — no hidden fees</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>Clean, professional workmanship</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>Guaranteed parts and labor</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>Free written quotations</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>Gas Safe Registered</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary mt-3">Get Free Quote</a>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600" alt="Professional plumber at work" class="img-fluid rounded-4 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container text-center text-white">
+            <h2 style="font-family: 'Playfair Display', serif;">Need a Plumber? We're Here to Help</h2>
+            <p class="lead mb-4">Get in touch for a free, no-obligation quote</p>
+            <a href="tel:02039848457" class="btn btn-light btn-lg px-5 me-2">
+                <i class="fas fa-phone me-2"></i>020 3984 8457
+            </a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg px-5">Get Quote Online</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-wrench me-2"></i>East London Plumbing</h5>
+                    <p class="text-muted">Professional plumbing services in East London and surrounding areas.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="testimonials.html"> Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    <p><i class="fas fa-phone me-2"></i>020 3984 8457</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>181 Globe Rd, Bethnal Green<br>London E2 0LJ</p>
+                    <a href="https://wa.me/442039848457" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <p class="text-center text-muted mb-0">&copy; 2026 East London Plumbing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
