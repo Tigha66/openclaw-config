@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnPilot AI | Personal Tutor & Coach</title>
+    <meta name="description" content="AI-powered tutor for languages, coding, test prep. Personalized lessons. From £0.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #8b5cf6; --accent: #f59e0b; --dark: #0f172a; --light: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, #F5F3FF, #EDE9FE); padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
+        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
+        .features, .subjects, .pricing { padding: 80px 20px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
+        .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+        .feature-card h3 { margin-bottom: 12px; }
+        .feature-card p { color: #64748b; }
+        .subjects { background: var(--light); }
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+        .subject-card { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+        .subject-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
+        .pricing-card.featured { background: var(--primary); color: white; }
+        .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">LearnPilot<span>AI</span></div>
+            <a href="#pricing" class="btn btn-primary">Start Learning</a>
+        </div>
+    </header>
+    <section class="hero">
+        <span class="hero-tag">Your Personal AI Tutor</span>
+        <h1>Learn Anything Faster</h1>
+        <p>Languages, coding, test prep - personalized lessons that adapt to you. Your AI tutor works 24/7.</p>
+        <a href="#pricing" class="btn btn-accent">Start Free</a>
+    </section>
+    <section class="features">
+        <div class="section-title"><h2>Why LearnPilot?</h2></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-comments"></i></div><h3>Chat-Based Learning</h3><p>Learn through interactive conversations. Ask questions, get instant answers.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-brain"></i></div><h3>Adaptive Lessons</h3><p>AI adjusts to your level. Focus on weak areas, skip what you know.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Progress Tracking</h3><p>See your improvement with detailed metrics and performance reports.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-clock"></i></div><h3>Learn Anytime</h3><p>24/7 availability. Fit learning into your schedule.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-user-graduate"></i></div><h3>Personalized</h3><p>Lessons tailored to your goals, pace, and learning style.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-certificate"></i></div><h3>Certified Results</h3><p>Prove your skills with certificates upon completion.</p></div>
+        </div>
+    </section>
+    <section class="subjects">
+        <div class="section-title"><h2>What You Can Learn</h2></div>
+        <div class="subject-grid">
+            <div class="subject-card"><i class="fas fa-language"></i><h3>Languages</h3><p>Spanish, French, Mandarin & more</p></div>
+            <div class="subject-card"><i class="fas fa-code"></i><h3>Coding</h3><p>Python, JavaScript, SQL & more</p></div>
+            <div class="subject-card"><i class="fas fa-flask"></i><h3>Test Prep</h3><p>GRE, GMAT, SAT, IELTS</p></div>
+            <div class="subject-card"><i class="fas fa-calculator"></i><h3>Math</h3><p>Algebra, Calculus, Statistics</p></div>
+            <div class="subject-card"><i class="fas fa-briefcase"></i><h3>Business</h3><p>Finance, Marketing, Leadership</p></div>
+            <div class="subject-card"><i class="fas fa-heartbeat"></i><h3>Health</h3><p>Anatomy, Nutrition, Fitness</p></div>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <div class="section-title"><h2>Pricing</h2></div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">£0</div>
+                <ul>
+                    <li>Basic lessons</li>
+                    <li>2 subjects</li>
+                    <li>Limited daily practice</li>
+                    <li>Community support</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;">Start Free</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Pro</h3>
+                <div class="price">£19.99<span>/mo</span></div>
+                <ul>
+                    <li>Unlimited subjects</li>
+                    <li>Advanced lessons</li>
+                    <li>Practice tests</li>
+                    <li>Progress certificates</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Sessions</h3>
+                <div class="price">£29.99<span>/session</span></div>
+                <ul>
+                    <li>1-on-1 video session</li>
+                    <li>Personalized plan</li>
+                    <li>Live feedback</li>
+                    <li>Follow-up resources</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;">Book Session</a>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Start Learning Today</h2>
+        <p style="margin:20px 0;">Join thousands learning with AI.</p>
+        <a href="#" class="btn btn-accent">Get Started Free</a>
+    </section>
+    <footer><p>&copy; 2026 LearnPilot AI. All rights reserved.</p></footer>
+</body>
+</html>
