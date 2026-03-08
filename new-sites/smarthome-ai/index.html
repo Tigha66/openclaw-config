@@ -4,63 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartHome AI | Voice-Controlled Smart Home</title>
-    <meta name="description" content="Control your home with voice. Lights, thermostat, cameras - all from one app. From £9.99/month.">
+    <meta name="description" content="Control your home with voice. Lights, thermostat, cameras. From £9.99/month.">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --primary: #3b82f6; --accent: #f59e0b; --dark: #0f172a; --light: #f8fafc; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin:0; padding:0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
         header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
         .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        .logo span { color: var(--accent); }
-        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; display: inline-block; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-accent { background: var(--accent); color: white; }
         .hero { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); padding: 100px 20px; text-align: center; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
         .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
-        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
-        .features, .devices, .pricing { padding: 80px 20px; }
+        .voice-demo { max-width: 500px; margin: 30px auto; background: white; border-radius: 20px; padding: 30px; }
+        .voice-cmd { background: var(--light); padding: 15px 20px; border-radius: 10px; margin: 10px 0; text-align: left; }
+        .voice-cmd strong { color: var(--primary); }
+        .features, .pricing, .contact { padding: 80px 20px; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
         .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
         .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
-        .feature-card h3 { margin-bottom: 12px; }
-        .feature-card p { color: #64748b; }
-        .devices { background: var(--light); }
-        .device-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
-        .device-card { background: white; padding: 30px; border-radius: 15px; text-align: center; }
-        .device-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
         .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
         .pricing-card.featured { background: var(--primary); color: white; }
         .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
         .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
         .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
+        .success-message { display: none; background: #dcfce7; color: #166534; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
         .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
         footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <div class="logo">SmartHome<span>AI</span></div>
-            <a href="#pricing" class="btn btn-primary">Get Started</a>
-        </div>
-    </header>
+    <header><div class="header-inner"><div class="logo">SmartHome<span style="color:var(--accent)">AI</span></div><a href="#contact" class="btn btn-primary">Get Started</a></div></header>
     <section class="hero">
-        <span class="hero-tag">Voice-Controlled Smart Home</span>
         <h1>Your Home, Your Voice</h1>
-        <p>Control lights, thermostat, cameras - everything with simple voice commands.</p>
+        <p>Control lights, thermostat, cameras with simple voice commands.</p>
+        <div class="voice-demo">
+            <h3>Try these commands:</h3>
+            <div class="voice-cmd"><strong>"Turn off living room lights"</strong></div>
+            <div class="voice-cmd"><strong>"Set thermostat to 72°F"</strong></div>
+            <div class="voice-cmd"><strong>"Show front door camera"</strong></div>
+            <div class="voice-cmd"><strong>"Lock the back door"</strong></div>
+        </div>
         <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
     </section>
     <section class="features">
         <div class="section-title"><h2>What SmartHome AI Does</h2></div>
         <div class="features-grid">
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-microphone"></i></div><h3>Voice Control</h3><p>"Turn off living room lights" - just say it.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-microphone"></i></div><h3>Voice Control</h3><p>"Turn off lights" - just say it. No app needed.</p></div>
             <div class="feature-card"><div class="feature-icon"><i class="fas fa-plug"></i></div><h3>Device Integration</h3><p>Works with Alexa, Google Home, SmartThings.</p></div>
             <div class="feature-card"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><h3>One Dashboard</h3><p>Control everything from a single app.</p></div>
             <div class="feature-card"><div class="feature-icon"><i class="fas fa-layer-group"></i></div><h3>Device Groups</h3><p>Group devices by room for easy control.</p></div>
@@ -68,62 +69,28 @@
             <div class="feature-card"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3>Secure</h3><p>Bank-level encryption for your home.</p></div>
         </div>
     </section>
-    <section class="devices">
-        <div class="section-title"><h2>Works With</h2></div>
-        <div class="device-grid">
-            <div class="device-card"><i class="fas fa-lightbulb"></i><h3>Lights</h3></div>
-            <div class="device-card"><i class="fas fa-temperature-high"></i><h3>Thermostat</h3></div>
-            <div class="device-card"><i class="fas fa-video"></i><h3>Cameras</h3></div>
-            <div class="device-card"><i class="fas fa-lock"></i><h3>Locks</h3></div>
-            <div class="device-card"><i class="fas fa-plug"></i><h3>Smart Plugs</h3></div>
-            <div class="device-card"><i class="fas fa-robot"></i><h3>Robots</h3></div>
-            <div class="device-card"><i class="fas fa-fan"></i><h3>Fans</h3></div>
-            <div class="device-card"><i class="fas fa-tv"></i><h3>TV</h3></div>
-        </div>
-    </section>
     <section class="pricing" id="pricing">
         <div class="section-title"><h2>Pricing</h2></div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <div class="price">£9.99<span>/mo</span></div>
-                <ul>
-                    <li>5 devices</li>
-                    <li>Voice control</li>
-                    <li>Basic automation</li>
-                    <li>Mobile app</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Start Free</a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Pro</h3>
-                <div class="price">£19.99<span>/mo</span></div>
-                <ul>
-                    <li>Unlimited devices</li>
-                    <li>Advanced automation</li>
-                    <li>Multi-user access</li>
-                    <li>Premium support</li>
-                </ul>
-                <a href="#" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <div class="price">£49.99<span>/mo</span></div>
-                <ul>
-                    <li>Everything in Pro</li>
-                    <li>Custom integrations</li>
-                    <li>Dedicated support</li>
-                    <li>API access</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Contact Sales</a>
-            </div>
+            <div class="pricing-card"><h3>Starter</h3><div class="price">£9.99<span>/mo</span></div><ul><li>5 devices</li><li>Voice control</li><li>Basic automation</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Start Free</a></div>
+            <div class="pricing-card featured"><h3>Pro</h3><div class="price">£19.99<span>/mo</span></div><ul><li>Unlimited devices</li><li>Advanced automation</li><li>Multi-user access</li><li>Premium support</li></ul><a href="#contact" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a></div>
+            <div class="pricing-card"><h3>Enterprise</h3><div class="price">£49.99<span>/mo</span></div><ul><li>Everything in Pro</li><li>Custom integrations</li><li>API access</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Contact Sales</a></div>
         </div>
     </section>
-    <section class="cta">
-        <h2>Control Your Home with Your Voice</h2>
-        <p style="margin:20px 0;">Start your free trial today.</p>
-        <a href="#" class="btn btn-accent">Get Started</a>
+    <section class="contact" id="contact">
+        <div class="section-title"><h2>Get Started</h2></div>
+        <div class="contact-form">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group"><label>Name</label><input type="text" required placeholder="Your name"></div>
+                <div class="form-group"><label>Email</label><input type="email" required placeholder="you@email.com"></div>
+                <div class="form-group"><label>Devices</label><select><option>5 or fewer</option><option>6-20</option><option>20+</option></select></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Start Free Trial</button>
+            </form>
+            <div class="success-message" id="successMessage">✓ Trial started! Check your email to set up.</div>
+        </div>
     </section>
+    <section class="cta"><h2>Control Your Home with Your Voice</h2><p style="margin:20px 0;">Start your free trial today.</p><a href="#contact" class="btn btn-accent">Get Started</a></section>
     <footer><p>&copy; 2026 SmartHome AI. All rights reserved.</p></footer>
+    <script>function handleSubmit(e){e.preventDefault();e.target.style.display='none';document.getElementById('successMessage').style.display='block';}</script>
 </body>
 </html>

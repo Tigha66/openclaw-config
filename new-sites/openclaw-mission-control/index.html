@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenClaw: Mission Control | Mobile Agent Dashboard</title>
-    <meta name="description" content="Monitor agents, track tokens, manage tasks. Your OpenClaw command center on mobile.">
+    <meta name="description" content="Monitor agents, track tokens, manage tasks. Your OpenClaw command center.">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -13,127 +13,93 @@
         body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
         header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
         .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; display: inline-block; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-accent { background: var(--accent); color: white; }
         .hero { background: linear-gradient(135deg, #EEF2FF, #E0E7FF); padding: 100px 20px; text-align: center; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
         .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
-        .hero-tag { background: var(--primary); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
-        .features, .pricing { padding: 80px 20px; }
+        .mockup { background: var(--dark); padding: 60px; }
+        .phone-mockup { width: 260px; height: 450px; background: #1e293b; border-radius: 35px; margin: 0 auto; padding: 12px; border: 4px solid #334155; }
+        .phone-screen { background: white; height: 100%; border-radius: 22px; overflow: hidden; padding: 15px; text-align: left; font-size: 0.75rem; }
+        .screen-header { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.7rem; }
+        .agent-row { background: #f1f5f9; padding: 10px; border-radius: 8px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .agent-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; display: inline-block; margin-right: 5px; }
+        .features, .pricing, .contact { padding: 80px 20px; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
         .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
         .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
-        .feature-card h3 { margin-bottom: 12px; }
-        .feature-card p { color: #64748b; }
-        .mockup { background: var(--dark); padding: 60px; text-align: center; }
-        .phone-mockup { width: 280px; height: 500px; background: #1e293b; border-radius: 40px; margin: 0 auto; padding: 15px; border: 4px solid #334155; }
-        .phone-screen { background: white; height: 100%; border-radius: 25px; overflow: hidden; padding: 20px; }
-        .screen-header { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 0.8rem; }
-        .agent-row { background: #f1f5f9; padding: 12px; border-radius: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
-        .agent-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
         .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
         .pricing-card.featured { background: var(--primary); color: white; }
         .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
         .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
         .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
+        .success-message { display: none; background: #dcfce7; color: #166534; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
         .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
         footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <div class="logo">OpenClaw <span style="color:var(--primary)">Mission Control</span></div>
-            <a href="#pricing" class="btn btn-primary">Get App</a>
-        </div>
-    </header>
+    <header><div class="header-inner"><div class="logo">OpenClaw <span style="color:var(--primary)">Mission Control</span></div><a href="#pricing" class="btn btn-primary">Get App</a></div></header>
     <section class="hero">
-        <span class="hero-tag">Mobile Dashboard for OpenClaw</span>
         <h1>Your Agents, In Your Pocket</h1>
-        <p>Monitor agent activity, track tokens, manage tasks. Full control from anywhere.</p>
-        <a href="#pricing" class="btn btn-accent">Download Free</a>
-    </section>
-    <section class="mockup">
-        <div class="phone-mockup">
-            <div class="phone-screen">
-                <div class="screen-header">
-                    <span><i class="fas fa-robot"></i> 3 Agents</span>
-                    <span><i class="fas fa-coins"></i> 12.4K tokens</span>
-                </div>
-                <div class="agent-row">
-                    <span><span class="agent-dot"></span> Agent-1</span>
-                    <span style="color:var(--accent)">Running</span>
-                </div>
-                <div class="agent-row">
-                    <span><span class="agent-dot"></span> Agent-2</span>
-                    <span style="color:var(--accent)">Idle</span>
-                </div>
-                <div class="agent-row">
-                    <span><span class="agent-dot"></span> Agent-3</span>
-                    <span style="color:var(--primary)">Processing</span>
+        <p>Monitor agent activity, track tokens, manage tasks.</p>
+        <div class="mockup">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="screen-header"><span><i class="fas fa-robot"></i> 3 Agents</span><span><i class="fas fa-coins"></i> 12.4K</span></div>
+                    <div class="agent-row"><span><span class="agent-dot"></span>Agent-1</span><span style="color:var(--accent)">Running</span></div>
+                    <div class="agent-row"><span><span class="agent-dot"></span>Agent-2</span><span style="color:#94a3b8">Idle</span></div>
+                    <div class="agent-row"><span><span class="agent-dot"></span>Agent-3</span><span style="color:var(--primary)">Processing</span></div>
+                    <hr style="margin:10px 0;border:none;border-top:1px solid #e2e8f0">
+                    <p><strong>Tasks Today:</strong> 47</p>
+                    <p><strong>Tokens:</strong> 12,450</p>
+                    <p><strong>Cost:</strong> £2.34</p>
                 </div>
             </div>
         </div>
+        <a href="#pricing" class="btn btn-accent" style="margin-top:30px">Download Free</a>
     </section>
     <section class="features">
         <div class="section-title"><h2>What Mission Control Does</h2></div>
         <div class="features-grid">
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-robot"></i></div><h3>Agent Monitoring</h3><p>Real-time status of all agents. See what each one is doing.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-coins"></i></div><h3>Token Tracking</h3><p>Monitor usage, costs, set alerts for budget limits.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-list"></i></div><h3>Task Management</h3><p>Push tasks to agents, track progress, see results.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-file-alt"></i></div><h3>Real-time Logs</h3><p>View detailed logs, outputs, errors as they happen.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-users"></i></div><h3>Team Collaboration</h3><p>Manage multiple users, permissions, role-based access.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Smart Alerts</h3><p>Get notified on completion, errors, or unusual activity.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-robot"></i></div><h3>Agent Monitoring</h3><p>Real-time status of all agents.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-coins"></i></div><h3>Token Tracking</h3><p>Monitor usage, costs, set alerts.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-list"></i></div><h3>Task Management</h3><p>Push tasks to agents, track progress.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-file-alt"></i></div><h3>Real-time Logs</h3><p>View outputs, errors as they happen.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-users"></i></div><h3>Team Collaboration</h3><p>Manage users, permissions.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Smart Alerts</h3><p>Get notified on completion, errors.</p></div>
         </div>
     </section>
     <section class="pricing" id="pricing">
         <div class="section-title"><h2>Pricing</h2></div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Free</h3>
-                <div class="price">£0</div>
-                <ul>
-                    <li>1 agent</li>
-                    <li>Basic monitoring</li>
-                    <li>100 tasks/day</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Download</a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Pro</h3>
-                <div class="price">£29.99<span>/mo</span></div>
-                <ul>
-                    <li>10 agents</li>
-                    <li>Advanced analytics</li>
-                    <li>Unlimited tasks</li>
-                    <li>Team features</li>
-                    <li>Priority support</li>
-                </ul>
-                <a href="#" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Download</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <div class="price">£99.99<span>/mo</span></div>
-                <ul>
-                    <li>Unlimited agents</li>
-                    <li>Custom integrations</li>
-                    <li>Dedicated support</li>
-                    <li>API access</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Contact Sales</a>
-            </div>
+            <div class="pricing-card"><h3>Free</h3><div class="price">£0</div><ul><li>1 agent</li><li>Basic monitoring</li><li>100 tasks/day</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Download</a></div>
+            <div class="pricing-card featured"><h3>Pro</h3><div class="price">£29.99<span>/mo</span></div><ul><li>10 agents</li><li>Advanced analytics</li><li>Unlimited tasks</li><li>Team features</li></ul><a href="#contact" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Download</a></div>
+            <div class="pricing-card"><h3>Enterprise</h3><div class="price">£99.99<span>/mo</span></div><ul><li>Unlimited agents</li><li>Custom integrations</li><li>API access</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Contact Sales</a></div>
         </div>
     </section>
-    <section class="cta">
-        <h2>Take Control of Your Agents</h2>
-        <p style="margin:20px 0;">Download on iOS and Android.</p>
-        <a href="#" class="btn btn-accent">Download App</a>
+    <section class="contact" id="contact">
+        <div class="section-title"><h2>Download App</h2></div>
+        <div class="contact-form">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group"><label>Email</label><input type="email" required placeholder="you@email.com"></div>
+                <div class="form-group"><label>Platform</label><select><option>iOS</option><option>Android</option></select></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Download Link</button>
+            </form>
+            <div class="success-message" id="successMessage">✓ Download link sent to your email!</div>
+        </div>
     </section>
+    <section class="cta"><h2>Take Control of Your Agents</h2><p style="margin:20px:0">Download on iOS and Android.</p><a href="#contact" class="btn btn-accent">Download App</a></section>
     <footer><p>&copy; 2026 OpenClaw Mission Control. All rights reserved.</p></footer>
+    <script>function handleSubmit(e){e.preventDefault();e.target.style.display='none';document.getElementById('successMessage').style.display='block';}</script>
 </body>
 </html>

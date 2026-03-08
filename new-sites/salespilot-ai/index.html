@@ -4,118 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SalesPilot AI | Mobile CRM & Sales Follow-Up Bot</title>
-    <meta name="description" content="Automate lead follow-up, track interactions. Mobile CRM for sales teams. From £97/month.">
+    <meta name="description" content="Automate lead follow-up, track interactions, close more deals. From £97/month.">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --primary: #ef4444; --accent: #22c55e; --dark: #0f172a; --light: #f8fafc; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin:0; padding:0; box-sizing: border-box; }
         body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
         header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
         .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        .logo span { color: var(--accent); }
-        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; display: inline-block; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-accent { background: var(--accent); color: white; }
         .hero { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); padding: 100px 20px; text-align: center; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
         .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
-        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
-        .features, .integrations, .pricing { padding: 80px 20px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 30px auto; }
+        .stat-box { background: white; padding: 20px; border-radius: 15px; }
+        .stat-box .num { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .features, .pricing, .contact { padding: 80px 20px; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
         .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
         .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
-        .feature-card h3 { margin-bottom: 12px; }
-        .feature-card p { color: #64748b; }
-        .integrations { background: var(--light); }
-        .int-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .int-item { width: 120px; height: 120px; background: white; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .int-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
         .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
         .pricing-card.featured { background: var(--primary); color: white; }
         .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
         .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
         .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
-        .stats { padding: 60px 20px; background: var(--dark); color: white; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: center; }
-        .stat-item .number { font-size: 3rem; font-weight: 700; color: var(--accent); }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
+        .success-message { display: none; background: #dcfce7; color: #166534; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
         .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
         footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <div class="logo">SalesPilot<span>AI</span></div>
-            <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
-        </div>
-    </header>
+    <header><div class="header-inner"><div class="logo">SalesPilot<span style="color:var(--accent)">AI</span></div><a href="#contact" class="btn btn-primary">Get Started</a></div></header>
     <section class="hero">
-        <span class="hero-tag">Mobile CRM + Sales Assistant</span>
         <h1>Never Lose a Lead Again</h1>
-        <p>Automate follow-ups, track interactions, close more deals. Your AI sales assistant works 24/7.</p>
-        <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
-    </section>
-    <section class="stats">
+        <p>Automate follow-ups, track interactions, close more deals.</p>
         <div class="stats-grid">
-            <div class="stat-item"><div class="number">3x</div><div>More Follow-ups</div></div>
-            <div class="stat-item"><div class="number">47%</div><div>More Closures</div></div>
-            <div class="stat-item"><div class="number">24/7</div><div>Lead Response</div></div>
-            <div class="stat-item"><div class="number">0</div><div>Missed Leads</div></div>
+            <div class="stat-box"><div class="num">3x</div><div>More Follow-ups</div></div>
+            <div class="stat-box"><div class="num">47%</div><div>More Closures</div></div>
+            <div class="stat-box"><div class="num">24/7</div><div>Lead Response</div></div>
+            <div class="stat-box"><div class="num">0</div><div>Missed Leads</div></div>
         </div>
+        <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
     </section>
     <section class="features">
         <div class="section-title"><h2>What SalesPilot Does</h2></div>
         <div class="features-grid">
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-robot"></i></div><h3>Auto Follow-Up</h3><p>AI automatically follows up with leads via chat, email, WhatsApp.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-clipboard-list"></i></div><h3>Response Logging</h3><p>Track and log every interaction. Full history for each lead.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Smart Scaling</h3><p>Adjust outreach based on lead activity and priority.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-plug"></i></div><h3>CRM Integration</h3><p>Sync with Salesforce, HubSpot, Pipedrive via API.</p></div>
-            <div class="feature-card"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><h3>Mobile CRM</h3><p>Full CRM on your phone. Manage leads anywhere.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-robot"></i></div><h3>Auto Follow-Up</h3><p>AI follows up with leads via chat, email, WhatsApp.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-clipboard-list"></i></div><h3>Response Logging</h3><p>Track every interaction in one place.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Smart Scaling</h3><p>Adjust outreach based on lead activity.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-plug"></i></div><h3>CRM Integration</h3><p>Sync with Salesforce, HubSpot, Pipedrive.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><h3>Mobile CRM</h3><p>Full CRM on your phone.</p></div>
             <div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Smart Reminders</h3><p>Get notified when leads respond.</p></div>
-        </div>
-    </section>
-    <section class="integrations">
-        <div class="section-title"><h2>Integrates With</h2></div>
-        <div class="int-grid">
-            <div class="int-item"><i class="fab fa-salesforce"></i><div>Salesforce</div></div>
-            <div class="int-item"><i class="fab fa-hubspot"></i><div>HubSpot</div></div>
-            <div class="int-item"><i class="fas fa-pipedrive"></i><div>Pipedrive</div></div>
-            <div class="int-item"><i class="fab fa-slack"></i><div>Slack</div></div>
         </div>
     </section>
     <section class="pricing" id="pricing">
         <div class="section-title"><h2>Pricing</h2></div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <div class="price">£97<span>/mo</span></div>
-                <ul><li>1,000 leads</li><li>Auto follow-ups</li><li>Basic CRM</li></ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Start Free</a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Growth</h3>
-                <div class="price">£197<span>/mo</span></div>
-                <ul><li>10,000 leads</li><li>Advanced automation</li><li>CRM integrations</li><li>Priority support</li></ul>
-                <a href="#" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <div class="price">£497<span>/mo</span></div>
-                <ul><li>Unlimited leads</li><li>Custom automation</li><li>Dedicated support</li><li>API access</li></ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Contact Sales</a>
-            </div>
+            <div class="pricing-card"><h3>Starter</h3><div class="price">£97<span>/mo</span></div><ul><li>1,000 leads</li><li>Auto follow-ups</li><li>Basic CRM</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Start Free</a></div>
+            <div class="pricing-card featured"><h3>Growth</h3><div class="price">£197<span>/mo</span></div><ul><li>10,000 leads</li><li>Advanced automation</li><li>CRM integrations</li><li>Priority support</li></ul><a href="#contact" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a></div>
+            <div class="pricing-card"><h3>Enterprise</h3><div class="price">£497<span>/mo</span></div><ul><li>Unlimited leads</li><li>Custom automation</li><li>API access</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Contact Sales</a></div>
         </div>
     </section>
-    <section class="cta">
-        <h2>Ready to Close More Deals?</h2>
-        <p style="margin:20px 0;">Start your 14-day free trial.</p>
-        <a href="#" class="btn btn-accent">Start Free Trial</a>
+    <section class="contact" id="contact">
+        <div class="section-title"><h2>Start Closing More Deals</h2></div>
+        <div class="contact-form">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group"><label>Company Name</label><input type="text" required placeholder="Your company"></div>
+                <div class="form-group"><label>Email</label><input type="email" required placeholder="you@company.com"></div>
+                <div class="form-group"><label>Team Size</label><select><option>1-5</option><option>6-20</option><option>20+</option></select></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Start Free Trial</button>
+            </form>
+            <div class="success-message" id="successMessage">✓ Trial started! Check your email to set up your account.</div>
+        </div>
     </section>
-    <footer><p>2026 SalesPilot AI. All rights reserved.</p></footer>
+    <section class="cta"><h2>Ready to Close More Deals?</h2><p style="margin:20px 0;">14-day free trial.</p><a href="#contact" class="btn btn-accent">Start Free Trial</a></section>
+    <footer><p>&copy; 2026 SalesPilot AI. All rights reserved.</p></footer>
+    <script>function handleSubmit(e){e.preventDefault();e.target.style.display='none';document.getElementById('successMessage').style.display='block';}</script>
 </body>
 </html>

@@ -3,204 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Concierge | Smart Customer Service for Small Businesses</title>
-    <meta name="description" content="AI-powered concierge bot for small businesses. Automate bookings, FAQs, reminders, and more. Starting £97/month.">
+    <title>AI Concierge | 24/7 Customer Service Bot</title>
+    <meta name="description" content="AI-powered customer service for websites. 24/7 support, instant responses. From £97/month.">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #6366f1; --secondary: #4f46e5; --accent: #10b981; --dark: #0f172a; --light: #f8fafc; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--dark); line-height: 1.6; }
-        
+        :root { --primary: #f97316; --accent: #22c55e; --dark: #0f172a; --light: #f8fafc; }
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
         header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        .logo span { color: var(--accent); }
-        
         .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
-        .btn-primary { background: var(--primary); color: white; transition: all 0.3s; }
-        .btn-primary:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn-primary { background: var(--primary); color: white; }
         .btn-accent { background: var(--accent); color: white; }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
-        
-        .hero { background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); padding: 100px 20px; text-align: center; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; color: var(--dark); }
+        .hero { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
         .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
-        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; font-weight: 500; }
-        
-        .features { padding: 80px 20px; background: white; }
-        .features-inner { max-width: 1200px; margin: 0 auto; }
+        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
+        .demo-box { background: white; border-radius: 20px; padding: 30px; max-width: 500px; margin: 30px auto; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .chat-messages { height: 250px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 10px; padding: 15px; margin-bottom: 15px; }
+        .chat-msg { margin-bottom: 12px; padding: 10px 15px; border-radius: 15px; max-width: 80%; }
+        .chat-msg.bot { background: #f1f5f9; float: left; clear: both; }
+        .chat-msg.user { background: var(--primary); color: white; float: right; clear: both; }
+        .chat-input { display: flex; gap: 10px; }
+        .chat-input input { flex: 1; padding: 12px 20px; border: 1px solid #e2e8f0; border-radius: 50px; outline: none; }
+        .features, .how-it-works, .pricing, .contact { padding: 80px 20px; }
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; }
-        .section-title p { color: #64748b; font-size: 1.1rem; }
-        
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background: var(--light); padding: 40px; border-radius: 20px; transition: transform 0.3s; }
-        .feature-card:hover { transform: translateY(-5px); }
-        .feature-icon { width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
-        .feature-card h3 { margin-bottom: 15px; font-size: 1.3rem; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
+        .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+        .feature-card h3 { margin-bottom: 12px; }
         .feature-card p { color: #64748b; }
-        
-        .businesses { padding: 80px 20px; background: var(--light); }
-        .biz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
-        .biz-item { background: white; padding: 25px; border-radius: 15px; text-align: center; font-weight: 500; }
-        
-        .pricing { padding: 80px 20px; background: white; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
-        .pricing-card { background: var(--light); padding: 40px; border-radius: 20px; text-align: center; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
         .pricing-card.featured { background: var(--primary); color: white; }
-        .pricing-card.featured p { color: rgba(255,255,255,0.8); }
         .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
-        .price span { font-size: 1rem; font-weight: 400; }
         .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
-        .pricing-card li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
-        .pricing-card.featured li { border-color: rgba(255,255,255,0.2); }
-        
-        .demo { padding: 80px 20px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; text-align: center; }
-        .demo-box { background: white; color: var(--dark); max-width: 600px; margin: 40px auto 0; border-radius: 20px; padding: 30px; text-align: left; }
-        .chat-message { padding: 15px; border-radius: 15px; margin-bottom: 15px; }
-        .chat-user { background: #f1f5f9; margin-left: 20%; }
-        .chat-bot { background: var(--primary); color: white; margin-right: 20%; }
-        
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; font-family: inherit; }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .success-message { display: none; background: #dcfce7; color: #166534; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
         .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
-        
         footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .features-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-inner">
-            <div class="logo">AI<span>Concierge</span></div>
-            <a href="#pricing" class="btn btn-primary">Get Started</a>
+            <div class="logo">AI Concierge</div>
+            <div><a href="#contact" class="btn btn-primary">Get Started</a></div>
         </div>
     </header>
-
     <section class="hero">
-        <span class="hero-tag">🚀 AI-Powered Customer Service</span>
-        <h1>Automate Your Business Customer Service</h1>
-        <p>Handle bookings, FAQs, reminders, and more — 24/7. Save hours every week and never miss a customer again.</p>
-        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
-            <a href="#demo" class="btn btn-outline">See Demo</a>
+        <span class="hero-tag">Your 24/7 AI Support Agent</span>
+        <h1>Instant Support, Every Time</h1>
+        <p>AI-powered customer service that never sleeps. Chat with our demo bot below.</p>
+        <div class="demo-box">
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-msg bot">👋 Hi! I'm your AI assistant. How can I help you today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+            </div>
         </div>
+        <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
     </section>
-
     <section class="features">
-        <div class="features-inner">
-            <div class="section-title">
-                <h2>What It Does</h2>
-                <p>Everything your receptionists do — automatically</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
-                    <h3>Booking Management</h3>
-                    <p>Customers can book, reschedule, or cancel appointments online. Auto-syncs with your calendar.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
-                    <h3>Smart FAQ Handling</h3>
-                    <p>Instant answers to common questions: pricing, hours, services, directions — any time day or night.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bell"></i></div>
-                    <h3>Reminders & Notifications</h3>
-                    <p>Automated SMS reminders for appointments, follow-ups, and promotions. Reduce no-shows by 80%.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-calendar-sync"></i></div>
-                    <h3>Calendar Integration</h3>
-                    <p>Syncs with Google Calendar, Outlook, Apple Calendar. Real-time availability updates.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-sms"></i></div>
-                    <h3>SMS Marketing</h3>
-                    <p>Send promotions, specials, and updates to customers. Keep them engaged and coming back.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
-                    <h3>Personalized Experience</h3>
-                    <p>Learns from customer history. Recommends services, remembers preferences, delivers tailored experiences.</p>
-                </div>
-            </div>
+        <div class="section-title"><h2>What AI Concierge Does</h2></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-clock"></i></div><h3>24/7 Support</h3><p>Instant responses, any time of day. Never miss a customer.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-brain"></i></div><h3>Smart AI</h3><p>Learns from conversations. Gets smarter over time.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-globe"></i></div><h3>80+ Languages</h3><p>Support customers in their native language.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-plug"></i></div><h3>Easy Integration</h3><p>Embeds in minutes. Works with any website.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Analytics</h3><p>Track conversations, satisfaction, and trends.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-user-shield"></i></div><h3>Human Handoff</h3><p>Escalate to human agents seamlessly.</p></div>
         </div>
     </section>
-
-    <section class="businesses">
-        <div class="section-title">
-            <h2>Works For Every Business</h2>
-        </div>
-        <div class="biz-grid">
-            <div class="biz-item">🏢 Plumbers</div>
-            <div class="biz-item">🦷 Dentists</div>
-            <div class="biz-item">🍽️ Restaurants</div>
-            <div class="biz-item">💇 Salons</div>
-            <div class="biz-item">🏥 Clinics</div>
-            <div class="biz-item">🏠 Estate Agents</div>
-            <div class="biz-item">💪 Gyms</div>
-            <div class="biz-item">🧑‍⚕️ Therapists</div>
-        </div>
-    </section>
-
     <section class="pricing" id="pricing">
-        <div class="section-title">
-            <h2>Simple Pricing</h2>
-            <p>No hidden fees. Cancel anytime.</p>
-        </div>
+        <div class="section-title"><h2>Pricing</h2></div>
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Starter</h3>
-                <div class="price">£97<span>/month</span></div>
-                <p>Perfect for small businesses</p>
+                <div class="price">£97<span>/mo</span></div>
                 <ul>
-                    <li>✓ Unlimited bookings</li>
-                    <li>✓ FAQ automation</li>
-                    <li>✓ SMS reminders</li>
-                    <li>✓ Calendar sync</li>
-                    <li>✓ Email support</li>
+                    <li>1,000 chats/month</li>
+                    <li>Basic AI responses</li>
+                    <li>Email support</li>
                 </ul>
-                <a href="#" class="btn btn-outline">Start Trial</a>
+                <a href="#contact" class="btn btn-primary" style="width:100%;">Start Free</a>
             </div>
             <div class="pricing-card featured">
-                <h3>Pro</h3>
-                <div class="price">£197<span>/month</span></div>
-                <p>For growing businesses</p>
+                <h3>Growth</h3>
+                <div class="price">£197<span>/mo</span></div>
                 <ul>
-                    <li>✓ Everything in Starter</li>
-                    <li>✓ SMS marketing campaigns</li>
-                    <li>✓ Multi-staff management</li>
-                    <li>✓ Custom integrations</li>
-                    <li>✓ Priority support</li>
+                    <li>10,000 chats/month</li>
+                    <li>Advanced AI</li>
+                    <li>Human handoff</li>
+                    <li>Analytics</li>
                 </ul>
-                <a href="#" class="btn btn-accent" style="background: white; color: var(--primary);">Start Trial</a>
+                <a href="#contact" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">£497<span>/mo</span></div>
+                <ul>
+                    <li>Unlimited chats</li>
+                    <li>Custom training</li>
+                    <li>Dedicated support</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width:100%;">Contact Sales</a>
             </div>
         </div>
     </section>
-
-    <section class="demo" id="demo">
-        <h2>See It In Action</h2>
-        <p>Watch how the AI handles customer conversations</p>
-        <div class="demo-box">
-            <div class="chat-message chat-user">Hi, do you have any availability tomorrow at 2pm?</div>
-            <div class="chat-message chat-bot">Yes! We have 2:00pm and 2:30pm available tomorrow. Would you like me to book you in for a haircut?</div>
-            <div class="chat-message chat-user">Yes please, book 2pm.</div>
-            <div class="chat-message chat-bot">Done! I've booked you in for tomorrow at 2:00pm. You'll receive a reminder 2 hours before. See you then!</div>
+    <section class="contact" id="contact">
+        <div class="section-title"><h2>Get Started</h2></div>
+        <div class="contact-form">
+            <form id="signupForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label>Business Name</label>
+                    <input type="text" name="business" required placeholder="Your business name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="you@business.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" placeholder="+44 7700 900000">
+                </div>
+                <div class="form-group">
+                    <label>Interest</label>
+                    <select name="plan">
+                        <option value="starter">Starter - £97/mo</option>
+                        <option value="growth">Growth - £197/mo</option>
+                        <option value="enterprise">Enterprise - £497/mo</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Request Demo</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                ✓ Thanks! We'll contact you within 24 hours to set up your demo.
+            </div>
         </div>
     </section>
-
     <section class="cta">
-        <h2>Ready to Automate?</h2>
-        <p style="margin: 20px 0;">Start your 14-day free trial. No credit card required.</p>
-        <a href="#" class="btn btn-accent">Get Started Free</a>
+        <h2>Ready to Automate Support?</h2>
+        <p style="margin:20px 0;">Start your 14-day free trial.</p>
+        <a href="#contact" class="btn btn-accent">Get Started</a>
     </section>
-
-    <footer>
-        <p>© 2026 AI Concierge. All rights reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 AI Concierge. All rights reserved.</p></footer>
+    <script>
+        const responses = {
+            'hello': 'Hi there! How can I help you today?',
+            'hi': 'Hello! What can I assist you with?',
+            'price': 'Our plans start at £97/month for Starter, £197/month for Growth, and £497/month for Enterprise. Which interests you?',
+            'pricing': 'Our plans start at £97/month for Starter, £197/month for Growth, and £497/month for Enterprise.',
+            'help': "I'd be happy to help! What would you like to know about our AI customer service?",
+            'demo': 'Great! Fill out the form above and we\'ll set up a personalized demo for you.',
+            'contact': 'You can fill out the form above or email us at hello@aiconcierge.ai',
+            'features': 'We offer 24/7 support, 80+ languages, easy integration, analytics, and human handoff. Want to learn more?'
+        };
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            const userMsg = input.value.trim();
+            if (!userMsg) return;
+            messages.innerHTML += `<div class="chat-msg user">${userMsg}</div>`;
+            setTimeout(() => {
+                const lower = userMsg.toLowerCase();
+                let found = false;
+                for (const key in responses) {
+                    if (lower.includes(key)) {
+                        messages.innerHTML += `<div class="chat-msg bot">${responses[key]}</div>`;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) messages.innerHTML += `<div class="chat-msg bot">Thanks for your message! Our team will follow up shortly. 😊</div>`;
+                messages.scrollTop = messages.scrollHeight;
+            }, 500);
+            input.value = '';
+        }
+        document.getElementById('chatInput').addEventListener('keypress', e => { if (e.key === 'Enter') sendMessage(); });
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

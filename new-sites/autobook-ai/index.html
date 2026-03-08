@@ -3,222 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoBook AI | Automated Lead & Appointment Bot</title>
-    <meta name="description" content="Automated appointment booking & lead nurturing bot for service professionals. Qualify leads, book appointments, send reminders. Starting £147/month.">
+    <title>AutoBook AI | Lead Qualification & Appointment Booking</title>
+    <meta name="description" content="AI-powered lead booking. Qualify leads and book appointments automatically. From £147/month.">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #7c3aed; --secondary: #6d28d9; --accent: #10b981; --dark: #0f172a; --light: #f8fafc; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--dark); line-height: 1.6; }
-        
-        header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        :root { --primary: #14b8a6; --accent: #f59e0b; --dark: #0f172a; --light: #f8fafc; }
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
         .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-        .logo span { color: var(--accent); }
-        
-        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
-        .btn-primary { background: var(--primary); color: white; transition: all 0.3s; }
-        .btn-primary:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
         .btn-accent { background: var(--accent); color: white; }
-        
-        .hero { background: linear-gradient(135deg, #F3E8FF 0%, #EDE9FE 100%); padding: 100px 20px; text-align: center; }
+        .hero { background: linear-gradient(135deg, #F0FDFA, #CCFBF1); padding: 100px 20px; text-align: center; }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
         .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
-        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; font-weight: 500; }
-        
-        .features { padding: 80px 20px; background: white; }
+        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
+        .features, .pricing, .contact { padding: 80px 20px; }
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px; }
-        .section-title p { color: #64748b; font-size: 1.1rem; }
-        
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; transition: transform 0.3s; }
-        .feature-card:hover { transform: translateY(-5px); }
+        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
         .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
-        .feature-card h3 { margin-bottom: 12px; font-size: 1.2rem; }
+        .feature-card h3 { margin-bottom: 12px; }
         .feature-card p { color: #64748b; }
-        
-        .channels { padding: 80px 20px; background: var(--light); }
-        .channel-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
-        .channel-item { text-align: center; padding: 30px; background: white; border-radius: 20px; width: 150px; }
-        .channel-item i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-        
-        .pricing { padding: 80px 20px; background: white; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
-        .pricing-card { background: var(--light); padding: 40px; border-radius: 20px; text-align: center; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
         .pricing-card.featured { background: var(--primary); color: white; }
-        .pricing-card.featured p { color: rgba(255,255,255,0.8); }
-        .pricing-card.featured li { border-color: rgba(255,255,255,0.2); }
         .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
-        .price span { font-size: 1rem; font-weight: 400; }
         .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
-        .pricing-card li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
-        
-        .stats { padding: 60px 20px; background: var(--dark); color: white; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: center; }
-        .stat-item .number { font-size: 3rem; font-weight: 700; color: var(--accent); }
-        
-        .demo { padding: 80px 20px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; text-align: center; }
-        .demo-box { background: white; color: var(--dark); max-width: 600px; margin: 40px auto 0; border-radius: 20px; padding: 30px; text-align: left; }
-        .chat-message { padding: 15px; border-radius: 15px; margin-bottom: 12px; }
-        .chat-user { background: #f1f5f9; margin-left: 20%; }
-        .chat-bot { background: var(--primary); color: white; margin-right: 20%; }
-        
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
+        .success-message { display: none; background: #dcfce7; color: #166534; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
         .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
-        
         footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
-        
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .stats-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-inner">
-            <div class="logo">AutoBook<span>AI</span></div>
-            <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
-        </div>
-    </header>
-
+    <header><div class="header-inner"><div class="logo">AutoBook AI</div><a href="#contact" class="btn btn-primary">Get Started</a></div></header>
     <section class="hero">
-        <span class="hero-tag">🤖 Automated Lead & Appointment System</span>
-        <h1>Never Miss Another Lead</h1>
-        <p>Automatically qualify leads, book appointments, and nurture customers — 24/7. Turn more leads into booked appointments.</p>
-        <div style="display: flex; gap: 15px; justify-content: center;">
-            <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
-            <a href="#demo" class="btn btn-primary" style="background: white; color: var(--primary);">See Demo</a>
-        </div>
+        <span class="hero-tag">Lead Booking Made Automatic</span>
+        <h1>Book More Appointments</h1>
+        <p>AI qualifies leads and books appointments on autopilot. Never lose a lead again.</p>
+        <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
     </section>
-
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item"><div class="number">80%</div><div>Less No-Shows</div></div>
-            <div class="stat-item"><div class="number">3x</div><div>More Appointments</div></div>
-            <div class="stat-item"><div class="number">24/7</div><div>Lead Response</div></div>
-            <div class="stat-item"><div class="number">£0</div><div>Setup Fee*</div></div>
-        </div>
-    </section>
-
     <section class="features">
-        <div class="section-title">
-            <h2>What AutoBook AI Does</h2>
-            <p>Complete lead management on autopilot</p>
-        </div>
+        <div class="section-title"><h2>What AutoBook Does</h2></div>
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-filter"></i></div>
-                <h3>Lead Qualification</h3>
-                <p>Automatically assess requirements, budget, and urgency. Filter high-quality leads and pass only the best to you.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
-                <h3>Appointment Booking</h3>
-                <p>Let leads book directly from conversation. Real-time availability synced to your calendar. No double bookings.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-bell"></i></div>
-                <h3>Confirmations & Reminders</h3>
-                <p>Auto-send confirmations via SMS/WhatsApp. Reminder 24h and 2h before. Reduce no-shows by 80%.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-seedling"></i></div>
-                <h3>Lead Nurturing</h3>
-                <p>Drip campaigns, follow-ups, re-engagement. Automatically nurture cold leads into bookings.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Analytics & Reporting</h3>
-                <p>Track leads, appointments, conversions, revenue. Know exactly what's working.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
-                <h3>CRM Integration</h3>
-                <p>Sync with Salesforce, HubSpot, Pipedrive. All your data in one place.</p>
-            </div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-robot"></i></div><h3>Lead Qualification</h3><p>AI asks the right questions to qualify leads instantly.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h3>Auto Booking</h3><p>Books appointments directly on your calendar.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Reminder Alerts</h3><p>Sends reminders to reduce no-shows.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Conversion Analytics</h3><p>Track lead sources and conversion rates.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-whatsapp"></i></div><h3>WhatsApp & SMS</h3><p>Engage leads on their preferred channel.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-sync"></i></div><h3>Calendar Sync</h3><p>Works with Google, Outlook, Calendly.</p></div>
         </div>
     </section>
-
-    <section class="channels">
-        <div class="section-title">
-            <h2>Works Everywhere</h2>
-        </div>
-        <div class="channel-grid">
-            <div class="channel-item"><i class="fab fa-whatsapp"></i><div>WhatsApp</div></div>
-            <div class="channel-item"><i class="fas fa-sms"></i><div>SMS</div></div>
-            <div class="channel-item"><i class="fas fa-globe"></i><div>Web Widget</div></div>
-            <div class="channel-item"><i class="fab fa-instagram"></i><div>Instagram</div></div>
-        </div>
-    </section>
-
     <section class="pricing" id="pricing">
-        <div class="section-title">
-            <h2>Pricing</h2>
-            <p>Flexible plans for any business size</p>
-        </div>
+        <div class="section-title"><h2>Pricing</h2></div>
         <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <div class="price">£147<span>/month</span></div>
-                <p>For small businesses</p>
-                <ul>
-                    <li>✓ 100 leads/month</li>
-                    <li>✓ Unlimited bookings</li>
-                    <li>✓ WhatsApp & SMS</li>
-                    <li>✓ Calendar sync</li>
-                    <li>✓ Basic analytics</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Start Trial</a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Growth</h3>
-                <div class="price">£297<span>/month</span></div>
-                <p>For growing businesses</p>
-                <ul>
-                    <li>✓ 500 leads/month</li>
-                    <li>✓ Lead nurturing campaigns</li>
-                    <li>✓ Multi-channel (IG, web)</li>
-                    <li>✓ CRM integration</li>
-                    <li>✓ Advanced analytics</li>
-                </ul>
-                <a href="#" class="btn btn-accent" style="background: white; color: var(--primary); width:100%;">Start Trial</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Enterprise</h3>
-                <div class="price">£497<span>/month</span></div>
-                <p>For large teams</p>
-                <ul>
-                    <li>✓ Unlimited leads</li>
-                    <li>✓ Custom integrations</li>
-                    <li>✓ Dedicated support</li>
-                    <li>✓ White-label</li>
-                    <li>✓ API access</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;">Contact Us</a>
-            </div>
+            <div class="pricing-card"><h3>Starter</h3><div class="price">£147<span>/mo</span></div><ul><li>50 bookings/month</li><li>Lead qualification</li><li>Calendar sync</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Start Free</a></div>
+            <div class="pricing-card featured"><h3>Growth</h3><div class="price">£297<span>/mo</span></div><ul><li>200 bookings/month</li><li>WhatsApp & SMS</li><li>Analytics</li><li>Priority support</li></ul><a href="#contact" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a></div>
+            <div class="pricing-card"><h3>Enterprise</h3><div class="price">£497<span>/mo</span></div><ul><li>Unlimited bookings</li><li>Custom integrations</li><li>Dedicated support</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Contact Sales</a></div>
         </div>
     </section>
-
-    <section class="demo" id="demo">
-        <h2>See It In Action</h2>
-        <p>Watch AutoBook qualify and book a lead</p>
-        <div class="demo-box">
-            <div class="chat-message chat-user">Hi, I need a plumber for a leaking pipe</div>
-            <div class="chat-message chat-bot">I can help! Is this an emergency or can we schedule?</div>
-            <div class="chat-message chat-user">It's leaking quite bad, need someone today</div>
-            <div class="chat-message chat-bot">I understand. What's your address? And what's the best number to reach you on?</div>
-            <div class="chat-message chat-user">23 High Street, and my number is 07700 900123</div>
-            <div class="chat-message chat-bot">Perfect! I've booked a plumber for today between 2-4pm. You'll receive a confirmation SMS shortly. Thanks!</div>
+    <section class="contact" id="contact">
+        <div class="section-title"><h2>Book a Demo</h2></div>
+        <div class="contact-form">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group"><label>Business Name</label><input type="text" required placeholder="Your business"></div>
+                <div class="form-group"><label>Email</label><input type="email" required placeholder="you@business.com"></div>
+                <div class="form-group"><label>Website</label><input type="url" placeholder="https://yoursite.com"></div>
+                <div class="form-group"><label>Plan</label><select><option>Starter - £147/mo</option><option>Growth - £297/mo</option><option>Enterprise - £497/mo</option></select></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Schedule Demo</button>
+            </form>
+            <div class="success-message" id="successMessage">✓ Thanks! We'll contact you within 24 hours.</div>
         </div>
     </section>
-
-    <section class="cta">
-        <h2>Ready to Automate?</h2>
-        <p style="margin: 20px 0;">Start your 14-day free trial. No credit card required.</p>
-        <a href="#" class="btn btn-accent">Get Started Free</a>
-    </section>
-
-    <footer>
-        <p>© 2026 AutoBook AI. All rights reserved.</p>
-    </footer>
+    <section class="cta"><h2>Start Booking More Leads</h2><p style="margin:20px 0;">14-day free trial. No credit card.</p><a href="#contact" class="btn btn-accent">Get Started</a></section>
+    <footer><p>&copy; 2026 AutoBook AI. All rights reserved.</p></footer>
+    <script>function handleSubmit(e){e.preventDefault();e.target.style.display='none';document.getElementById('successMessage').style.display='block';}</script>
 </body>
 </html>
