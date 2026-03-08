@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchedulePilot AI | Smart Scheduling for Service Businesses</title>
+    <meta name="description" content="AI-powered scheduling for consultants, salons, clinics. Automate bookings, reminders. From £150/month.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #0ea5e9; --accent: #22c55e; --dark: #0f172a; --light: #f8fafc; }
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, #E0F2FE, #BAE6FD); padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
+        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
+        .features, .use-cases, .pricing { padding: 80px 20px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
+        .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+        .feature-card h3 { margin-bottom: 12px; }
+        .feature-card p { color: #64748b; }
+        .use-cases { background: var(--light); }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+        .case-card { background: white; padding: 30px; border-radius: 15px; text-align: center; }
+        .case-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
+        .pricing-card.featured { background: var(--primary); color: white; }
+        .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .stats { padding: 60px 20px; background: var(--dark); color: white; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .stat-item .number { font-size: 3rem; font-weight: 700; color: var(--accent); }
+        .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">SchedulePilot<span>AI</span></div>
+            <a href="#pricing" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+    <section class="hero">
+        <span class="hero-tag">Smart Scheduling for Service Businesses</span>
+        <h1>Automate Your Bookings</h1>
+        <p>AI-powered scheduling for consultants, salons, clinics. Clients book via text. You focus on serving.</p>
+        <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
+    </section>
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item"><div class="number">80%</div><div>Less Admin Work</div></div>
+            <div class="stat-item"><div class="number">40%</div><div>Fewer No-Shows</div></div>
+            <div class="stat-item"><div class="number">24/7</div><div>Booking Hours</div></div>
+            <div class="stat-item"><div class="number">£0</div><div>Setup Fee</div></div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="section-title"><h2>What SchedulePilot Does</h2></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h3>Calendar Sync</h3><p>Google Calendar, Outlook. Two-way sync. Real-time availability.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-whatsapp"></i></div><h3>Book via Text</h3><p>Clients book via WhatsApp or SMS. No app needed.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-sync"></i></div><h3>Auto Reschedule</h3><p>Clients can reschedule with one text. Updates everywhere.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Smart Reminders</h3><p>Automated reminders via SMS/WhatsApp. Reduce no-shows.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-list"></i></div><h3>Daily Agendas</h3><p>Auto-generated daily schedule. Prep materials included.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Analytics</h3><p>Track bookings, revenue, no-shows. Insights to grow.</p></div>
+        </div>
+    </section>
+    <section class="use-cases">
+        <div class="section-title"><h2>Works For</h2></div>
+        <div class="case-grid">
+            <div class="case-card"><i class="fas fa-user-tie"></i><h3>Consultants</h3><p>Client meetings scheduled automatically</p></div>
+            <div class="case-card"><i class="fas fa-cut"></i><h3>Salons</h3><p>Hair, beauty, wellness appointments</p></div>
+            <div class="case-card"><i class="fas fa-stethoscope"></i><h3>Clinics</h3><p>Patient appointments, reminders</p></div>
+            <div class="case-card"><i class="fas fa-dumbbell"></i><h3>Coaches</h3><p>Personal training, sessions</p></div>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <div class="section-title"><h2>Pricing</h2></div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">£150<span>/mo</span></div>
+                <p>For small businesses</p>
+                <ul>
+                    <li>1 user</li>
+                    <li>50 bookings/month</li>
+                    <li>Google/Outlook sync</li>
+                    <li>SMS reminders</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;">Start Trial</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Growth</h3>
+                <div class="price">£300<span>/mo</span></div>
+                <p>For growing teams</p>
+                <ul>
+                    <li>3 users</li>
+                    <li>Unlimited bookings</li>
+                    <li>WhatsApp booking</li>
+                    <li>Auto reschedule</li>
+                    <li>Analytics</li>
+                </ul>
+                <a href="#" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Trial</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">£500<span>/mo</span></div>
+                <p>For large teams</p>
+                <ul>
+                    <li>Unlimited users</li>
+                    <li>Custom integrations</li>
+                    <li>API access</li>
+                    <li>Dedicated support</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Automate Your Scheduling</h2>
+        <p style="margin:20px 0;">Start your 14-day free trial.</p>
+        <a href="#" class="btn btn-accent">Start Free Trial</a>
+    </section>
+    <footer><p>&copy; 2026 SchedulePilot AI. All rights reserved.</p></footer>
+</body>
+</html>
