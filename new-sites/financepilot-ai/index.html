@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinancePilot AI | Personal Finance Assistant</title>
+    <meta name="description" content="Track expenses, create budgets, bill reminders. AI-powered finance assistant. Free to start.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #10b981; --secondary: #059669; --accent: #f59e0b; --dark: #0f172a; --light: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
+        .hero-tag { background: var(--accent); color: white; padding: 8px 20px; border-radius: 30px; display: inline-block; margin-bottom: 20px; }
+        .features, .how-it-works, .pricing { padding: 80px 20px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
+        .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+        .feature-card h3 { margin-bottom: 12px; }
+        .feature-card p { color: #64748b; }
+        .how-it-works { background: var(--light); }
+        .steps { max-width: 700px; margin: 0 auto; }
+        .step { background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 20px; }
+        .step-num { width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
+        .pricing-card.featured { background: var(--primary); color: white; }
+        .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .stats { padding: 60px 20px; background: var(--dark); color: white; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .stat-item .number { font-size: 3rem; font-weight: 700; color: var(--primary); }
+        .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">FinancePilot<span>AI</span></div>
+            <a href="#pricing" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+    <section class="hero">
+        <span class="hero-tag">Your AI Finance Assistant</span>
+        <h1>Master Your Money</h1>
+        <p>Track expenses, create budgets, never miss a bill. Your personal finance assistant in your pocket.</p>
+        <a href="#pricing" class="btn btn-accent">Start Free</a>
+    </section>
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item"><div class="number">£2,400</div><div>Avg. Saved/Year</div></div>
+            <div class="stat-item"><div class="number">98%</div><div>Bill Reminders</div></div>
+            <div class="stat-item"><div class="number">50+</div><div>Banks Supported</div></div>
+            <div class="stat-item"><div class="number">Free</div><div>To Start</div></div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="section-title"><h2>What FinancePilot Does</h2></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-credit-card"></i></div><h3>Auto Expense Tracking</h3><p>Connects to your bank. Automatically records and categorizes every transaction.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-pie"></i></div><h3>Smart Budgeting</h3><p>AI creates personalized budgets based on your income and spending patterns.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h3>Bill Reminders</h3><p>Never miss a payment. Get alerts for bills, subscriptions, due dates.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-lightbulb"></i></div><h3>Savings Suggestions</h3><p>AI analyzes spending and suggests ways to cut costs and save more.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fab fa-whatsapp"></i></div><h3>Chat Interface</h3><p>Manage finances via WhatsApp, Telegram, Discord. Simple commands.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-shield-alt"></i></div><h3>Bank-Level Security</h3><p>256-bit encryption. Your data is always safe and private.</p></div>
+        </div>
+    </section>
+    <section class="how-it-works">
+        <div class="section-title"><h2>How It Works</h2></div>
+        <div class="steps">
+            <div class="step"><div class="step-num">1</div><div><h3>Connect Your Bank</h3><p>Securely link your bank account via open banking API.</p></div></div>
+            <div class="step"><div class="step-num">2</div><div><h3>Set Your Goals</h3><p>Tell FinancePilot your savings goals and monthly budget.</p></div></div>
+            <div class="step"><div class="step-num">3</div><div><h3>Let AI Do the Rest</h3><p>Track, budget, save. Get alerts and suggestions automatically.</p></div></div>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <div class="section-title"><h2>Pricing</h2></div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">£0</div>
+                <ul>
+                    <li>Basic expense tracking</li>
+                    <li>Manual budgeting</li>
+                    <li>3 bill reminders</li>
+                    <li>WhatsApp support</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;">Start Free</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Premium</h3>
+                <div class="price">£4.99<span>/mo</span></div>
+                <ul>
+                    <li>Auto bank sync</li>
+                    <li>AI budgeting</li>
+                    <li>Unlimited reminders</li>
+                    <li>Advanced analytics</li>
+                    <li>All chat platforms</li>
+                </ul>
+                <a href="#" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Free</a>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Take Control of Your Finances</h2>
+        <p style="margin:20px 0;">Start free. No credit card required.</p>
+        <a href="#" class="btn btn-accent">Get Started</a>
+    </section>
+    <footer><p>&copy; 2026 FinancePilot AI. All rights reserved.</p></footer>
+</body>
+</html>
