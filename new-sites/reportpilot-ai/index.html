@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReportPilot AI | Automated Business Reporting & Insights</title>
+    <meta name="description" content="Automated reports delivered to your WhatsApp, Email, Slack. No dashboards needed. From £200/month.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #0d9488; --accent: #f59e0b; --dark: #0f172a; --light: #f8fafc; }
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--dark); }
+        header { background: white; padding: 20px; box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: sticky; top: 0; }
+        .header-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .btn { padding: 14px 32px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; display: inline-block; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-accent { background: var(--accent); color: white; }
+        .hero { background: linear-gradient(135deg, #CCFBF1, #99F6E4); padding: 100px 20px; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.3rem; color: #64748b; max-width: 700px; margin: 0 auto 30px; }
+        .report-demo { max-width: 500px; margin: 30px auto; background: white; border-radius: 20px; padding: 25px; text-align: left; }
+        .report-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #e2e8f0; }
+        .report-item { padding: 12px 0; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; }
+        .report-item .label { color: #64748b; }
+        .report-item .value { font-weight: 600; }
+        .features, .channels, .pricing, .contact { padding: 80px 20px; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .feature-card { background: var(--light); padding: 35px; border-radius: 20px; }
+        .feature-icon { width: 55px; height: 55px; background: var(--primary); color: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+        .channels { background: var(--light); }
+        .channel-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .channel-item { width: 150px; height: 150px; background: white; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .channel-item i { font-size: 2.5rem; margin-bottom: 10px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .pricing-card { background: white; padding: 40px; border-radius: 20px; text-align: center; }
+        .pricing-card.featured { background: var(--primary); color: white; }
+        .price { font-size: 3rem; font-weight: 700; margin: 20px 0; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
+        .pricing-card li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select { width: 100%; padding: 14px 20px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; }
+        .success-message { display: none; background: #dcfce7; color: #166534; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; }
+        .cta { padding: 60px 20px; background: var(--dark); color: white; text-align: center; }
+        footer { background: #0f172a; color: #94a3b8; padding: 40px 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header><div class="header-inner"><div class="logo">ReportPilot<span style="color:var(--accent)">AI</span></div><a href="#contact" class="btn btn-primary">Get Started</a></div></header>
+    <section class="hero">
+        <h1>Insights Delivered to You</h1>
+        <p>Automated reports sent to WhatsApp, Email, Slack. No more checking dashboards.</p>
+        <div class="report-demo">
+            <div class="report-header">
+                <strong>📊 Weekly Sales Report</strong>
+                <small>Monday 9:00 AM</small>
+            </div>
+            <div class="report-item"><span class="label">Total Revenue</span><span class="value" style="color:var(--primary)">£12,450</span></div>
+            <div class="report-item"><span class="label">Orders</span><span class="value">147</span></div>
+            <div class="report-item"><span class="label">Top Product</span><span class="value">Premium Widget</span></div>
+            <div class="report-item"><span class="label">vs Last Week</span><span class="value" style="color:var(--accent)">↑ 23%</span></div>
+            <div class="report-item"><span class="label">⚠️ Low Stock</span><span class="value">3 items</span></div>
+        </div>
+        <a href="#pricing" class="btn btn-accent">Start Free Trial</a>
+    </section>
+    <section class="features">
+        <div class="section-title"><h2>What ReportPilot Does</h2></div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-line"></i></div><h3>Sales Reports</h3><p>Weekly summaries: revenue, orders, trends, top products.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-tags"></i></div><h3>Competitor Pricing</h3><p>Real-time price scraping from competitor websites.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-boxes"></i></div><h3>Inventory Alerts</h3><p>Get notified when stock runs low. Never miss a restock.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-chart-pie"></i></div><h3>Custom KPIs</h3><p>Define your own metrics. Track what matters to you.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-clock"></i></div><h3>Flexible Schedule</h3><p>Daily, weekly, monthly. You choose when.</p></div>
+            <div class="feature-card"><div class="feature-icon"><i class="fas fa-cog"></i></div><h3>Easy Setup</h3><p>Connect your data sources in minutes. No coding.</p></div>
+        </div>
+    </section>
+    <section class="channels">
+        <div class="section-title"><h2>Delivered Via</h2></div>
+        <div class="channel-grid">
+            <div class="channel-item"><i class="fab fa-whatsapp" style="color:#25D366"></i><h3>WhatsApp</h3></div>
+            <div class="channel-item"><i class="fab fa-telegram" style="color:#0088cc"></i><h3>Telegram</h3></div>
+            <div class="channel-item"><i class="fas fa-envelope" style="color:#ea4335"></i><h3>Email</h3></div>
+            <div class="channel-item"><i class="fab fa-slack" style="color:#4A154B"></i><h3>Slack</h3></div>
+        </div>
+    </section>
+    <section class="pricing" id="pricing">
+        <div class="section-title"><h2>Pricing</h2></div>
+        <div class="pricing-grid">
+            <div class="pricing-card"><h3>Starter</h3><div class="price">£200<span>/mo</span></div><ul><li>Weekly reports</li><li>1 delivery channel</li><li>Basic metrics</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Start Trial</a></div>
+            <div class="pricing-card featured"><h3>Growth</h3><div class="price">£400<span>/mo</span></div><ul><li>Daily + Weekly reports</li><li>3 delivery channels</li><li>Competitor pricing</li><li>Inventory alerts</li></ul><a href="#contact" class="btn btn-accent" style="background:white;color:var(--primary);width:100%;">Start Trial</a></div>
+            <div class="pricing-card"><h3>Enterprise</h3><div class="price">£800<span>/mo</span></div><ul><li>Real-time reports</li><li>Unlimited channels</li><li>Custom integrations</li><li>Dedicated support</li></ul><a href="#contact" class="btn btn-primary" style="width:100%;">Contact Sales</a></div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="section-title"><h2>Start Getting Insights</h2></div>
+        <div class="contact-form">
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group"><label>Company Name</label><input type="text" required placeholder="Your company"></div>
+                <div class="form-group"><label>Email</label><input type="email" required placeholder="you@company.com"></div>
+                <div class="form-group"><label>Delivery Channel</label><select><option>WhatsApp</option><option>Email</option><option>Slack</option><option>Multiple</option></select></div>
+                <div class="form-group"><label>Report Frequency</label><select><option>Weekly</option><option>Daily</option><option>Real-time</option></select></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Start Free Trial</button>
+            </form>
+            <div class="success-message" id="successMessage">✓ Trial started! We'll contact you to set up your reports.</div>
+        </div>
+    </section>
+    <section class="cta"><h2>Get Insights Without the Dashboards</h2><p style="margin:20px 0">14-day free trial.</p><a href="#contact" class="btn btn-accent">Start Free Trial</a></section>
+    <footer><p>&copy; 2026 ReportPilot AI. All rights reserved.</p></footer>
+    <script>function handleSubmit(e){e.preventDefault();e.target.style.display='none';document.getElementById('successMessage').style.display='block';}</script>
+</body>
+</html>
