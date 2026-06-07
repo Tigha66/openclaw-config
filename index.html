@@ -14,9 +14,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--dark); color: var(--text); overflow-x: hidden; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--dark); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: var(--dark); } ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
         .navbar { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(30px); border-bottom: 1px solid var(--dark-border); padding: 1.25rem 0; position: fixed; width: 100%; z-index: 1000; }
         .navbar-brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; background: linear-gradient(135deg, #ff6b00, #ff8c33); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-link { color: var(--text-muted) !important; font-weight: 500; padding: 0.5rem 1.25rem !important; transition: color 0.3s; }
@@ -26,288 +24,147 @@
         .btn-outline { background: transparent; border: 2px solid var(--dark-border); color: var(--text); padding: 14px 32px; border-radius: 12px; font-weight: 600; transition: all 0.3s; }
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
         .hero { background: var(--dark); padding: 180px 0 100px; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 107, 0, 0.15) 0%, transparent 60%); }
+        .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 107, 0, 0.15) 0%, transparent 60%); }
         .hero-glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255, 107, 0, 0.15) 0%, transparent 70%); top: -200px; right: -200px; animation: pulse 8s ease-in-out infinite; }
         @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 0.8; } }
         .hero h1 { font-family: 'Syne', sans-serif; font-size: 4.5rem; font-weight: 800; line-height: 1.05; margin-bottom: 1.5rem; }
         .hero h1 span { background: linear-gradient(135deg, #ff6b00, #ff8c33); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 540px; }
-        .hero-badges { display: flex; gap: 2rem; margin-bottom: 2.5rem; }
-        .hero-badge { display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.9rem; }
-        .hero-badge i { color: var(--primary); }
-        .section { padding: 120px 0; }
-        .section-dark { background: var(--dark-card); }
-        .section-title { text-align: center; margin-bottom: 80px; }
-        .section-title h2 { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
-        .section-title p { color: var(--text-muted); font-size: 1.1rem; }
+        .hero-badges { display: flex; gap: 2rem; margin-bottom: 2.5rem; } .hero-badge { display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.9rem; } .hero-badge i { color: var(--primary); }
+        .section { padding: 120px 0; } .section-dark { background: var(--dark-card); }
+        .section-title { text-align: center; margin-bottom: 80px; } .section-title h2 { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 700; margin-bottom: 1rem; } .section-title p { color: var(--text-muted); font-size: 1.1rem; }
         .service-card { background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 24px; padding: 50px 32px; text-align: center; transition: all 0.4s; }
         .service-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 30px 60px rgba(255, 107, 0, 0.15); }
         .service-icon { width: 90px; height: 90px; background: linear-gradient(135deg, rgba(255,107,0,0.2), rgba(255,107,0,0.05)); border: 1px solid rgba(255,107,0,0.2); border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; }
-        .service-card:hover .service-icon { background: linear-gradient(135deg, #ff6b00, #ff8c33); transform: scale(1.1); }
-        .service-icon i { font-size: 2rem; color: var(--primary); }
-        .service-card:hover .service-icon i { color: white; }
-        .service-card h4 { font-weight: 600; font-size: 1.25rem; margin-bottom: 12px; }
-        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
-        .feature-card { background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 20px; padding: 40px; transition: all 0.3s; }
-        .feature-card:hover { border-color: rgba(255,107,0,0.3); transform: translateY(-5px); }
-        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #ff6b00, #ff8c33); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
-        .feature-icon i { font-size: 1.5rem; color: white; }
-        .feature-card h5 { font-weight: 600; margin-bottom: 12px; }
-        .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
-        .portfolio-item { border-radius: 24px; overflow: hidden; position: relative; transition: all 0.4s; }
-        .portfolio-item:hover { transform: scale(1.02); }
-        .portfolio-item img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.4s; }
-        .portfolio-item:hover img { transform: scale(1.1); }
-        .portfolio-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 30px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); transform: translateY(20px); opacity: 0; transition: all 0.4s; }
-        .portfolio-item:hover .portfolio-overlay { transform: translateY(0); opacity: 1; }
-        .pricing-card { background: var(--dark-card); border: 2px solid var(--dark-border); border-radius: 32px; padding: 50px 40px; transition: all 0.4s; position: relative; height: 100%; }
-        .pricing-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 40px 80px rgba(255, 107, 0, 0.2); }
-        .pricing-card.popular { border-color: var(--primary); background: linear-gradient(180deg, rgba(255,107,0,0.1), var(--dark-card)); }
+        .service-card:hover .service-icon { background: linear-gradient(135deg, #ff6b00, #ff8c33); transform: scale(1.1); } .service-icon i { font-size: 2rem; color: var(--primary); } .service-card:hover .service-icon i { color: white; }
+        .service-card h4 { font-weight: 600; font-size: 1.25rem; margin-bottom: 12px; } .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .feature-card { background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 20px; padding: 40px; transition: all 0.3s; } .feature-card:hover { border-color: rgba(255,107,0,0.3); transform: translateY(-5px); }
+        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, #ff6b00, #ff8c33); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; } .feature-icon i { font-size: 1.5rem; color: white; } .feature-card h5 { font-weight: 600; margin-bottom: 12px; } .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .portfolio-item { border-radius: 24px; overflow: hidden; position: relative; transition: all 0.4s; } .portfolio-item:hover { transform: scale(1.02); } .portfolio-item img { width: 100%; height: 280px; object-fit: cover; transition: transform 0.4s; } .portfolio-item:hover img { transform: scale(1.1); }
+        .portfolio-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 30px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); transform: translateY(20px); opacity: 0; transition: all 0.4s; } .portfolio-item:hover .portfolio-overlay { transform: translateY(0); opacity: 1; }
+        .pricing-card { background: var(--dark-card); border: 2px solid var(--dark-border); border-radius: 32px; padding: 50px 40px; transition: all 0.4s; position: relative; height: 100%; } .pricing-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 40px 80px rgba(255, 107, 0, 0.2); } .pricing-card.popular { border-color: var(--primary); background: linear-gradient(180deg, rgba(255,107,0,0.1), var(--dark-card)); }
         .popular-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #ff6b00, #ff8c33); color: white; padding: 8px 28px; border-radius: 30px; font-weight: 600; font-size: 0.85rem; }
-        .price { font-family: 'Syne', sans-serif; font-size: 4rem; font-weight: 800; margin: 24px 0 8px; }
-        .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
-        .price-old { font-size: 1.25rem; color: var(--text-muted); text-decoration: line-through; margin-bottom: 16px; }
-        .pricing-card ul { list-style: none; padding: 0; margin: 32px 0; }
-        .pricing-card li { padding: 14px 0; border-bottom: 1px solid var(--dark-border); color: var(--text-muted); display: flex; align-items: center; gap: 12px; }
-        .pricing-card li:last-child { border-bottom: none; }
-        .pricing-card li i { color: var(--success); font-size: 0.9rem; }
+        .price { font-family: 'Syne', sans-serif; font-size: 4rem; font-weight: 800; margin: 24px 0 8px; } .price span { font-size: 1rem; color: var(--text-muted); font-weight: 400; } .price-old { font-size: 1.25rem; color: var(--text-muted); text-decoration: line-through; margin-bottom: 16px; }
+        .pricing-card ul { list-style: none; padding: 0; margin: 32px 0; } .pricing-card li { padding: 14px 0; border-bottom: 1px solid var(--dark-border); color: var(--text-muted); display: flex; align-items: center; gap: 12px; } .pricing-card li:last-child { border-bottom: none; } .pricing-card li i { color: var(--success); font-size: 0.9rem; }
         .contact-card { background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 32px; padding: 60px; }
-        .form-control, .form-select { background: var(--dark); border: 1px solid var(--dark-border); color: var(--text); padding: 18px 24px; border-radius: 14px; font-size: 1rem; transition: all 0.3s; }
-        .form-control:focus, .form-select:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(255,107,0,0.1); color: var(--text); outline: none; }
-        .form-control::placeholder { color: var(--text-muted); }
-        footer { background: var(--dark-card); padding: 80px 0 30px; border-top: 1px solid var(--dark-border); }
-        .footer-brand { font-family: 'Syne', sans-serif; font-size: 1.75rem; font-weight: 800; background: linear-gradient(135deg, #ff6b00, #ff8c33); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; display: inline-block; }
-        .footer-link { color: var(--text-muted); transition: color 0.3s; text-decoration: none; display: block; padding: 8px 0; }
-        .footer-link:hover { color: var(--primary); }
+        .form-control, .form-select { background: var(--dark); border: 1px solid var(--dark-border); color: var(--text); padding: 18px 24px; border-radius: 14px; font-size: 1rem; transition: all 0.3s; } .form-control:focus, .form-select:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(255,107,0,0.1); color: var(--text); outline: none; } .form-control::placeholder { color: var(--text-muted); }
+        footer { background: var(--dark-card); padding: 80px 0 30px; border-top: 1px solid var(--dark-border); } .footer-brand { font-family: 'Syne', sans-serif; font-size: 1.75rem; font-weight: 800; background: linear-gradient(135deg, #ff6b00, #ff8c33); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; display: inline-block; } .footer-link { color: var(--text-muted); transition: color 0.3s; text-decoration: none; display: block; padding: 8px 0; } .footer-link:hover { color: var(--primary); }
         @media (max-width: 992px) { .hero h1 { font-size: 3rem; } .section-title h2 { font-size: 2.25rem; } }
         @media (max-width: 768px) { .hero { padding: 140px 0 80px; } .hero h1 { font-size: 2.25rem; } .hero-badges { flex-direction: column; gap: 0.75rem; } .navbar-brand { font-size: 1.3rem; } .contact-card { padding: 30px; } }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-globe"></i> autoAIwebsolutions</a>
-            <div class="d-flex align-items-center gap-3">
-                <a href="#services" class="nav-link d-none d-md-block">Services</a>
-                <a href="#portfolio" class="nav-link d-none d-md-block">Work</a>
-                <a href="#receptionist" class="nav-link d-none d-md-block">AI Receptionist</a>
-                <a href="#pricing" class="nav-link d-none d-md-block">Pricing</a>
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-            </div>
+    <nav class="navbar"><div class="container">
+        <a class="navbar-brand" href="#"><i class="fas fa-globe"></i> autoAIwebsolutions</a>
+        <div class="d-flex align-items-center gap-3">
+            <a href="#services" class="nav-link d-none d-md-block">Services</a>
+            <a href="#portfolio" class="nav-link d-none d-md-block">Work</a>
+            <a href="#receptionist" class="nav-link d-none d-md-block">AI Receptionist</a>
+            <a href="#pricing" class="nav-link d-none d-md-block">Pricing</a>
+            <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
-    </nav>
+    </div></nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-glow"></div>
-        <div class="container position-relative">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="hero-badges">
-                        <div class="hero-badge"><i class="fas fa-check-circle"></i> Free Consultation</div>
-                        <div class="hero-badge"><i class="fas fa-check-circle"></i> 24hr Delivery</div>
-                        <div class="hero-badge"><i class="fas fa-check-circle"></i> Stripe Ready</div>
-                    </div>
-                    <h1>Stunning Websites<br>for <span>Local Business</span></h1>
-                    <p>Transform your business with a premium, mobile-friendly website. We build stunning sites for plumbers, dentists, salons, estate agents & more. Accept payments online.</p>
-                    <div class="d-flex gap-3 flex-wrap">
-                        <a href="#pricing" class="btn btn-primary btn-lg"><i class="fas fa-rocket me-2"></i>View Packages</a>
-                        <a href="#portfolio" class="btn btn-outline btn-lg"><i class="fas fa-eye me-2"></i>See Our Work</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="hero"><div class="hero-glow"></div><div class="container position-relative"><div class="row align-items-center"><div class="col-lg-7">
+        <div class="hero-badges"><div class="hero-badge"><i class="fas fa-check-circle"></i> Free Consultation</div><div class="hero-badge"><i class="fas fa-check-circle"></i> 24hr Delivery</div><div class="hero-badge"><i class="fas fa-check-circle"></i> Stripe Ready</div></div>
+        <h1>Stunning Websites<br>for <span>Local Business</span></h1>
+        <p>Transform your business with a premium, mobile-friendly website. We build stunning sites for plumbers, dentists, salons, estate agents & more. Accept payments online.</p>
+        <div class="d-flex gap-3 flex-wrap"><a href="#pricing" class="btn btn-primary btn-lg"><i class="fas fa-rocket me-2"></i>View Packages</a><a href="#portfolio" class="btn btn-outline btn-lg"><i class="fas fa-eye me-2"></i>See Our Work</a></div>
+    </div></div></div></section>
 
-    <!-- Services -->
-    <section class="section section-dark" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Who We Build For</h2>
-                <p>Professional websites for all types of local businesses</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-wrench"></i></div><h4>Plumbers</h4><p>Emergency services, booking systems, payments</p></div></div>
-                <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-tooth"></i></div><h4>Dentists</h4><p>NHS & Private, appointment booking</p></div></div>
-                <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-cut"></i></div><h4>Salons</h4><p>Booking, pricing, online payments</p></div></div>
-                <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h4>Estate Agents</h4><p>Property listings, valuations</p></div></div>
-            </div>
+    <section class="section section-dark" id="services"><div class="container">
+        <div class="section-title"><h2>Who We Build For</h2><p>Professional websites for all types of local businesses</p></div>
+        <div class="row g-4">
+            <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-wrench"></i></div><h4>Plumbers</h4><p>Emergency services, booking systems, payments</p></div></div>
+            <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-tooth"></i></div><h4>Dentists</h4><p>NHS & Private, appointment booking</p></div></div>
+            <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-cut"></i></div><h4>Salons</h4><p>Booking, pricing, online payments</p></div></div>
+            <div class="col-6 col-lg-3"><div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h4>Estate Agents</h4><p>Property listings, valuations</p></div></div>
         </div>
-    </section>
+    </div></section>
 
-    <!-- Features -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>What's Included</h2>
-                <p>Everything you need to dominate your local market</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><h5>Mobile Responsive</h5><p>Perfect on every device. Phones, tablets & desktops.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-credit-card"></i></div><h5>Stripe Payments</h5><p>Accept cards, send invoices, get paid online.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-search"></i></div><h5>SEO Optimised</h5><p>Rank on Google. Get found by customers.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h5>Lightning Fast</h5><p>Super quick load times.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-paint-brush"></i></div><h5>Premium Design</h5><p>Stunning designs that make you look pro.</p></div></div>
-                <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-headset"></i></div><h5>Easy Updates</h5><p>Change content yourself. No coding.</p></div></div>
-            </div>
+    <section class="section"><div class="container">
+        <div class="section-title"><h2>What's Included</h2><p>Everything you need to dominate your local market</p></div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><h5>Mobile Responsive</h5><p>Perfect on every device. Phones, tablets & desktops.</p></div></div>
+            <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-credit-card"></i></div><h5>Stripe Payments</h5><p>Accept cards, send invoices, get paid online.</p></div></div>
+            <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-search"></i></div><h5>SEO Optimised</h5><p>Rank on Google. Get found by customers.</p></div></div>
+            <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-bolt"></i></div><h5>Lightning Fast</h5><p>Super quick load times.</p></div></div>
+            <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-paint-brush"></i></div><h5>Premium Design</h5><p>Stunning designs that make you look pro.</p></div></div>
+            <div class="col-md-6 col-lg-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-headset"></i></div><h5>Easy Updates</h5><p>Change content yourself. No coding.</p></div></div>
         </div>
-    </section>
+    </div></section>
 
-    <!-- AI Receptionist -->
-    <section class="section section-dark" id="receptionist">
-        <div class="container">
-            <div class="section-title">
-                <h2>Built-in <span style="background:linear-gradient(135deg,#ff6b00,#ff8c33);-webkit-background-clip:text;-webkit-text-fill-color:transparent">AI Voice Receptionist</span></h2>
-                <p>Answers calls 24/7, books appointments & never misses a customer.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-phone-volume"></i></div><h5>Answers every call</h5><p>24/7, after hours, and when you're busy — the AI picks up instantly.</p></div></div>
-                <div class="col-md-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h5>Books appointments</h5><p>Takes name, time & number, then sends a WhatsApp confirmation.</p></div></div>
-                <div class="col-md-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h5>Alerts you instantly</h5><p>You get every booking & lead on WhatsApp — never miss a customer.</p></div></div>
-            </div>
-            <div class="text-center mt-5">
-                <p style="font-size:1.2rem"><i class="fas fa-microphone" style="color:var(--primary)"></i> Tap the <strong>orange mic button</strong> (bottom-right) and talk to it now — like a real phone call.</p>
-            </div>
+    <section class="section section-dark" id="receptionist"><div class="container">
+        <div class="section-title"><h2>Built-in <span style="background:linear-gradient(135deg,#ff6b00,#ff8c33);-webkit-background-clip:text;-webkit-text-fill-color:transparent">AI Voice Receptionist</span></h2><p>Answers calls 24/7, books appointments & never misses a customer.</p></div>
+        <div class="row g-4">
+            <div class="col-md-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-phone-volume"></i></div><h5>Answers every call</h5><p>24/7, after hours, and when you're busy — the AI picks up instantly.</p></div></div>
+            <div class="col-md-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-calendar-check"></i></div><h5>Books appointments</h5><p>Takes name, time & number, then sends a WhatsApp confirmation.</p></div></div>
+            <div class="col-md-4"><div class="feature-card"><div class="feature-icon"><i class="fas fa-bell"></i></div><h5>Alerts you instantly</h5><p>You get every booking & lead on WhatsApp — never miss a customer.</p></div></div>
         </div>
-    </section>
+        <div class="text-center mt-5"><p style="font-size:1.2rem"><i class="fas fa-microphone" style="color:var(--primary)"></i> Tap the <strong>orange mic button</strong> (bottom-right) and talk to it now — like a real phone call.</p></div>
+    </div></section>
 
-    <!-- Portfolio -->
-    <section class="section section-dark" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>Recent Work</h2>
-                <p>Stunning websites we've built</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600" alt="Plumber"><div class="portfolio-overlay"><h5>Plumber Website</h5><p class="mb-0"><i class="fas fa-wrench me-1"></i> Emergency Services</p></div></div></div>
-                <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600" alt="Dental"><div class="portfolio-overlay"><h5>Dental Practice</h5><p class="mb-0"><i class="fas fa-tooth me-1"></i> NHS & Private</p></div></div></div>
-                <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600" alt="Salon"><div class="portfolio-overlay"><h5>Hair Salon</h5><p class="mb-0"><i class="fas fa-cut me-1"></i> Booking System</p></div></div></div>
-                <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600" alt="Estate"><div class="portfolio-overlay"><h5>Estate Agent</h5><p class="mb-0"><i class="fas fa-home me-1"></i> Property Listings</p></div></div></div>
-                <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600" alt="Restaurant"><div class="portfolio-overlay"><h5>Restaurant</h5><p class="mb-0"><i class="fas fa-utensils me-1"></i> Online Menu</p></div></div></div>
-                <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600" alt="Medical"><div class="portfolio-overlay"><h5>Medical Practice</h5><p class="mb-0"><i class="fas fa-user-md me-1"></i> Appointments</p></div></div></div>
-            </div>
+    <section class="section section-dark" id="portfolio"><div class="container">
+        <div class="section-title"><h2>Recent Work</h2><p>Stunning websites we've built</p></div>
+        <div class="row g-4">
+            <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600" alt="Plumber"><div class="portfolio-overlay"><h5>Plumber Website</h5><p class="mb-0"><i class="fas fa-wrench me-1"></i> Emergency Services</p></div></div></div>
+            <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600" alt="Dental"><div class="portfolio-overlay"><h5>Dental Practice</h5><p class="mb-0"><i class="fas fa-tooth me-1"></i> NHS & Private</p></div></div></div>
+            <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600" alt="Salon"><div class="portfolio-overlay"><h5>Hair Salon</h5><p class="mb-0"><i class="fas fa-cut me-1"></i> Booking System</p></div></div></div>
+            <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600" alt="Estate"><div class="portfolio-overlay"><h5>Estate Agent</h5><p class="mb-0"><i class="fas fa-home me-1"></i> Property Listings</p></div></div></div>
+            <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600" alt="Restaurant"><div class="portfolio-overlay"><h5>Restaurant</h5><p class="mb-0"><i class="fas fa-utensils me-1"></i> Online Menu</p></div></div></div>
+            <div class="col-md-4"><div class="portfolio-item"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600" alt="Medical"><div class="portfolio-overlay"><h5>Medical Practice</h5><p class="mb-0"><i class="fas fa-user-md me-1"></i> Appointments</p></div></div></div>
         </div>
-    </section>
+    </div></section>
 
-    <!-- Pricing -->
-    <section class="section" id="pricing">
-        <div class="container">
-            <div class="section-title">
-                <h2>Simple Pricing</h2>
-                <p>No hidden fees. Choose what works for you</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-5">
-                    <div class="pricing-card">
-                        <h5 class="text-muted">One-Time Payment</h5>
-                        <div class="price-old">Was £597</div>
-                        <div class="price">£397<span>/once</span></div>
-                        <p class="text-muted">Best for owning your site outright</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Professional 5-page website</li>
-                            <li><i class="fas fa-check"></i> Mobile responsive design</li>
-                            <li><i class="fas fa-check"></i> Contact forms & booking</li>
-                            <li><i class="fas fa-check"></i> Google Maps integration</li>
-                            <li><i class="fas fa-check"></i> SEO optimisation</li>
-                            <li><i class="fas fa-check"></i> Stripe payment integration</li>
-                            <li><i class="fas fa-check"></i> 1 year hosting included</li>
-                        </ul>
-                        <button class="btn btn-primary w-100" onclick="selectPlan('onetime')"><i class="fas fa-shopping-cart me-2"></i>Get Started - £397</button>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="pricing-card popular">
-                        <span class="popular-badge">Most Popular</span>
-                        <h5 class="text-muted">Monthly Plan</h5>
-                        <div class="price">£39<span>/month</span></div>
-                        <p class="text-muted">Best for ongoing support</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Everything in one-time</li>
-                            <li><i class="fas fa-check"></i> <strong>Unlimited edits</strong></li>
-                            <li><i class="fas fa-check"></i> Priority 24hr support</li>
-                            <li><i class="fas fa-check"></i> Hosting always included</li>
-                            <li><i class="fas fa-check"></i> Stripe maintenance</li>
-                            <li><i class="fas fa-check"></i> Monthly analytics report</li>
-                            <li><i class="fas fa-check"></i> Cancel anytime</li>
-                        </ul>
-                        <button class="btn btn-primary w-100" onclick="selectPlan('monthly')"><i class="fas fa-shopping-cart me-2"></i>Subscribe - £39/mo</button>
-                    </div>
-                </div>
-            </div>
+    <section class="section" id="pricing"><div class="container">
+        <div class="section-title"><h2>Simple Pricing</h2><p>No hidden fees. Choose what works for you</p></div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-5"><div class="pricing-card">
+                <h5 class="text-muted">One-Time Payment</h5><div class="price-old">Was £597</div><div class="price">£397<span>/once</span></div><p class="text-muted">Best for owning your site outright</p>
+                <ul><li><i class="fas fa-check"></i> Professional 5-page website</li><li><i class="fas fa-check"></i> Mobile responsive design</li><li><i class="fas fa-check"></i> Contact forms & booking</li><li><i class="fas fa-check"></i> Google Maps integration</li><li><i class="fas fa-check"></i> SEO optimisation</li><li><i class="fas fa-check"></i> Stripe payment integration</li><li><i class="fas fa-check"></i> 1 year hosting included</li></ul>
+                <button class="btn btn-primary w-100" onclick="selectPlan('onetime')"><i class="fas fa-shopping-cart me-2"></i>Get Started - £397</button>
+            </div></div>
+            <div class="col-lg-5"><div class="pricing-card popular"><span class="popular-badge">Most Popular</span>
+                <h5 class="text-muted">Monthly Plan</h5><div class="price">£39<span>/month</span></div><p class="text-muted">Best for ongoing support</p>
+                <ul><li><i class="fas fa-check"></i> Everything in one-time</li><li><i class="fas fa-check"></i> <strong>Unlimited edits</strong></li><li><i class="fas fa-check"></i> Priority 24hr support</li><li><i class="fas fa-check"></i> Hosting always included</li><li><i class="fas fa-check"></i> Stripe maintenance</li><li><i class="fas fa-check"></i> Monthly analytics report</li><li><i class="fas fa-check"></i> Cancel anytime</li></ul>
+                <button class="btn btn-primary w-100" onclick="selectPlan('monthly')"><i class="fas fa-shopping-cart me-2"></i>Subscribe - £39/mo</button>
+            </div></div>
         </div>
-    </section>
+    </div></section>
 
-    <!-- Contact -->
-    <section class="section section-dark" id="contact">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section-title">
-                        <h2>Let's Build Your Site</h2>
-                        <p>Tell us about your business</p>
-                    </div>
-                    <div class="contact-card">
-                        <form id="contactForm">
-                            <div class="row g-4">
-                                <div class="col-md-6"><label class="form-label fw-500 mb-2">Your Name *</label><input type="text" class="form-control" required placeholder="John Smith"></div>
-                                <div class="col-md-6"><label class="form-label fw-500 mb-2">Business Name *</label><input type="text" class="form-control" required placeholder="ABC Plumbing"></div>
-                                <div class="col-md-6"><label class="form-label fw-500 mb-2">Email Address *</label><input type="email" class="form-control" required placeholder="john@example.com"></div>
-                                <div class="col-md-6"><label class="form-label fw-500 mb-2">Phone Number</label><input type="tel" class="form-control" placeholder="07700 900000"></div>
-                                <div class="col-12"><label class="form-label fw-500 mb-2">Business Type *</label>
-                                    <select class="form-select" id="businessType" required>
-                                        <option value="">Select business type...</option>
-                                        <option>Plumber</option><option>Electrician</option><option>Dentist</option><option>Hair Salon / Barber</option><option>Estate Agent / Lettings</option><option>Restaurant / Cafe</option><option>Retail Shop</option><option>Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-12"><label class="form-label fw-500 mb-2">About Your Project</label><textarea class="form-control" rows="4" placeholder="What services do you offer?"></textarea></div>
-                                <div class="col-12"><label class="form-label fw-500 mb-2">Preferred Package</label>
-                                    <select class="form-select" id="selectedPackage">
-                                        <option value="">I'm not sure yet</option><option value="onetime">One-Time Payment - £397</option><option value="monthly">Monthly Plan - £39/month</option>
-                                    </select>
-                                </div>
-                                <div class="col-12"><button type="submit" class="btn btn-primary btn-lg w-100"><i class="fas fa-paper-plane me-2"></i>Send Enquiry</button></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="section section-dark" id="contact"><div class="container"><div class="row justify-content-center"><div class="col-lg-8">
+        <div class="section-title"><h2>Let's Build Your Site</h2><p>Tell us about your business</p></div>
+        <div class="contact-card"><form id="contactForm"><div class="row g-4">
+            <div class="col-md-6"><label class="form-label fw-500 mb-2">Your Name *</label><input type="text" class="form-control" required placeholder="John Smith"></div>
+            <div class="col-md-6"><label class="form-label fw-500 mb-2">Business Name *</label><input type="text" class="form-control" required placeholder="ABC Plumbing"></div>
+            <div class="col-md-6"><label class="form-label fw-500 mb-2">Email Address *</label><input type="email" class="form-control" required placeholder="john@example.com"></div>
+            <div class="col-md-6"><label class="form-label fw-500 mb-2">Phone Number</label><input type="tel" class="form-control" placeholder="07700 900000"></div>
+            <div class="col-12"><label class="form-label fw-500 mb-2">Business Type *</label><select class="form-select" required><option value="">Select business type...</option><option>Plumber</option><option>Electrician</option><option>Dentist</option><option>Hair Salon / Barber</option><option>Estate Agent / Lettings</option><option>Restaurant / Cafe</option><option>Retail Shop</option><option>Other</option></select></div>
+            <div class="col-12"><label class="form-label fw-500 mb-2">About Your Project</label><textarea class="form-control" rows="4" placeholder="What services do you offer?"></textarea></div>
+            <div class="col-12"><label class="form-label fw-500 mb-2">Preferred Package</label><select class="form-select" id="selectedPackage"><option value="">I'm not sure yet</option><option value="onetime">One-Time Payment - £397</option><option value="monthly">Monthly Plan - £39/month</option></select></div>
+            <div class="col-12"><button type="submit" class="btn btn-primary btn-lg w-100"><i class="fas fa-paper-plane me-2"></i>Send Enquiry</button></div>
+        </div></form></div>
+    </div></div></div></section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4">
-                    <div class="footer-brand"><i class="fas fa-globe"></i> autoAIwebsolutions</div>
-                    <p class="text-muted mb-4">Premium websites for local businesses across the UK.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" style="width:44px;height:44px;background:var(--dark-border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted)"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="width:44px;height:44px;background:var(--dark-border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted)"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="width:44px;height:44px;background:var(--dark-border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted)"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2"><h6 class="fw-bold mb-4">Quick Links</h6><a href="#services" class="footer-link">Services</a><a href="#portfolio" class="footer-link">Work</a><a href="#pricing" class="footer-link">Pricing</a><a href="#contact" class="footer-link">Contact</a></div>
-                <div class="col-lg-3"><h6 class="fw-bold mb-4">Services</h6><a href="#" class="footer-link">Business Websites</a><a href="#" class="footer-link">Stripe Payments</a><a href="#" class="footer-link">SEO Services</a><a href="#receptionist" class="footer-link">AI Receptionist</a></div>
-                <div class="col-lg-3"><h6 class="fw-bold mb-4">Contact</h6><a href="mailto:hello@callpilotvoice.co.uk" class="footer-link"><i class="fas fa-envelope me-2"></i>hello@callpilotvoice.co.uk</a><a href="https://autoaiwebsolutions.com" class="footer-link"><i class="fas fa-globe me-2"></i>autoAIwebsolutions.com</a><span class="footer-link"><i class="fas fa-map-marker-alt me-2"></i>London, UK</span></div>
-            </div>
-            <hr style="border-color:var(--dark-border);margin:40px 0 20px">
-            <div class="text-center text-muted"><p class="mb-0">&copy; 2026 autoAIwebsolutions. All rights reserved.</p></div>
-        </div>
-    </footer>
+    <footer><div class="container"><div class="row g-5">
+        <div class="col-lg-4"><div class="footer-brand"><i class="fas fa-globe"></i> autoAIwebsolutions</div><p class="text-muted mb-4">Premium websites for local businesses across the UK.</p><div class="d-flex gap-3"><a href="#" style="width:44px;height:44px;background:var(--dark-border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted)"><i class="fab fa-facebook"></i></a><a href="#" style="width:44px;height:44px;background:var(--dark-border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted)"><i class="fab fa-instagram"></i></a><a href="#" style="width:44px;height:44px;background:var(--dark-border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted)"><i class="fab fa-twitter"></i></a></div></div>
+        <div class="col-lg-2"><h6 class="fw-bold mb-4">Quick Links</h6><a href="#services" class="footer-link">Services</a><a href="#portfolio" class="footer-link">Work</a><a href="#pricing" class="footer-link">Pricing</a><a href="#contact" class="footer-link">Contact</a></div>
+        <div class="col-lg-3"><h6 class="fw-bold mb-4">Services</h6><a href="#" class="footer-link">Business Websites</a><a href="#" class="footer-link">Stripe Payments</a><a href="#" class="footer-link">SEO Services</a><a href="#receptionist" class="footer-link">AI Receptionist</a></div>
+        <div class="col-lg-3"><h6 class="fw-bold mb-4">Contact</h6><a href="mailto:hello@callpilotvoice.co.uk" class="footer-link"><i class="fas fa-envelope me-2"></i>hello@callpilotvoice.co.uk</a><a href="https://autoaiwebsolutions.com" class="footer-link"><i class="fas fa-globe me-2"></i>autoAIwebsolutions.com</a><span class="footer-link"><i class="fas fa-map-marker-alt me-2"></i>London, UK</span></div>
+    </div><hr style="border-color:var(--dark-border);margin:40px 0 20px"><div class="text-center text-muted"><p class="mb-0">&copy; 2026 autoAIwebsolutions. All rights reserved.</p></div></div></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const stripe = Stripe('pk_test_YOUR_STRIPE_KEY');
-        const prices = { onetime: 'price_YOUR_ONETIME_ID', monthly: 'price_YOUR_MONTHLY_ID' };
-        function selectPlan(plan) { document.getElementById('selectedPackage').value = plan; document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); }
-        document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); alert('Thank you for your enquiry! We will contact you within 24 hours.\n\nEmail: hello@callpilotvoice.co.uk'); });
+        function selectPlan(plan){document.getElementById('selectedPackage').value=plan;document.getElementById('contact').scrollIntoView({behavior:'smooth'});}
+        document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();alert('Thank you for your enquiry! We will contact you within 24 hours.\n\nEmail: hello@callpilotvoice.co.uk');});
     </script>
 
-    <!-- 🎙️ CallPilot AI Voice Widget (floating, in-page voice call) -->
+    <!-- 🎙️ CallPilot AI Voice Widget — auto-reads this website & answers about it -->
     <script src="https://get.callpilotvoice.co.uk/widget.js"
+            data-name="autoAIwebsolutions"
+            data-label="Talk to our AI assistant"
             data-color="#ff6b00"
-            data-label="Talk to our AI receptionist"></script>
+            data-owner="447901921642"></script>
 </body>
 </html>
